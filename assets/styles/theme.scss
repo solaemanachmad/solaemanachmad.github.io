@@ -34,8 +34,8 @@ $photo-border:     $ugm-navy !default;
 $navbar-bg:        $ugm-navy-100 !default;
 $navbar-fg:        $ugm-navy !default;
 $navbar-hl:        $ugm-gold-600 !default;
-$footer-bg:        $ugm-navy !default;
-$footer-fg:        #f2f2f2 !default;
+$footer-bg:        $navbar-bg !default;   // sama dengan header
+$footer-fg:        $navbar-fg !default;
 
 $font-family-ui: "Segoe UI", Helvetica, Arial, sans-serif, "Atkinson Hyperlegible";
 $font-family-sans-serif: $font-family-ui;
@@ -79,7 +79,7 @@ h3 { font-size: 1.05rem; margin-top: 1.4rem; margin-bottom: .2rem; }
 
 footer.footer { background-color: $footer-bg; position: relative; z-index: 2; }
 .nav-footer, .nav-footer a, footer.footer, footer.footer a { color: $footer-fg !important; }
-.nav-footer a:hover { color: $ugm-gold !important; }
+.nav-footer a:hover { color: $navbar-hl !important; }
 
 @media (max-width: 991.98px) {
   footer.footer, .nav-footer { min-height: 0 !important; }

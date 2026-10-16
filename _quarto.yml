@@ -3,6 +3,7 @@ project:
   output-dir: _site
   resources:
     - assets/images/
+    - assets/vendor/
     # Slide PDF & thumbnail yang disimpan di folder mata kuliah
     - "courses/**/*.pdf"
     - "courses/**/thumbs/*"
@@ -42,10 +43,9 @@ format:
     smooth-scroll: true
     link-external-newwindow: true
     link-external-icon: false
-    # Ikon Google Scholar & ORCID (Academicons)
-    include-in-header:
-      - text: |
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
+    # Ikon Google Scholar & ORCID (Academicons 1.9.5, disimpan lokal di assets/vendor)
+    css:
+      - assets/vendor/academicons/css/academicons.min.css
     # Kolom profil kiri, tampil di setiap halaman. Edit link-nya di _includes/profile.html
     include-before-body:
       - _includes/profile.html
