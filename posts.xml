@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Achmad Solaeman</title>
+<link>https://solaemanachmad.github.io/posts.html</link>
+<atom:link href="https://solaemanachmad.github.io/posts.xml" rel="self" type="application/rss+xml"/>
+<description>Junior Lecturer in Internet Engineering Technology, Universitas Gadjah Mada. Deep learning, computer vision, and eye tracking.</description>
+<generator>quarto-1.10.19</generator>
+<lastBuildDate>Fri, 16 Oct 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Welcome to my new site</title>
+  <dc:creator>Achmad Solaeman</dc:creator>
+  <link>https://solaemanachmad.github.io/posts/2026-10-16-welcome/</link>
+  <description><![CDATA[ 
+
+<!--
+  Kolom profil (kiri). Muncul di setiap halaman.
+  Edit link di bawah bila akun berubah.
+-->
+<aside class="profile-sidebar" aria-label="Profile">
+  <img class="profile-photo" data-src="assets/images/profile.jpg" alt="Photo of Achmad Solaeman">
+  <div class="profile-name">Achmad Solaeman</div>
+  <div class="profile-role">Junior Lecturer, DTEDI<br>Universitas Gadjah Mada</div>
+  <!-- Tombol "Follow": hanya tampil di layar kecil, membuka daftar kontak -->
+  <button type="button" class="profile-follow" aria-expanded="false" aria-controls="profile-links">
+    <i class="bi bi-person-plus"></i><span>Follow</span><i class="bi bi-chevron-down profile-follow-caret"></i>
+  </button>
+  <ul class="profile-links" id="profile-links">
+    <li><i class="bi bi-geo-alt"></i><span>Yogyakarta, Indonesia</span></li>
+    <li><a href="mailto:achmad.solaeman@ugm.ac.id"><i class="bi bi-envelope"></i><span>Email</span></a></li>
+    <li><a href="https://www.linkedin.com/in/solaemanachmad/"><i class="bi bi-linkedin"></i><span>LinkedIn</span></a></li>
+    <li><a href="https://www.instagram.com/solaemanachmad/"><i class="bi bi-instagram"></i><span>Instagram</span></a></li>
+    <li><a href="https://github.com/solaemanachmad"><i class="bi bi-github"></i><span>GitHub</span></a></li>
+    <li><a href="https://scholar.google.com/citations?user=sPEG30wAAAAJ"><i class="ai ai-google-scholar"></i><span>Google Scholar</span></a></li>
+    <li><a href="https://orcid.org/0009-0002-9620-7411"><i class="ai ai-orcid"></i><span>ORCID</span></a></li>
+    <li><a class="profile-cv deck-preview" data-href="cv/solaemanachmad_cv.pdf" data-title="Curriculum Vitae — Achmad Solaeman" data-filename="solaemanachmad_cv.pdf"><i class="bi bi-file-earmark-person"></i><span>CV (PDF)</span></a></li>
+  </ul>
+</aside>
+<script>
+  // Path foto relatif ke root situs (berfungsi juga di subfolder seperti posts/)
+  (function () {
+    var meta = document.querySelector('meta[name="quarto:offset"]');
+    var offset = meta ? meta.getAttribute("content") : "./";
+    document.querySelectorAll(".profile-photo[data-src]").forEach(function (img) {
+      img.src = offset + img.getAttribute("data-src");
+    });
+    document.querySelectorAll(".profile-cv[data-href]").forEach(function (a) {
+      var url = offset + a.getAttribute("data-href");
+      a.href = url;
+      a.dataset.src = url;
+      a.dataset.download = url;
+    });
+
+    // Menu aktif untuk subhalaman (nav-parent): courses/... → Teaching, posts/... → Posts
+    var parents = { "/courses/": "teaching.html", "/posts/": "posts.html" };
+    Object.keys(parents).forEach(function (dir) {
+      if (location.pathname.indexOf(dir) === -1) return;
+      document.querySelectorAll(".navbar .nav-link").forEach(function (link) {
+        var href = link.getAttribute("href") || "";
+        if (href.split("/").pop() === parents[dir]) {
+          link.classList.add("active");
+          link.setAttribute("aria-current", "page");
+        }
+      });
+    });
+
+    // Tombol Follow (mobile): buka/tutup daftar kontak
+    var btn = document.querySelector(".profile-follow");
+    var box = document.querySelector(".profile-sidebar");
+    if (!btn || !box) return;
+    function setOpen(open) {
+      box.classList.toggle("links-open", open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      setOpen(!box.classList.contains("links-open"));
+    });
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest(".profile-links")) setOpen(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") setOpen(false);
+    });
+  })();
+</script>
+
+
+
+
+<p>This site brings together my CV, publications, teaching, and open research topics for students in one place.</p>
+<p>It is built with <a href="https://quarto.org">Quarto</a> and published on GitHub Pages. The same source files generate both these web pages and a PDF version of my <a href="../../cv/solaemanachmad_cv.pdf">CV</a>, so everything stays in sync.</p>
+<p>In this section I plan to share short notes on research, teaching, and tools I find useful.</p>
+
+
+
+ ]]></description>
+  <category>news</category>
+  <guid>https://solaemanachmad.github.io/posts/2026-10-16-welcome/</guid>
+  <pubDate>Fri, 16 Oct 2026 00:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

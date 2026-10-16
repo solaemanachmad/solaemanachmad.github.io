@@ -1,0 +1,55 @@
+[
+  {
+    "listing": "/posts.html",
+    "items": [
+      "/posts/2026-10-16-welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/courses/database-lab/index.html",
+    "items": []
+  },
+  {
+    "listing": "/courses/information-security-2/index.html",
+    "items": []
+  },
+  {
+    "listing": "/courses/digital-infrastructure-lab/index.html",
+    "items": []
+  },
+  {
+    "listing": "/services.html",
+    "items": []
+  },
+  {
+    "listing": "/teaching.html",
+    "items": [
+      "/courses/basis-data/index.html",
+      "/courses/digital-infrastructure-lab/index.html",
+      "/courses/information-security-2/index.html",
+      "/courses/k3/index.html",
+      "/courses/network-design-lab/index.html",
+      "/courses/database-lab/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": []
+  },
+  {
+    "listing": "/courses/k3/index.html",
+    "items": []
+  },
+  {
+    "listing": "/courses/basis-data/index.html",
+    "items": []
+  },
+  {
+    "listing": "/courses/network-design-lab/index.html",
+    "items": []
+  },
+  {
+    "listing": "/publications.html",
+    "items": []
+  }
+]
