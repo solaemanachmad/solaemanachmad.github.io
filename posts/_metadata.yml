@@ -1,0 +1,13 @@
+# Pengaturan bersama untuk semua tulisan di folder posts/
+author: "Achmad Solaeman"
+toc: true
+title-block-banner: false
+
+# ---- Komentar pembaca (giscus, memakai GitHub Discussions) ----
+# Aktifkan setelah repo dipublikasikan:
+#   1. Repo harus public, dan Discussions diaktifkan (Settings → Features → Discussions).
+#   2. Pasang aplikasi giscus: https://github.com/apps/giscus
+#   3. Hapus tanda # pada 3 baris di bawah dan sesuaikan nama repo bila berbeda.
+# comments:
+#   giscus:
+#     repo: solaemanachmad/solaemanachmad.github.io

@@ -1,0 +1,5 @@
+# Daftar pertemuan — lihat courses/basis-data/meetings.yml untuk penjelasan field.
+- meeting: 1
+  title: "Introduction to Occupational Health and Safety"
+  description: "Course overview and the core principles of occupational health and safety."
+  slides: "https://docs.google.com/presentation/d/1G3LCV_MqKOJk4yvANV8bRMeD8n3udohe/edit?usp=sharing&ouid=105928114356312916201&rtpof=true&sd=true"

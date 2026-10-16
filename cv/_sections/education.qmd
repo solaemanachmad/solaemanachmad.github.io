@@ -1,0 +1,13 @@
+### Master of Engineering (Information Technology)
+
+[[Universitas Gadjah Mada](https://pasca.jteti.ugm.ac.id/) · Yogyakarta, Indonesia · 2023 – 2025]{.meta}
+
+- Specializing in deep learning, with a focus on computer vision and time series classification
+- GPA: 3.80 / 4.00
+- Relevant coursework: Artificial Intelligence, Big Data, Cloud Computing, Decision Support Systems
+
+### Bachelor of Applied Engineering (Internet Engineering Technology)
+
+[[Universitas Gadjah Mada](https://tri.sv.ugm.ac.id/) · Yogyakarta, Indonesia · 2013 – 2018]{.meta}
+
+- Relevant coursework: Computer Networks, Network Security, Edge Computing

@@ -1,0 +1,56 @@
+/*-- scss:defaults --*/
+// Mode gelap: navy gelap + emas. Hanya menimpa variabel & beberapa komponen Bootstrap;
+// semua tata letak ada di theme.scss.
+$ugm-navy-bg:    #0C1524;
+$ugm-navy-panel: #14213D;
+$ugm-navy-input: #16213E;
+$ugm-gold:       #E3B54F;
+$ugm-gold-600:   #C99A2E;
+
+$primary: $ugm-gold;
+$link-color: $ugm-gold;
+$link-hover-color: #ffffff;
+$body-color: #EDEDED;
+$body-bg: $ugm-navy-bg;
+$muted-color: #a9b3c4;
+$rule-color: #2a3954;
+$accent: $ugm-gold;
+$year-color: $ugm-gold;
+$chip-bg: $ugm-navy-input;
+$photo-border: $ugm-gold-600;
+$navbar-bg: $ugm-navy-panel;
+$navbar-fg: #ffffff;
+$navbar-hl: $ugm-gold;
+$footer-bg: $ugm-navy-panel;
+$footer-fg: #EDEDED;
+$input-bg: $ugm-navy-input;
+$popover-bg: $ugm-navy-input;
+
+/*-- scss:rules --*/
+a:visited { color: $ugm-gold-600; }
+
+// Kolom filter/pencarian (mis. halaman Posts) — ikon & teks tetap terlihat
+.quarto-listing-filter .input-group-text,
+.quarto-listing-sort .input-group-text,
+.input-group-text {
+  background-color: $ugm-navy-input !important;
+  color: $body-color !important;
+  border-color: $rule-color !important;
+}
+.quarto-listing-filter .form-control,
+.quarto-listing-sort .form-select,
+.form-control {
+  background-color: $ugm-navy-input !important;
+  color: $body-color !important;
+  border-color: $rule-color !important;
+  &::placeholder { color: $muted-color; }
+}
+.quarto-listing-filter .bi, .quarto-listing-sort .bi { color: $ugm-gold !important; }
+// Kotak pencarian navbar (popup)
+.aa-Form, .aa-Panel, .aa-DetachedFormContainer { background-color: $ugm-navy-input !important; color: $body-color; }
+.aa-Input { color: $body-color !important; }
+.aa-SubmitIcon, .aa-ClearIcon, .aa-DetachedCancelButton { color: $ugm-gold !important; fill: $ugm-gold !important; }
+
+// Menu header: yang tidak dipilih putih penuh; aktif & hover tetap emas
+.navbar .nav-link:not(.active):not(:hover):not(:focus) { color: #ffffff !important; opacity: 1; }
+.navbar .navbar-brand, .navbar .navbar-brand:visited { color: #ffffff !important; }

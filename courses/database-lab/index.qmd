@@ -1,0 +1,21 @@
+---
+title: "Database Lab"
+subtitle: "Praktikum Basis Data"
+code: "DBL"
+kind: "Lab"
+semester: "Even Semester 2025/2026"
+order: 20260201   # urutan tampil (lebih besar = lebih atas)
+description: "Hands-on SQL and database design exercises."
+listing:
+  id: meetings
+  contents: meetings.yml
+  template: ../../_templates/meeting-cards.ejs
+  sort: false
+---
+
+[[← All courses](../../teaching.qmd) · Even Semester 2025/2026 · Internet Engineering Technology · Universitas Gadjah Mada]{.meta}
+
+## Meetings
+
+::: {#meetings}
+:::

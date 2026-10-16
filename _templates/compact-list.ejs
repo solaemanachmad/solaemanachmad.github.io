@@ -1,0 +1,9 @@
+<%
+// Daftar ringkas satu baris per item (dipakai untuk Certifications di About).
+// Field: title, issuer, url, year (opsional)
+%>
+<ul class="compact-list">
+<% for (const item of items) { %>
+<li><i class="bi bi-patch-check"></i><span class="compact-title"><% if (item.url) { %><a href="<%- item.url %>"><%= item.title %></a><% } else { %><%= item.title %><% } %></span><span class="compact-meta"><%= [item.issuer, item.year].filter(Boolean).join(" · ") %></span></li>
+<% } %>
+</ul>

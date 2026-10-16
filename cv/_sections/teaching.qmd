@@ -1,0 +1,46 @@
+::: {.year-grid}
+::: {.year}
+**2026/2027**
+:::
+::: {.entries}
+[Odd semester (current) · Junior Lecturer · Universitas Gadjah Mada]{.meta}
+
+::: {.course-list}
+- Database Systems (Basis Data)
+- Digital Infrastructure Support Laboratory Work
+:::
+:::
+:::
+
+::: {.year-grid}
+::: {.year}
+**2025/2026**
+:::
+::: {.entries}
+[Even semester · Junior Lecturer · Universitas Gadjah Mada]{.meta}
+
+::: {.course-list}
+- Information Security 2
+- Occupational Health and Safety (K3)
+- Network Design Laboratory Work
+- Database Laboratory Work
+:::
+:::
+:::
+
+::: {.year-grid}
+::: {.year}
+**2015–2017**
+:::
+::: {.entries}
+[Teaching Assistant · Universitas Gadjah Mada]{.meta}
+
+::: {.course-list}
+- Computer Networking
+- Network Security
+- Algorithms & Data Structures
+- Computer Applications
+- Fundamentals of Computer Engineering
+:::
+:::
+:::

@@ -1,0 +1,13 @@
+---
+title: "Research"
+---
+
+My work sits at the intersection of deep learning, human-centred sensing, and intelligent communication.
+
+## Student Projects
+
+**For Internet Engineering Technology students looking for a final-project (Tugas Akhir) topic.**
+
+A list of open research topics will be posted here soon. In the meantime, if you are interested in working on a project with me, send me an [email](mailto:achmad.solaeman@ugm.ac.id) and we can talk it through.
+
+Have your own idea instead? I'm glad to hear it. Reach out by [email](mailto:achmad.solaeman@ugm.ac.id) and we can explore whether it fits.

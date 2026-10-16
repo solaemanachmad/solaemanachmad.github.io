@@ -1,0 +1,31 @@
+### Junior Lecturer (Asisten Ahli), Internet Engineering Technology
+
+[[Universitas Gadjah Mada](https://tri.sv.ugm.ac.id/) · Sleman, Yogyakarta · 02/2026 – Present]{.meta}
+
+- Teach courses and laboratory sessions in information security, databases, network design, and digital infrastructure (see *Teaching*)
+
+### Laboratory Assistant, UPT Komputer and UPT Bahasa
+
+[[Universitas Muria Kudus](https://umk.ac.id/) · Kudus, Indonesia · 2020 – 01/2026]{.meta}
+
+- Administered Microsoft Office Specialist and Microsoft Certified Educator certification exams for 250 candidates per semester, ensuring compliance with testing protocols
+- Proctored British Council EnglishScore certification exams for 300 test-takers annually, maintaining examination integrity
+- Developed a computerized English proficiency testing system and digitized certificate management, improving administrative efficiency
+
+### English & Arabic Language Tutor
+
+[[Pondok Pesantren Sulaimaniyah](https://tahfidzsulaimaniyah.org/) · Pati, Indonesia · 2021 – 2024]{.meta}
+
+- Taught English and Arabic across 5 grade levels (junior to senior high school), serving 80 students weekly
+
+### Teaching Assistant
+
+[[Universitas Gadjah Mada](https://tri.sv.ugm.ac.id/) · Yogyakarta, Indonesia · 2015 – 2017]{.meta}
+
+- Led laboratory sessions for Computer Networking, Network Security, Algorithms & Data Structures, Computer Applications, and Fundamentals of Computer Engineering
+
+### Intern, Fault Management
+
+[[PT Indonesia Comnets Plus (ICON+)](https://www.iconpln.co.id/) · Depok, Indonesia · 02/2017 – 05/2017]{.meta}
+
+- Monitored network infrastructure in real time through the Network Operation Center (NOC), identifying and documenting system faults

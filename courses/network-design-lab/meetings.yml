@@ -1,0 +1,4 @@
+# Daftar pertemuan — lihat courses/basis-data/meetings.yml untuk penjelasan field.
+- meeting: 1
+  title: "Course Introduction"
+  description: "Course outline, learning outcomes, and assessment."

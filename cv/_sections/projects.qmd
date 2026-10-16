@@ -1,0 +1,11 @@
+### A Hybrid Deep Learning Approach for Accurate Eye Movement Classification
+
+[Master's thesis · 02/2025 – 06/2025]{.meta}
+
+A lightweight hybrid deep learning model for near real-time eye-movement classification, achieving over 91% F1-score on the GazeCom dataset with only a 20 ms input window, enabling low-latency gaze interaction for assistive technologies.
+
+### ACL and Dynamic Control List in Software-Defined Networks with Floodlight Controller
+
+[Bachelor's final project · 09/2017 – 11/2017]{.meta}
+
+A desktop application to manage outbound packet flow via Access Control Lists, extended with a Dynamic Control List that builds firewall rules automatically in collaboration with a honeypot.

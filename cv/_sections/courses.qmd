@@ -1,0 +1,5 @@
+### Artificial Intelligence & Big Data — Digital Talent Scholarship
+
+[[Ministry of Communication and Information Technology, Republic of Indonesia](https://digitalent.kominfo.go.id/) · Yogyakarta · 10/2018 – 12/2018]{.meta}
+
+Foundational and practical training in data preprocessing, machine learning models, and real-world applications.

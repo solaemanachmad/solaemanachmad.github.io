@@ -1,0 +1,64 @@
+---
+title: "Achmad Solaeman"
+subtitle: "Junior Lecturer · Internet Engineering Technology · Universitas Gadjah Mada"
+# CV hanya dibuat sebagai PDF → _site/cv/solaemanachmad_cv.pdf (tidak ada halaman web CV).
+# Dibuka lewat popup dari tombol di About dan kolom profil.
+# Isi tiap bagian ada di cv/_sections/.
+format:
+  typst:
+    output-file: solaemanachmad_cv.pdf
+    papersize: a4
+    margin:
+      x: 1.8cm
+      y: 1.6cm
+    fontsize: 10pt
+    # Font PDF: Segoe UI (Windows), cadangan Source Sans 3 (lihat typst-show.typ)
+    template-partials:
+      - typst-show.typ
+    font-paths: cv/fonts   # relatif terhadap root proyek
+    include-before-body:
+      - cv-style.typ
+format-links: false
+---
+
+Yogyakarta, Indonesia · +62 895-410-729-030 · [achmad.solaeman\@ugm.ac.id](mailto:achmad.solaeman@ugm.ac.id) · [linkedin.com/in/solaemanachmad](https://www.linkedin.com/in/solaemanachmad/)
+
+## Education
+
+{{< include _sections/education.qmd >}}
+
+## Professional Experience
+
+{{< include _sections/experience.qmd >}}
+
+## Teaching
+
+{{< include _sections/teaching.qmd >}}
+
+## Publications
+
+{{< include _sections/publications.qmd >}}
+
+## Services
+
+{{< include _sections/services.qmd >}}
+
+## Projects
+
+{{< include _sections/projects.qmd >}}
+
+<!-- Bagian akademik tambahan (grant, pengabdian, bimbingan, dll.):
+isi _sections/academic.qmd, lalu tambahkan di sini heading
+"## Academic Activities" dan baris include untuk file tersebut. -->
+
+## Certificates
+
+{{< include _sections/certificates.qmd >}}
+
+## Skills
+
+{{< include _sections/skills.qmd >}}
+
+## Courses & Training
+
+{{< include _sections/courses.qmd >}}

@@ -1,0 +1,15 @@
+---
+title: "Services"
+listing:
+  id: services
+  contents: data/services.yml
+  template: _templates/year-cards.ejs
+  sort: false
+---
+
+Academic service as a reviewer and program committee member.
+
+<div class="view-config" data-key="services" data-default="grid" hidden></div>
+
+::: {#services}
+:::

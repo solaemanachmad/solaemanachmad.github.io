@@ -1,0 +1,16 @@
+---
+title: "Publications"
+listing:
+  id: pubs
+  contents: data/publications.yml
+  template: _templates/year-cards.ejs
+  sort: false
+---
+
+The complete and most recent list of my papers is available on [Google Scholar](https://scholar.google.com/citations?user=sPEG30wAAAAJ).
+
+<!-- Tampilan bawaan halaman ini: list (pembaca tetap bisa memilih Grid) -->
+<div class="view-config" data-key="publications" data-default="list" hidden></div>
+
+::: {#pubs}
+:::

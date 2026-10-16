@@ -1,0 +1,20 @@
+---
+title: "Teaching"
+listing:
+  id: courses
+  contents: courses/*/index.qmd
+  template: _templates/course-cards.ejs
+  sort: "order desc"
+  fields: [title, subtitle, description, path, code, kind, semester, semesters, order]
+---
+
+Courses I teach in the Internet Engineering Technology program, Vocational College, Universitas Gadjah Mada. Select a course to see its meetings and slides; tap an academic year to expand or collapse it.
+
+::: {#courses}
+:::
+
+## Earlier Teaching
+
+[2015–2017 · Teaching Assistant · Universitas Gadjah Mada]{.meta}
+
+Laboratory sessions for Computer Networking, Network Security, Algorithms & Data Structures, Computer Applications, and Fundamentals of Computer Engineering.

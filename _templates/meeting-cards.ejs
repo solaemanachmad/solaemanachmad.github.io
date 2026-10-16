@@ -1,0 +1,62 @@
+<%
+// Kartu pertemuan dari meetings.yml. Field per item:
+//   meeting (nomor), title, description, slides (URL), image (opsional, thumbnail),
+//   semester (opsional, mis. "2026/2027": hanya tampil di tab semester itu)
+// URL Google Slides / Google Drive otomatis diubah menjadi link preview & download.
+function deckLinks(url) {
+  if (!url) return null;
+  let m = url.match(/docs\.google\.com\/presentation\/d\/([^/]+)/);
+  // File PowerPoint (.pptx) yang dibuka lewat Google Slides (?rtpof=true) = file Drive biasa
+  if (m && /rtpof=true/.test(url)) return {
+    preview: `https://drive.google.com/file/d/${m[1]}/preview`,
+    download: `https://drive.google.com/uc?export=download&id=${m[1]}`,
+    open: url };
+  if (m) return {
+    preview: `https://docs.google.com/presentation/d/${m[1]}/embed`,
+    download: `https://docs.google.com/presentation/d/${m[1]}/export/pptx`,
+    open: url };
+  m = url.match(/drive\.google\.com\/file\/d\/([^/]+)/);
+  if (m) return {
+    preview: `https://drive.google.com/file/d/${m[1]}/preview`,
+    download: `https://drive.google.com/uc?export=download&id=${m[1]}`,
+    open: url };
+  return { preview: url, download: url, open: url };
+}
+// Tab semester: muncul bila ada pertemuan yang diberi field `semester` (mis. "2026/2027").
+// Pertemuan tanpa `semester` berlaku untuk semua tab.
+const semTabs = [...new Set(items.map(i => i.semester).filter(Boolean).map(String))]
+  .sort((a, b) => b.localeCompare(a));
+%>
+<div class="view-toolbar" role="group" aria-label="Layout" data-key="meetings" data-default="grid">
+<button type="button" class="view-btn" data-view="grid" title="Grid view"><i class="bi bi-grid-3x2-gap"></i> Grid</button>
+<button type="button" class="view-btn" data-view="list" title="List view"><i class="bi bi-list-ul"></i> List</button>
+</div>
+<% if (semTabs.length) { %>
+<div class="sem-tabs" role="tablist" aria-label="Semester">
+<% semTabs.forEach((s, i) => { %><button type="button" class="sem-tab<%= i === 0 ? ' active' : '' %>" data-sem="<%= s %>" role="tab"><%= s %></button><% }) %>
+</div>
+<% } %>
+<div class="deck-grid">
+<% for (const item of items) { const L = deckLinks(item.slides); %>
+<article class="deck-card<%= L ? '' : ' is-pending' %>" data-sem="<%= item.semester ? String(item.semester) : 'all' %>">
+<div class="deck-thumb">
+<% if (item.image) { %>
+<img src="<%- item.image %>" alt="" loading="lazy">
+<% } else { %>
+<span class="deck-num"><%= item.meeting %></span>
+<% } %>
+<% if (L) { %>
+<div class="deck-actions">
+<button type="button" class="deck-btn deck-preview" data-src="<%- L.preview %>" data-title="<%= item.title %>" data-download="<%- L.download %>" title="Preview" aria-label="Preview slides"><i class="bi bi-eye"></i></button>
+<a class="deck-btn" href="<%- L.download %>" title="Download" aria-label="Download slides" download><i class="bi bi-download"></i></a>
+</div>
+<% } %>
+</div>
+<div class="deck-body">
+<div class="deck-meta">Meeting <%= item.meeting %><% if (!L) { %> · <span class="deck-soon">slides coming soon</span><% } %></div>
+<h3 class="deck-title"><%= item.title %></h3>
+<% if (item.description) { %><p class="deck-desc"><%= item.description %></p><% } %>
+</div>
+</article>
+<% } %>
+</div>

@@ -1,0 +1,21 @@
+---
+title: "Network Design Lab"
+subtitle: "Praktikum Perancangan Jaringan"
+code: "ND"
+kind: "Lab"
+semester: "Even Semester 2025/2026"
+order: 20260202   # urutan tampil (lebih besar = lebih atas)
+description: "Designing, configuring, and testing computer networks in the lab."
+listing:
+  id: meetings
+  contents: meetings.yml
+  template: ../../_templates/meeting-cards.ejs
+  sort: false
+---
+
+[[← All courses](../../teaching.qmd) · Even Semester 2025/2026 · Internet Engineering Technology · Universitas Gadjah Mada]{.meta}
+
+## Meetings
+
+::: {#meetings}
+:::

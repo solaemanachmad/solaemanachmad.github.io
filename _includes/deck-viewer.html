@@ -1,0 +1,50 @@
+<!-- Jendela preview (slide & CV). Tekan Esc atau klik di luar untuk menutup.
+     Pemicu: elemen dengan class "deck-preview" dan atribut
+       data-src      = URL yang ditampilkan
+       data-title    = judul di bar atas (opsional)
+       data-download = URL unduhan (opsional; tombol unduh disembunyikan bila kosong)
+       data-filename = nama file saat diunduh (opsional) -->
+<dialog id="deck-viewer" aria-label="Preview">
+  <div class="deck-viewer-bar">
+    <span class="deck-viewer-title"></span>
+    <a class="deck-viewer-download" title="Download" aria-label="Download"><i class="bi bi-download"></i><span>Download</span></a>
+    <a class="deck-viewer-open" target="_blank" rel="noopener" title="Open in new tab" aria-label="Open in new tab"><i class="bi bi-box-arrow-up-right"></i></a>
+    <button type="button" class="deck-viewer-close" title="Close" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+  </div>
+  <iframe title="Preview" allowfullscreen></iframe>
+</dialog>
+<script>
+  (function () {
+    var dlg = document.getElementById("deck-viewer");
+    if (!dlg || typeof dlg.showModal !== "function") return;
+    var frame = dlg.querySelector("iframe");
+    var dl = dlg.querySelector(".deck-viewer-download");
+    document.addEventListener("click", function (e) {
+      var btn = e.target.closest(".deck-preview");
+      if (!btn) return;
+      e.preventDefault();
+      var src = btn.dataset.src || btn.getAttribute("href");
+      // Browser ponsel umumnya tidak bisa menampilkan PDF di dalam bingkai: buka di tab baru
+      if (/\.pdf($|[?#])/i.test(src) && window.matchMedia("(max-width: 767.98px)").matches) {
+        window.open(src, "_blank", "noopener");
+        return;
+      }
+      frame.src = src;
+      dlg.querySelector(".deck-viewer-title").textContent = btn.dataset.title || "";
+      dlg.querySelector(".deck-viewer-open").href = src;
+      if (btn.dataset.download) {
+        dl.href = btn.dataset.download;
+        if (btn.dataset.filename) dl.setAttribute("download", btn.dataset.filename);
+        else dl.setAttribute("download", "");
+        dl.hidden = false;
+      } else {
+        dl.hidden = true;
+      }
+      dlg.showModal();
+    });
+    function close() { dlg.close(); }
+    dlg.querySelector(".deck-viewer-close").addEventListener("click", close);
+    dlg.addEventListener("click", function (e) { if (e.target === dlg) close(); });
+    dlg.addEventListener("close", function () { frame.src = "about:blank"; });
+  })();
+</script>

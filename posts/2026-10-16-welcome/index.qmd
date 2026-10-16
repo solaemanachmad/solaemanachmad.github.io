@@ -1,0 +1,12 @@
+---
+title: "Welcome to my new site"
+description: "Why I moved my CV to a Quarto website, and what you'll find here."
+date: 2026-10-16
+categories: [news]
+---
+
+This site brings together my CV, publications, teaching, and open research topics for students in one place.
+
+It is built with [Quarto](https://quarto.org) and published on GitHub Pages. The same source files generate both these web pages and a PDF version of my [CV](../../cv/solaemanachmad_cv.pdf), so everything stays in sync.
+
+In this section I plan to share short notes on research, teaching, and tools I find useful.

@@ -1,0 +1,21 @@
+---
+title: "Database Systems"
+subtitle: "Basis Data"
+code: "DB"
+kind: "Lecture"
+semester: "Odd Semester 2026/2027"
+order: 20260803   # urutan tampil (lebih besar = lebih atas)
+description: "Fundamentals of relational databases: data modeling, normalization, and SQL."
+listing:
+  id: meetings
+  contents: meetings.yml
+  template: ../../_templates/meeting-cards.ejs
+  sort: false
+---
+
+[[← All courses](../../teaching.qmd) · Odd Semester 2026/2027 · Internet Engineering Technology · Universitas Gadjah Mada]{.meta}
+
+## Meetings
+
+::: {#meetings}
+:::

@@ -1,0 +1,22 @@
+<!--
+Bagian akademik tambahan. Hapus tanda komentar pembuka/penutup dan isi bila sudah ada datanya.
+Sumber yang cocok: PDDikti, SINTA, Google Scholar, SIMASTER/SISTER UGM.
+
+### Academic Identifiers
+
+- NIDN / NUPTK: XXXXXXXXXX
+- SINTA ID: XXXXXXX · Scopus Author ID: XXXXXXXXXX
+- ORCID: 0009-0002-9620-7411 · Google Scholar: https://scholar.google.com/citations?user=sPEG30wAAAAJ
+
+### Research Grants
+
+### Community Service (Pengabdian kepada Masyarakat)
+
+### Student Supervision
+
+### Invited Talks & Workshops
+
+### Reviewer & Committee Service
+
+### Professional Memberships
+-->

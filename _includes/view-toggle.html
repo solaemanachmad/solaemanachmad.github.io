@@ -1,0 +1,46 @@
+<script>
+  // Tombol Grid / List. Tiap halaman punya pilihan sendiri (data-key) dan bawaan sendiri
+  // (data-default, mis. Publications = list) lewat .view-config atau atribut di .view-toolbar. Pilihan pembaca diingat di browser.
+  (function () {
+    var bar = document.querySelector(".view-toolbar");
+    if (!bar) return;
+    // Pengaturan per halaman: <div class="view-config" data-key=".." data-default="list|grid">
+    var cfg = document.querySelector(".view-config") || bar;
+    var KEY = "view-" + (cfg.dataset.key || "default");
+    function apply(view) {
+      document.body.classList.toggle("view-list", view === "list");
+      document.querySelectorAll(".view-btn").forEach(function (b) {
+        var on = b.dataset.view === view;
+        b.classList.toggle("active", on);
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+    }
+    var saved = null;
+    try { saved = localStorage.getItem(KEY); } catch (e) {}
+    apply(saved || cfg.dataset.default || "grid");
+    document.addEventListener("click", function (e) {
+      var b = e.target.closest(".view-btn");
+      if (!b) return;
+      apply(b.dataset.view);
+      try { localStorage.setItem(KEY, b.dataset.view); } catch (err) {}
+    });
+  })();
+
+  // Tab semester di halaman mata kuliah: tampilkan pertemuan semester terpilih + yang berlaku umum
+  (function () {
+    var tabs = document.querySelectorAll(".sem-tab");
+    if (!tabs.length) return;
+    function show(sem) {
+      tabs.forEach(function (t) {
+        var on = t.dataset.sem === sem;
+        t.classList.toggle("active", on);
+        t.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      document.querySelectorAll(".deck-card[data-sem]").forEach(function (c) {
+        c.hidden = !(c.dataset.sem === "all" || c.dataset.sem === sem);
+      });
+    }
+    tabs.forEach(function (t) { t.addEventListener("click", function () { show(t.dataset.sem); }); });
+    show(tabs[0].dataset.sem);
+  })();
+</script>

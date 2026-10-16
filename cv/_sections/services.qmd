@@ -1,0 +1,21 @@
+::: {.year-grid}
+::: {.year}
+**2026**
+:::
+::: {.entries}
+**Technical Program Committee Member**
+
+[[DELCON 2026, BITS Pilani](https://www.bits-pilani.ac.in/delcon2026/tpc-members/) · Conference]{.meta}
+:::
+:::
+
+::: {.year-grid}
+::: {.year}
+**Ongoing**
+:::
+::: {.entries}
+**Reviewer**
+
+[[Journal of Internet and Software Engineering (JISE)](https://jurnal.ugm.ac.id/v3/JISE/) · Journal]{.meta}
+:::
+:::

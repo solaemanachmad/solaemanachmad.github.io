@@ -1,0 +1,6 @@
+- **Machine Learning:** Python, PyTorch, TensorFlow
+- **Databases:** MySQL, PostgreSQL, MongoDB, database design
+- **Web Development:** Laravel (PHP), Django (Python), React.js, WordPress
+- **Cloud Computing:** Amazon Web Services (EC2, S3, Lambda)
+- **Networking & Security:** network design, SDN (Floodlight), network monitoring (NOC)
+- **Languages:** Indonesian (native), English, Arabic

@@ -1,0 +1,33 @@
+# Daftar pertemuan. Urutan di sini = urutan tampil.
+# Field:
+#   meeting:     nomor pertemuan
+#   title:       topik
+#   description: ringkasan singkat (opsional)
+#   slides:      link slide. Bisa Google Slides, file Google Drive (PPTX/PDF),
+#                atau link PDF langsung. Kosongkan bila belum ada → "slides coming soon".
+#                Pastikan akses link "Anyone with the link can view".
+#   image:       thumbnail (opsional), mis. thumbs/m1.png
+#
+# Pertemuan 2–5: CONTOH topik, silakan ganti.
+- meeting: 1
+  title: "Introduction to Database"
+  description: "Course overview and the basic concepts of database systems."
+  slides: "https://docs.google.com/presentation/d/10D39scOQdgSnJn3gEZKk41pi_uQ0NCRU/edit?usp=sharing&ouid=105928114356312916201&rtpof=true&sd=true"
+- meeting: 2
+  title: "Relational Database Concepts"
+  description: "Key terms and concepts in relational databases."
+  slides: "https://docs.google.com/presentation/d/1uZWw0wbZsTZbfcxBQFyBncJitwnEQBrO/edit?usp=sharing&ouid=105928114356312916201&rtpof=true&sd=true"
+- meeting: 3
+  title: "Database Design I: Quiz"
+  description: "We have to review everything we've learned so far, as well as what's ahead."
+- meeting: 4
+  title: "Database Design II"
+  description: "Junction tables, composite keys, introduction to normalization."
+  slides: "https://docs.google.com/presentation/d/18REzSXkLK0ZK_uRycEsEb0NnoaXhphpW/edit?usp=sharing&ouid=105928114356312916201&rtpof=true&sd=true"
+- meeting: 5
+  title: "SQL Fundamentals"
+  description: "DDL, DML, DQL, DCL, and TCL statements in SQL."
+  slides: "https://docs.google.com/presentation/d/1Xh3-ZfRLPdZFASYaD_pE7nf19xBzSnIe/edit?usp=sharing&ouid=105928114356312916201&rtpof=true&sd=true"
+- meeting: 6
+  title: "Security and Optimization"
+  description: "Indexing, query optimization, and security best practices in database management."

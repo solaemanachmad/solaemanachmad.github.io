@@ -1,0 +1,452 @@
+/*-- scss:defaults --*/
+// =====================================================================
+// Tema situs — Achmad Solaeman
+// Warna identitas UGM / Prodi TRI (navy & emas). Mode gelap menimpa
+// variabel di theme-dark.scss; aturan di bawah dipakai kedua mode.
+//
+// Isi:
+//   1. Variabel (warna, font)          5. Kartu: mata kuliah & pertemuan
+//   2. Dasar (navbar, judul, footer)   6. Kartu: publikasi & layanan
+//   3. Kolom profil (desktop/ponsel)   7. Daftar ringkas (sertifikasi)
+//   4. Panel per tahun & Grid/List     8. Jendela preview (slide & CV)
+// =====================================================================
+
+// ---------- 1. Variabel ----------
+$ugm-navy:     #0B2545 !default;  // UGM Blue (aproksimasi)
+$ugm-navy-600: #163A67 !default;
+$ugm-navy-100: #E7ECF3 !default;
+$ugm-gold:     #C99A2E !default;  // UGM Gold (aproksimasi)
+$ugm-gold-600: #AD8324 !default;
+$ugm-gold-100: #F7EFDA !default;
+$ugm-ink:      #14213D !default;
+
+$primary:          $ugm-navy !default;
+$link-color:       $ugm-navy-600 !default;
+$link-hover-color: $ugm-gold-600 !default;
+$body-color:       $ugm-ink !default;
+$body-bg:          #ffffff !default;
+$muted-color:      #5b6578 !default;
+$rule-color:       #dfe4ec !default;
+$accent:           $ugm-gold !default;
+$year-color:       $ugm-navy !default;
+$chip-bg:          $ugm-navy-100 !default;
+$photo-border:     $ugm-navy !default;
+$navbar-bg:        $ugm-navy-100 !default;
+$navbar-fg:        $ugm-navy !default;
+$navbar-hl:        $ugm-gold-600 !default;
+$footer-bg:        $ugm-navy !default;
+$footer-fg:        #f2f2f2 !default;
+
+$font-family-ui: "Segoe UI", Helvetica, Arial, sans-serif, "Atkinson Hyperlegible";
+$font-family-sans-serif: $font-family-ui;
+$headings-font-family:   $font-family-ui;
+$headings-font-weight:   600;
+$font-size-root:         16px;
+
+/*-- scss:rules --*/
+
+$sidebar-w: 230px;
+$radius: .6rem;
+$shadow-hover: 0 6px 18px rgba(11, 37, 69, .13);
+
+// ---------- 2. Dasar ----------
+a:hover, a:focus { color: $link-hover-color; }
+
+.navbar { font-family: $font-family-ui; font-size: .95rem; }
+.navbar-brand { font-weight: 700; font-size: 1.15rem; }
+.navbar .nav-link { font-weight: 500; }
+.navbar .nav-link.active, .navbar .nav-link:hover { color: $navbar-hl !important; }
+.navbar .nav-link.active { box-shadow: inset 0 -2px 0 $navbar-hl; }
+
+.quarto-title .title { font-weight: 700; color: $year-color; }
+.quarto-title .subtitle { color: $muted-color; }
+
+h2 {
+  border-bottom: 2px solid $accent;
+  padding-bottom: .3rem;
+  margin-top: 2.2rem;
+  font-size: 1.35rem;
+}
+h3 { font-size: 1.05rem; margin-top: 1.4rem; margin-bottom: .2rem; }
+
+.meta { color: $muted-color; font-size: .85rem; margin-bottom: .4rem; }
+
+.btn-outline-primary { color: $primary; border-color: $primary; }
+.btn-outline-primary:hover { background: $primary; color: $body-bg; }
+.download-btn { margin: .5rem 0 1rem; }
+
+.quarto-listing .listing-date, .quarto-listing .listing-categories { font-size: .82rem; }
+
+footer.footer { background-color: $footer-bg; position: relative; z-index: 2; }
+.nav-footer, .nav-footer a, footer.footer, footer.footer a { color: $footer-fg !important; }
+.nav-footer a:hover { color: $ugm-gold !important; }
+
+@media (max-width: 991.98px) {
+  footer.footer, .nav-footer { min-height: 0 !important; }
+  .nav-footer {
+    padding: .7rem 1rem !important;
+    font-size: .9rem; line-height: 1.4;
+    flex-direction: row !important; flex-wrap: wrap;
+    justify-content: center !important; align-items: center !important;
+    gap: .1rem 1rem;
+  }
+  .nav-footer-left, .nav-footer-center, .nav-footer-right {
+    margin: 0 !important; padding: 0 !important; min-height: 0 !important;
+    flex: 0 0 auto !important;
+    p { margin: 0; }
+  }
+  .nav-footer-center { display: none !important; }
+}
+
+// ---------- 3. Kolom profil ----------
+.profile-sidebar {
+  text-align: center;
+  padding: 1.5rem 1rem 1rem;
+
+  .profile-photo {
+    width: 140px; height: 140px;
+    border-radius: 50%; object-fit: cover;
+    border: 3px solid $photo-border;
+    box-shadow: 0 4px 10px rgba(11, 37, 69, .18);
+  }
+  .profile-name { font-weight: 700; font-size: 1.2rem; margin-top: .8rem; color: $year-color; }
+  .profile-role { color: $muted-color; font-size: .9rem; line-height: 1.35; margin-top: .25rem; }
+  .profile-links {
+    list-style: none; padding: 0; margin: 1rem auto 0;
+    display: inline-block; text-align: left; font-size: .88rem;
+    li { margin: .35rem 0; display: flex; align-items: center; gap: .55rem; color: $muted-color; }
+    a { color: $body-color; text-decoration: none; display: flex; align-items: center; gap: .55rem; cursor: pointer; }
+    a:hover { color: $link-color; }
+    i { width: 1.1em; text-align: center; font-size: 1rem; color: $accent; }
+  }
+}
+.profile-follow { display: none; }
+
+// Desktop: kolom profil tetap di kiri, konten bergeser ke kanan
+@media (min-width: 992px) {
+  .profile-sidebar {
+    position: fixed;
+    top: 4.5rem;
+    left: max(1rem, calc(50vw - 590px));
+    width: $sidebar-w;
+    z-index: 1 !important;  // Quarto memberi <aside> z-index 998; diturunkan agar footer di atasnya
+  }
+  #quarto-content, .nav-footer {
+    padding-left: calc(#{$sidebar-w} + 1.5rem);
+    max-width: 1220px;
+    margin-left: auto; margin-right: auto;
+  }
+}
+
+// Ponsel/tablet: kartu ringkas di atas konten; kontak di balik tombol "Follow"
+@media (max-width: 991.98px) {
+  .profile-sidebar {
+    position: relative;
+    margin: 1rem 0 1.2rem;
+    padding: 0 0 .9rem;
+    display: grid;
+    grid-template-columns: 68px 1fr;
+    column-gap: 1rem;
+    text-align: left; align-items: center;
+    border-bottom: 1px solid $rule-color;
+    .profile-photo { width: 68px; height: 68px; grid-row: span 3; border-width: 2px; }
+    .profile-name { margin-top: 0; font-size: 1.1rem; }
+    .profile-role { margin-top: 0; font-size: .85rem; }
+    .profile-follow {
+      display: inline-flex; align-items: center; gap: .4rem;
+      justify-self: start; margin-top: .45rem;
+      padding: .25rem .8rem;
+      font-size: .85rem; font-weight: 600;
+      color: $primary; background: $chip-bg;
+      border: 1px solid $rule-color; border-radius: 999px;
+      cursor: pointer;
+      .profile-follow-caret { font-size: .7rem; transition: transform .15s ease; }
+    }
+    .profile-links {
+      display: none;
+      position: absolute; z-index: 1050;
+      top: calc(100% - .4rem); left: 0;
+      min-width: 230px;
+      margin: 0; padding: .5rem .25rem;
+      background: $body-bg;
+      border: 1px solid $rule-color; border-top: 3px solid $accent;
+      border-radius: $radius;
+      box-shadow: 0 10px 30px rgba(11, 37, 69, .2);
+      li { margin: 0; }
+      li, a { padding: .35rem .75rem; width: 100%; }
+      li:has(a) { padding: 0; }
+      a { border-radius: .35rem; }
+      a:hover { background: $chip-bg; }
+    }
+    &.links-open {
+      .profile-links { display: block; }
+      .profile-follow-caret { transform: rotate(180deg); }
+    }
+  }
+}
+
+// ---------- 4. Panel per tahun & tombol Grid/List ----------
+.group-panel {
+  border: 1px solid $rule-color;
+  border-radius: $radius;
+  margin-bottom: .9rem;
+  background: $body-bg;
+  > .course-grid, > .entry-grid { padding: 0 1rem 1rem; }
+}
+.group-title {
+  display: flex; align-items: center; gap: .75rem;
+  padding: .8rem 1rem;
+  cursor: pointer; list-style: none;
+  font-weight: 600; font-size: 1.05rem; color: $year-color;
+  &::-webkit-details-marker { display: none; }
+  &:hover { background: $chip-bg; border-radius: $radius; }
+  > span:first-child { flex: 1; }
+}
+.group-count { font-size: .8rem; font-weight: 500; color: $muted-color; }
+.group-caret { transition: transform .15s ease; color: $accent; }
+.group-panel[open] > .group-title {
+  border-bottom: 1px solid $rule-color;
+  border-radius: $radius $radius 0 0;
+  margin-bottom: 1rem;
+  .group-caret { transform: rotate(180deg); }
+}
+
+.view-toolbar {
+  display: inline-flex; margin: .2rem 0 1rem;
+  border: 1px solid $rule-color; border-radius: 999px; padding: 2px;
+  background: $chip-bg;
+}
+.view-btn {
+  border: 0; background: none; color: $muted-color;
+  font-size: .82rem; font-weight: 600;
+  padding: .25rem .8rem; border-radius: 999px; cursor: pointer;
+  &.active { background: $primary; color: $body-bg; }
+}
+
+// ---------- 5. Kartu: mata kuliah & pertemuan ----------
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+.course-card {
+  position: relative;
+  display: flex; flex-direction: column;
+  border: 1px solid $rule-color; border-top: 3px solid $accent;
+  border-radius: $radius;
+  background: $body-bg;
+  color: $body-color !important;
+  overflow: hidden;
+  transition: transform .15s ease, box-shadow .15s ease;
+  &:hover { transform: translateY(-3px); box-shadow: $shadow-hover; }
+
+  .course-card-top {
+    display: flex; align-items: center; flex-wrap: wrap; gap: .3rem;
+    padding: .7rem 1rem .2rem;
+  }
+  .course-code {
+    background: $primary; color: $body-bg;
+    font-weight: 700; font-size: .78rem; letter-spacing: .04em;
+    padding: .1rem .5rem; border-radius: .3rem;
+  }
+  .course-kind {
+    font-size: .78rem; color: $muted-color;
+    text-transform: uppercase; letter-spacing: .05em;
+    margin-left: .5rem; margin-right: auto;
+  }
+  .term-tag {
+    white-space: nowrap;
+    font-size: .72rem; font-weight: 700; letter-spacing: .03em;
+    padding: .1rem .55rem; border-radius: 999px;
+    border: 1px solid $rule-color;
+    &.term-odd  { background: rgba($accent, .16); color: $year-color; border-color: rgba($accent, .45); }
+    &.term-even { background: $chip-bg; color: $year-color; }
+  }
+  .course-card-body {
+    padding: .4rem 1rem .6rem; flex: 1;
+    h3 { margin: .2rem 0 .1rem; font-size: 1.08rem; }
+    h3 a { color: inherit; text-decoration: none; font-weight: 600; }
+    .course-sub { color: $muted-color; font-size: .88rem; font-style: italic; margin: 0 0 .4rem; }
+    .course-desc { font-size: .92rem; margin: 0; }
+  }
+  .course-card-foot {
+    padding: .55rem 1rem;
+    font-size: .85rem; font-weight: 600; color: $link-color;
+    border-top: 1px solid $rule-color;
+  }
+}
+
+.deck-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.deck-card {
+  border: 1px solid $rule-color;
+  border-radius: $radius;
+  overflow: hidden;
+  background: $body-bg;
+  &.is-pending .deck-thumb { opacity: .55; }
+}
+.deck-thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, $chip-bg, rgba($accent, .25));
+  display: flex; align-items: center; justify-content: center;
+  img { width: 100%; height: 100%; object-fit: cover; }
+  .deck-num { font-size: 2.6rem; font-weight: 700; color: $year-color; opacity: .8; }
+}
+.deck-actions { position: absolute; top: .5rem; right: .5rem; display: flex; gap: .35rem; }
+.deck-btn {
+  width: 2.1rem; height: 2.1rem;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 0; border-radius: 50%;
+  background: rgba(255, 255, 255, .92);
+  color: $ugm-navy !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .18);
+  cursor: pointer; text-decoration: none;
+  &:hover { background: $ugm-gold; color: #fff !important; }
+}
+.deck-body { padding: .7rem .9rem .9rem; }
+.deck-meta { font-size: .78rem; color: $muted-color; text-transform: uppercase; letter-spacing: .05em; }
+.deck-soon { text-transform: none; letter-spacing: 0; font-style: italic; }
+.deck-title { font-size: 1rem; margin: .25rem 0 .3rem; }
+.deck-desc { font-size: .9rem; margin: 0; color: $muted-color; }
+
+// Tab semester (halaman mata kuliah yang diajar di beberapa semester)
+.sem-tabs {
+  display: flex; flex-wrap: wrap; gap: .4rem;
+  margin: 0 0 .25rem;
+}
+.sem-tab {
+  border: 1px solid $rule-color; background: $body-bg; color: $muted-color;
+  font-size: .85rem; font-weight: 600;
+  padding: .3rem .9rem; border-radius: $radius $radius 0 0;
+  border-bottom-width: 3px; cursor: pointer;
+  &.active { color: $year-color; border-bottom-color: $accent; background: $chip-bg; }
+}
+.deck-card[hidden] { display: none !important; }
+
+// ---------- 6. Kartu: publikasi & layanan ----------
+.entry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.entry-card {
+  position: relative;
+  display: flex; flex-direction: column;
+  border: 1px solid $rule-color; border-top: 3px solid $accent;
+  border-radius: $radius;
+  padding: .8rem 1rem 1rem;
+  background: $body-bg;
+  transition: box-shadow .15s ease;
+  &:hover { box-shadow: $shadow-hover; }
+}
+.entry-top {
+  display: flex; align-items: center;
+  margin-bottom: .4rem; min-height: 1.9rem; padding-right: 2.4rem;
+  p { margin: 0; }
+}
+.entry-kind {
+  font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
+  background: $chip-bg; color: $year-color;
+  padding: .1rem .55rem; border-radius: .3rem;
+}
+.entry-link {
+  position: absolute; top: .8rem; right: .9rem;
+  width: 1.9rem; height: 1.9rem;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: $chip-bg; color: $year-color !important; text-decoration: none;
+  &:hover { background: $ugm-gold; color: #fff !important; }
+}
+.entry-title {
+  font-size: 1rem; font-weight: 600; margin: 0 0 .3rem; line-height: 1.35;
+  a { color: inherit; text-decoration: none; font-weight: 600; }
+  a:hover { color: $link-hover-color; }
+}
+.entry-meta { font-size: .85rem; color: $muted-color; margin: 0 0 .4rem; }
+.entry-summary { font-size: .9rem; margin: 0; }
+
+// Mode List (tombol "List") untuk bagian 5 & 6
+body.view-list {
+  .course-grid, .deck-grid, .entry-grid { grid-template-columns: 1fr; gap: .6rem; }
+
+  .course-card {
+    flex-direction: row; align-items: center; flex-wrap: wrap;
+    border-top-width: 1px; border-left: 3px solid $accent;
+    &:hover { transform: none; }
+    .course-card-top {
+      flex-direction: column; align-items: flex-start; flex-wrap: nowrap; gap: .3rem;
+      padding: .7rem 0 .7rem 1rem; width: 9rem;
+    }
+    .course-kind { margin: 0; }
+    .course-card-body { padding: .6rem 1rem; min-width: 12rem; }
+    .course-desc { display: none; }
+    .course-card-foot { border-top: 0; }
+  }
+
+  .deck-card { display: flex; align-items: stretch; position: relative; }
+  .deck-thumb {
+    flex: 0 0 7rem; aspect-ratio: auto; min-height: 5rem; position: static;
+    .deck-num { font-size: 1.8rem; }
+  }
+  .deck-actions { top: 50%; right: .8rem; transform: translateY(-50%); }
+  .deck-body { flex: 1; padding: .6rem 6.2rem .6rem .9rem; }
+  .deck-card.is-pending .deck-body { padding-right: .9rem; }
+
+  .entry-card { border-top-width: 1px; border-left: 3px solid $accent; padding-right: 3.5rem; }
+  .entry-top { margin-bottom: .25rem; }
+  .entry-meta { margin-bottom: 0; }
+  .entry-summary { display: none; }
+}
+@media (max-width: 575.98px) {
+  body.view-list {
+    .course-card .course-card-foot { display: none; }
+    .deck-thumb { flex-basis: 4.5rem; }
+  }
+}
+
+// ---------- 7. Daftar ringkas (sertifikasi) ----------
+.compact-list {
+  list-style: none; padding: 0; margin: .5rem 0 0;
+  li {
+    display: flex; align-items: baseline; flex-wrap: wrap; gap: .1rem .55rem;
+    padding: .4rem 0;
+    border-bottom: 1px dashed $rule-color;
+    font-size: .95rem;
+  }
+  li:last-child { border-bottom: 0; }
+  i { color: $accent; flex: 0 0 auto; }
+  .compact-title a { color: $body-color; text-decoration: none; font-weight: 500; }
+  .compact-title a:hover { color: $link-hover-color; }
+  .compact-meta { color: $muted-color; font-size: .82rem; }
+}
+
+// ---------- 8. Jendela preview (slide & CV) ----------
+#deck-viewer {
+  width: min(1100px, 94vw);
+  padding: 0; border: 0; border-radius: $radius;
+  background: $body-bg; color: $body-color;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
+  &::backdrop { background: rgba(8, 15, 28, .7); }
+  iframe { display: block; width: 100%; aspect-ratio: 16 / 9.6; border: 0; background: #fff; }
+}
+.deck-viewer-bar {
+  display: flex; align-items: center; gap: .75rem;
+  padding: .5rem .9rem;
+  border-bottom: 1px solid $rule-color;
+  .deck-viewer-title { flex: 1; font-weight: 600; font-size: .95rem; }
+  a, button {
+    background: none; border: 0; color: $body-color;
+    font-size: 1.05rem; cursor: pointer; text-decoration: none;
+  }
+  .deck-viewer-download {
+    display: inline-flex; align-items: center; gap: .35rem;
+    font-size: .85rem; font-weight: 600;
+    padding: .25rem .75rem; border-radius: 999px;
+    background: $primary; color: $body-bg !important;
+    &[hidden] { display: none; }
+  }
+}

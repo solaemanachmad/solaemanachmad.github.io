@@ -1,0 +1,13 @@
+# Daftar layanan akademik untuk halaman Services (dikelompokkan per `year`).
+# Field: year, title (peran), venue, url, kind (Conference / Journal / ...), summary (opsional)
+# Catatan: CV PDF memakai cv/_sections/services.qmd — perbarui keduanya.
+- year: 2026
+  title: "Technical Program Committee Member"
+  venue: "DELCON 2026, BITS Pilani"
+  url: "https://www.bits-pilani.ac.in/delcon2026/tpc-members/"
+  kind: "Conference"
+- year: "Ongoing"
+  title: "Reviewer"
+  venue: "Journal of Internet and Software Engineering (JISE)"
+  url: "https://jurnal.ugm.ac.id/v3/JISE/"
+  kind: "Journal"

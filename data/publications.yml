@@ -1,0 +1,26 @@
+# Daftar publikasi untuk halaman Publications (urutan bebas; dikelompokkan per `year`).
+# Field:
+#   year, title, url (link paper/DOI), venue, kind (Conference paper / Journal article / Book review / ...),
+#   publisher, summary (1–2 kalimat)
+# Catatan: CV PDF memakai cv/_sections/publications.qmd — perbarui keduanya bila menambah publikasi.
+- year: 2025
+  title: "A Systematic Literature Review of Transfer Learning for Eye Tracking"
+  url: "https://ieeexplore.ieee.org/document/10933367"
+  venue: "ICADEIS 2025"
+  kind: "Conference paper"
+  publisher: "IEEE"
+  summary: "A review of 29 studies (2018–2024) showing how transfer learning addresses data scarcity and individual variability in gaze classification and estimation, with best practices for preprocessing and fine-tuning."
+- year: 2024
+  title: "Robust Fetal Head Circumference Calculation on Ultrasound Images Using Just-in-Time Compiled Ellipse Fitting"
+  url: "https://ieeexplore.ieee.org/document/10903012"
+  venue: "TENCON 2024"
+  kind: "Conference paper"
+  publisher: "IEEE"
+  summary: "A fast, memory-efficient method based on JIT-compiled Randomized Hough Transform ellipse fitting, reaching Dice 0.93 and Hausdorff 3.88 mm in 0.41 s per image with under 800 kB of memory."
+- year: 2024
+  title: "Personalized medicine meets artificial intelligence: beyond \"hype\", towards the metaverse"
+  url: "https://www.tandfonline.com/doi/full/10.1080/17538157.2024.2347230"
+  venue: "Informatics for Health and Social Care"
+  kind: "Book review"
+  publisher: "Taylor & Francis"
+  summary: "A review of a book on how AI and personalized medicine are shaping digital health, data-driven care, and patient outcomes."
