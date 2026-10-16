@@ -78,6 +78,14 @@ h3 { font-size: 1.05rem; margin-top: 1.4rem; margin-bottom: .2rem; }
 .quarto-listing .listing-date, .quarto-listing .listing-categories { font-size: .82rem; }
 
 footer.footer { background-color: $footer-bg; position: relative; z-index: 2; }
+.nav-footer {
+  font-size: 1rem;                 // ukuran huruf footer
+  align-items: center !important;  // tengah secara vertikal
+  padding-top: .2rem !important;  // jarak atas…
+  padding-bottom: .2rem !important; // …dan bawah dibuat sama
+  min-height: 0 !important;
+}
+.nav-footer p { margin: 0 !important; }  // hilangkan jarak bawah bawaan paragraf
 .nav-footer, .nav-footer a, footer.footer, footer.footer a { color: $footer-fg !important; }
 .nav-footer a:hover { color: $navbar-hl !important; }
 
@@ -85,7 +93,7 @@ footer.footer { background-color: $footer-bg; position: relative; z-index: 2; }
   footer.footer, .nav-footer { min-height: 0 !important; }
   .nav-footer {
     padding: .7rem 1rem !important;
-    font-size: .9rem; line-height: 1.4;
+    font-size: 1rem; line-height: 1.4;
     flex-direction: row !important; flex-wrap: wrap;
     justify-content: center !important; align-items: center !important;
     gap: .1rem 1rem;
@@ -140,6 +148,11 @@ footer.footer { background-color: $footer-bg; position: relative; z-index: 2; }
 
 // Ponsel/tablet: kartu ringkas di atas konten; kontak di balik tombol "Follow"
 @media (max-width: 991.98px) {
+  // Quarto menaruh <aside> di kolom margin kanan pada layar 768–991px
+  // (aturan `aside:not(.footnotes):not(.sidebar)`); selektor ini lebih spesifik agar profil tetap di kolom isi
+  aside.profile-sidebar:not(.footnotes):not(.sidebar) {
+    grid-column: body-content-start / body-content-end !important;
+  }
   .profile-sidebar {
     position: relative;
     margin: 1rem 0 1.2rem;
