@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="News, grants, notes, and updates from Achmad Solaeman’s teaching and research.">
 
 <title>Posts – Achmad Solaeman</title>
 <style>
@@ -50,9 +51,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2f6f73fe289e2c8cd1ac7d84a31cb98a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-c6fa8356911e6f4d66674df0af83cfd1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-2f6f73fe289e2c8cd1ac7d84a31cb98a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-66f4e2ffd714046053294c85584342e8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-6af17a47e8c76a2d5c76c2a1f7033b20.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-66f4e2ffd714046053294c85584342e8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -110,6 +111,90 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 <style>html{ scroll-behavior: smooth; }</style>
+<!--
+  SEO: data terstruktur (JSON-LD) tentang pemilik situs untuk Google & Google Scholar.
+  Dimuat di <head> setiap halaman lewat _quarto.yml (format.html.include-in-header).
+  Statis (tanpa JavaScript) agar pasti terbaca crawler; muncul di semua halaman tidak masalah.
+  Edit nama/jabatan/tautan di bawah bila berubah.
+-->
+<!-- Verifikasi Google Search Console (metode "HTML tag"): hapus tanda komentar dan tempel kodenya.
+<meta name="google-site-verification" content="PASTE_CODE_HERE">
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://solaemanachmad.github.io/#person",
+  "name": "Achmad Solaeman",
+  "jobTitle": "Junior Lecturer",
+  "description": "Junior Lecturer in Internet Engineering Technology, Vocational College (Sekolah Vokasi), Universitas Gadjah Mada. Research in deep learning, computer vision, time series classification, eye tracking, and medical image analysis.",
+  "url": "https://solaemanachmad.github.io/",
+  "image": "https://solaemanachmad.github.io/assets/images/profile.jpg",
+  "email": "mailto:achmad.solaeman@ugm.ac.id",
+  "affiliation": {
+    "@type": "Organization",
+    "name": "Universitas Gadjah Mada",
+    "url": "https://ugm.ac.id"
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Universitas Gadjah Mada",
+    "url": "https://ugm.ac.id",
+    "department": {
+      "@type": "Organization",
+      "name": "Internet Engineering Technology, Sekolah Vokasi (Vocational College)",
+      "url": "https://tri.sv.ugm.ac.id/"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Yogyakarta",
+      "addressCountry": "ID"
+    }
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Universitas Gadjah Mada",
+    "url": "https://ugm.ac.id"
+  },
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "ORCID",
+    "value": "0009-0002-9620-7411"
+  },
+  "sameAs": [
+    "https://orcid.org/0009-0002-9620-7411",
+    "https://scholar.google.com/citations?user=sPEG30wAAAAJ",
+    "https://www.linkedin.com/in/solaemanachmad/",
+    "https://github.com/solaemanachmad"
+  ],
+  "knowsAbout": [
+    "Deep learning",
+    "Computer vision",
+    "Time series classification",
+    "Eye tracking",
+    "Medical image analysis"
+  ]
+}
+</script>
+<!--
+  Statistik pengunjung dengan GoatCounter (gratis, tanpa cookie, tanpa banner izin).
+  Aktivasi:
+    1. Daftar di https://www.goatcounter.com/signup dan pilih kode situs, mis. "solaeman"
+       (dasbor Anda nanti di https://solaeman.goatcounter.com).
+    2. Isi kode itu di GOATCOUNTER_CODE di bawah, lalu push.
+  Selama kosong, tidak ada apa pun yang dimuat. Kunjungan dari localhost (quarto preview) tidak dihitung.
+-->
+<script>
+  (function () {
+    var GOATCOUNTER_CODE = "";   // ← isi di sini, mis. "solaeman"
+    if (!GOATCOUNTER_CODE || /^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://gc.zgo.at/count.js";
+    s.setAttribute("data-goatcounter", "https://" + GOATCOUNTER_CODE + ".goatcounter.com/count");
+    document.head.appendChild(s);
+  })();
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
@@ -143,7 +228,13 @@ window.Quarto = {
 
 <link rel="stylesheet" href="assets/vendor/academicons/css/academicons.min.css">
 <link rel="alternate" type="application/rss+xml" title="Achmad Solaeman" href="posts.xml" data-external="1"><meta property="og:title" content="Posts – Achmad Solaeman">
+<meta property="og:description" content="News, grants, notes, and updates from Achmad Solaeman’s teaching and research.">
+<meta property="og:image" content="https://solaemanachmad.github.io/assets/images/profile.jpg">
 <meta property="og:site_name" content="Achmad Solaeman">
+<meta name="twitter:title" content="Posts – Achmad Solaeman">
+<meta name="twitter:description" content="News, grants, notes, and updates from Achmad Solaeman’s teaching and research.">
+<meta name="twitter:image" content="https://solaemanachmad.github.io/assets/images/profile.jpg">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -394,11 +485,14 @@ window.Quarto = {
     <li><a href="https://github.com/solaemanachmad"><i class="bi bi-github"></i><span>GitHub</span></a></li>
     <li><a href="https://scholar.google.com/citations?user=sPEG30wAAAAJ"><i class="ai ai-google-scholar"></i><span>Google Scholar</span></a></li>
     <li><a href="https://orcid.org/0009-0002-9620-7411"><i class="ai ai-orcid"></i><span>ORCID</span></a></li>
-    <li><a class="profile-cv deck-preview" data-href="cv/solaemanachmad_cv.pdf" data-title="Curriculum Vitae — Achmad Solaeman" data-filename="solaemanachmad_cv.pdf"><i class="bi bi-file-earmark-person"></i><span>CV (PDF)</span></a></li>
+    <!-- Jadwal konsultasi: isi data-url dengan link Google Calendar Appointment / Cal.com.
+         Selama data-url kosong, baris ini disembunyikan. -->
+    <li class="profile-booking" hidden=""><a data-url="" target="_blank" rel="noopener"><i class="bi bi-calendar-check"></i><span>Book a meeting</span></a></li>
+    <li><a class="profile-cv" data-href="cv/index.html"><i class="bi bi-file-earmark-person"></i><span>Curriculum Vitae</span></a></li>
   </ul>
 </aside>
 <script>
-  // Path foto relatif ke root situs (berfungsi juga di subfolder seperti posts/)
+  // Path foto & link CV relatif ke root situs (berfungsi juga di subfolder seperti posts/)
   (function () {
     var meta = document.querySelector('meta[name="quarto:offset"]');
     var offset = meta ? meta.getAttribute("content") : "./";
@@ -406,10 +500,19 @@ window.Quarto = {
       img.src = offset + img.getAttribute("data-src");
     });
     document.querySelectorAll(".profile-cv[data-href]").forEach(function (a) {
-      var url = offset + a.getAttribute("data-href");
-      a.href = url;
-      a.dataset.src = url;
-      a.dataset.download = url;
+      a.href = offset + a.getAttribute("data-href");
+    });
+
+    // Tombol jadwal konsultasi: tampil hanya bila link sudah diisi
+    var booking = document.querySelector(".profile-booking a");
+    if (booking && booking.dataset.url) {
+      booking.href = booking.dataset.url;
+      booking.parentElement.hidden = false;
+    }
+
+    // Tandai halaman yang memakai komentar giscus (kotak Discussion di About hanya tampil bila aktif)
+    document.addEventListener("DOMContentLoaded", function () {
+      if (document.getElementById("giscus-base-theme")) document.body.classList.add("has-giscus");
     });
 
     // Menu aktif untuk subhalaman (nav-parent): courses/... → Teaching, posts/... → Posts
@@ -451,6 +554,11 @@ window.Quarto = {
 <h1 class="title">Posts</h1>
 </div>
 
+<div>
+  <div class="description">
+    News, grants, notes, and updates from Achmad Solaeman’s teaching and research.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -465,6 +573,79 @@ window.Quarto = {
 </header>
 
 
+<p><a href="posts.xml" class="btn btn-outline-primary btn-sm subscribe-btn" title="Add this feed to a reader such as Feedly or Inoreader to get new posts automatically"><i class="bi bi-rss"></i> Subscribe (RSS)</a></p>
+<!-- Hashtag (categories tiap post) dengan jumlahnya; klik untuk menyaring.
+     Diurutkan dari yang paling sering dipakai. Bila tag banyak, hanya 12 teratas yang tampil
+     (tombol "+N more" untuk sisanya) dan muncul kotak pencarian tag.
+     Link dari About berbentuk posts.html#category=<tag>. -->
+<div class="post-tagbar" aria-label="Filter by hashtag">
+
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var TOP = 12;          // jumlah tag yang tampil sebelum "+N more"
+    var SEARCH_FROM = 20;  // kotak pencarian tag muncul bila tag lebih dari ini
+    var bar = document.querySelector(".post-tagbar");
+    var counts = {};
+    document.querySelectorAll(".quarto-listing [data-categories]").forEach(function (el) {
+      decodeURIComponent(atob(el.dataset.categories)).split(",").forEach(function (t) {
+        if (t) counts[t] = (counts[t] || 0) + 1;
+      });
+    });
+    var tags = Object.keys(counts).sort(function (a, b) {
+      return counts[b] - counts[a] || a.localeCompare(b);
+    });
+    function current() {
+      var m = location.hash.match(/category=([^&]*)/);
+      return m ? decodeURIComponent(m[1]) : "";
+    }
+    var expanded = false, query = "";
+
+    function draw() {
+      bar.innerHTML = "";
+      if (tags.length > SEARCH_FROM) {
+        var input = document.createElement("input");
+        input.type = "search"; input.className = "tag-search"; input.placeholder = "Search tags…";
+        input.value = query;
+        input.addEventListener("input", function () {
+          query = input.value.trim().toLowerCase();
+          draw();
+          var again = bar.querySelector(".tag-search");
+          again.focus(); again.setSelectionRange(again.value.length, again.value.length);
+        });
+        bar.appendChild(input);
+      }
+      var cur = current();
+      var list = query ? tags.filter(function (t) { return t.toLowerCase().indexOf(query) !== -1; }) : tags;
+      var shown = (expanded || query) ? list : list.slice(0, TOP);
+      // tag yang sedang aktif tetap terlihat walau tidak termasuk 12 teratas
+      if (cur && shown.indexOf(cur) === -1 && counts[cur]) shown = shown.concat([cur]);
+      chip("All", "", document.querySelectorAll(".quarto-listing .list > *").length, cur === "");
+      shown.forEach(function (t) { chip("#" + t, t, counts[t], t === cur); });
+      if (!query && list.length > TOP) {
+        var more = document.createElement("button");
+        more.type = "button"; more.className = "news-tag tag-more";
+        more.textContent = expanded ? "Show less" : "+" + (list.length - TOP) + " more";
+        more.addEventListener("click", function () { expanded = !expanded; draw(); });
+        bar.appendChild(more);
+      }
+    }
+    function chip(label, tag, n, active) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "news-tag" + (active ? " active" : "");
+      b.dataset.tag = tag;
+      b.innerHTML = label + ' <span class="news-tag-count">' + n + "</span>";
+      b.addEventListener("click", function () {
+        if (!window.quartoListingCategory) return;
+        window.quartoListingCategory(btoa(encodeURIComponent(tag)));
+        if (!tag) history.replaceState(null, "", location.pathname);
+        draw();
+      });
+      bar.appendChild(b);
+    }
+    draw();
+  });
+</script>
 
 
 
@@ -477,24 +658,49 @@ window.Quarto = {
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="bmV3cw==" data-listing-date-sort="1792108800000" data-listing-file-modified-sort="1792142195296" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="63">
-<div class="thumbnail"><a href="./posts/2026-10-16-welcome/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="0" data-categories="Z3JhbnQlMkNyZXNlYXJjaA==" data-listing-date-sort="1775001600000" data-listing-file-modified-sort="1792342847294" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="39">
+<div class="thumbnail"><a href="./posts/2026-04-01-hibah-riset-sv-ugm/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/2026-10-16-welcome/index.html" class="no-external">Welcome to my new site</a>
+<a href="./posts/2026-04-01-hibah-riset-sv-ugm/index.html" class="no-external">Awarded the 2025 Research and Publication Grant, Vocational College UGM</a>
 </h3>
-<div class="delink listing-description"><a href="./posts/2026-10-16-welcome/index.html" class="no-external">
+<div class="delink listing-description"><a href="./posts/2026-04-01-hibah-riset-sv-ugm/index.html" class="no-external">
+<p>Received the Hibah Riset dan Pembuatan Artikel Publikasi 2025 from Sekolah Vokasi UGM under the Competitive cluster.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2026-04-01-hibah-riset-sv-ugm/index.html" class="no-external">
+<div class="listing-date">
+1 Apr 2026
+</div>
+<div class="listing-author">
+Achmad Solaeman
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="bmV3cw==" data-listing-date-sort="1773619200000" data-listing-file-modified-sort="1792342847294" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="63">
+<div class="thumbnail"><a href="./posts/2026-03-16-welcome/index.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2026-03-16-welcome/index.html" class="no-external">Welcome to my new site</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2026-03-16-welcome/index.html" class="no-external">
 <p>Why I moved my CV to a Quarto website, and what you’ll find here.</p>
 </a></div>
 </div>
 <div class="metadata">
-<a href="./posts/2026-10-16-welcome/index.html" class="no-external">
+<a href="./posts/2026-03-16-welcome/index.html" class="no-external">
 <div class="listing-date">
-16 Oct 2026
+16 Mar 2026
 </div>
 <div class="listing-author">
 Achmad Solaeman

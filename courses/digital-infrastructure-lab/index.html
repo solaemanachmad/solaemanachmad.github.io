@@ -51,9 +51,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-2f6f73fe289e2c8cd1ac7d84a31cb98a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-c6fa8356911e6f4d66674df0af83cfd1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-2f6f73fe289e2c8cd1ac7d84a31cb98a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-66f4e2ffd714046053294c85584342e8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-6af17a47e8c76a2d5c76c2a1f7033b20.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-66f4e2ffd714046053294c85584342e8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -111,6 +111,90 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 <style>html{ scroll-behavior: smooth; }</style>
+<!--
+  SEO: data terstruktur (JSON-LD) tentang pemilik situs untuk Google & Google Scholar.
+  Dimuat di <head> setiap halaman lewat _quarto.yml (format.html.include-in-header).
+  Statis (tanpa JavaScript) agar pasti terbaca crawler; muncul di semua halaman tidak masalah.
+  Edit nama/jabatan/tautan di bawah bila berubah.
+-->
+<!-- Verifikasi Google Search Console (metode "HTML tag"): hapus tanda komentar dan tempel kodenya.
+<meta name="google-site-verification" content="PASTE_CODE_HERE">
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://solaemanachmad.github.io/#person",
+  "name": "Achmad Solaeman",
+  "jobTitle": "Junior Lecturer",
+  "description": "Junior Lecturer in Internet Engineering Technology, Vocational College (Sekolah Vokasi), Universitas Gadjah Mada. Research in deep learning, computer vision, time series classification, eye tracking, and medical image analysis.",
+  "url": "https://solaemanachmad.github.io/",
+  "image": "https://solaemanachmad.github.io/assets/images/profile.jpg",
+  "email": "mailto:achmad.solaeman@ugm.ac.id",
+  "affiliation": {
+    "@type": "Organization",
+    "name": "Universitas Gadjah Mada",
+    "url": "https://ugm.ac.id"
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Universitas Gadjah Mada",
+    "url": "https://ugm.ac.id",
+    "department": {
+      "@type": "Organization",
+      "name": "Internet Engineering Technology, Sekolah Vokasi (Vocational College)",
+      "url": "https://tri.sv.ugm.ac.id/"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Yogyakarta",
+      "addressCountry": "ID"
+    }
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Universitas Gadjah Mada",
+    "url": "https://ugm.ac.id"
+  },
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "ORCID",
+    "value": "0009-0002-9620-7411"
+  },
+  "sameAs": [
+    "https://orcid.org/0009-0002-9620-7411",
+    "https://scholar.google.com/citations?user=sPEG30wAAAAJ",
+    "https://www.linkedin.com/in/solaemanachmad/",
+    "https://github.com/solaemanachmad"
+  ],
+  "knowsAbout": [
+    "Deep learning",
+    "Computer vision",
+    "Time series classification",
+    "Eye tracking",
+    "Medical image analysis"
+  ]
+}
+</script>
+<!--
+  Statistik pengunjung dengan GoatCounter (gratis, tanpa cookie, tanpa banner izin).
+  Aktivasi:
+    1. Daftar di https://www.goatcounter.com/signup dan pilih kode situs, mis. "solaeman"
+       (dasbor Anda nanti di https://solaeman.goatcounter.com).
+    2. Isi kode itu di GOATCOUNTER_CODE di bawah, lalu push.
+  Selama kosong, tidak ada apa pun yang dimuat. Kunjungan dari localhost (quarto preview) tidak dihitung.
+-->
+<script>
+  (function () {
+    var GOATCOUNTER_CODE = "";   // ← isi di sini, mis. "solaeman"
+    if (!GOATCOUNTER_CODE || /^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://gc.zgo.at/count.js";
+    s.setAttribute("data-goatcounter", "https://" + GOATCOUNTER_CODE + ".goatcounter.com/count");
+    document.head.appendChild(s);
+  })();
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
@@ -145,7 +229,12 @@ window.Quarto = {
 <link rel="stylesheet" href="../../assets/vendor/academicons/css/academicons.min.css">
 <meta property="og:title" content="Digital Infrastructure Support Lab – Achmad Solaeman">
 <meta property="og:description" content="Hands-on practice in setting up and supporting digital infrastructure.">
+<meta property="og:image" content="https://solaemanachmad.github.io/courses/digital-infrastructure-lab/assets/images/profile.jpg">
 <meta property="og:site_name" content="Achmad Solaeman">
+<meta name="twitter:title" content="Digital Infrastructure Support Lab – Achmad Solaeman">
+<meta name="twitter:description" content="Hands-on practice in setting up and supporting digital infrastructure.">
+<meta name="twitter:image" content="https://solaemanachmad.github.io/courses/digital-infrastructure-lab/assets/images/profile.jpg">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -396,11 +485,14 @@ window.Quarto = {
     <li><a href="https://github.com/solaemanachmad"><i class="bi bi-github"></i><span>GitHub</span></a></li>
     <li><a href="https://scholar.google.com/citations?user=sPEG30wAAAAJ"><i class="ai ai-google-scholar"></i><span>Google Scholar</span></a></li>
     <li><a href="https://orcid.org/0009-0002-9620-7411"><i class="ai ai-orcid"></i><span>ORCID</span></a></li>
-    <li><a class="profile-cv deck-preview" data-href="cv/solaemanachmad_cv.pdf" data-title="Curriculum Vitae — Achmad Solaeman" data-filename="solaemanachmad_cv.pdf"><i class="bi bi-file-earmark-person"></i><span>CV (PDF)</span></a></li>
+    <!-- Jadwal konsultasi: isi data-url dengan link Google Calendar Appointment / Cal.com.
+         Selama data-url kosong, baris ini disembunyikan. -->
+    <li class="profile-booking" hidden=""><a data-url="" target="_blank" rel="noopener"><i class="bi bi-calendar-check"></i><span>Book a meeting</span></a></li>
+    <li><a class="profile-cv" data-href="cv/index.html"><i class="bi bi-file-earmark-person"></i><span>Curriculum Vitae</span></a></li>
   </ul>
 </aside>
 <script>
-  // Path foto relatif ke root situs (berfungsi juga di subfolder seperti posts/)
+  // Path foto & link CV relatif ke root situs (berfungsi juga di subfolder seperti posts/)
   (function () {
     var meta = document.querySelector('meta[name="quarto:offset"]');
     var offset = meta ? meta.getAttribute("content") : "./";
@@ -408,10 +500,19 @@ window.Quarto = {
       img.src = offset + img.getAttribute("data-src");
     });
     document.querySelectorAll(".profile-cv[data-href]").forEach(function (a) {
-      var url = offset + a.getAttribute("data-href");
-      a.href = url;
-      a.dataset.src = url;
-      a.dataset.download = url;
+      a.href = offset + a.getAttribute("data-href");
+    });
+
+    // Tombol jadwal konsultasi: tampil hanya bila link sudah diisi
+    var booking = document.querySelector(".profile-booking a");
+    if (booking && booking.dataset.url) {
+      booking.href = booking.dataset.url;
+      booking.parentElement.hidden = false;
+    }
+
+    // Tandai halaman yang memakai komentar giscus (kotak Discussion di About hanya tampil bila aktif)
+    document.addEventListener("DOMContentLoaded", function () {
+      if (document.getElementById("giscus-base-theme")) document.body.classList.add("has-giscus");
     });
 
     // Menu aktif untuk subhalaman (nav-parent): courses/... → Teaching, posts/... → Posts
