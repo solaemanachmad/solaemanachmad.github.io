@@ -1,10 +1,15 @@
 ---
 title: "Publications"
+description: "Peer-reviewed publications by Achmad Solaeman on eye tracking, medical image analysis, and AI in health."
+body-classes: description-meta-only   # deskripsi hanya untuk mesin pencari, tidak tampil di halaman
 listing:
   id: pubs
   contents: data/publications.yml
   template: _templates/year-cards.ejs
   sort: false
+# Data publikasi untuk mesin pencari (dibuat otomatis oleh scripts/build_jsonld.py)
+include-in-header:
+  - _includes/publications-jsonld.html
 ---
 
 The complete and most recent list of my papers is available on [Google Scholar](https://scholar.google.com/citations?user=sPEG30wAAAAJ).

@@ -1,0 +1,19 @@
+<!--
+  Statistik pengunjung dengan GoatCounter (gratis, tanpa cookie, tanpa banner izin).
+  Aktivasi:
+    1. Daftar di https://www.goatcounter.com/signup dan pilih kode situs, mis. "solaeman"
+       (dasbor Anda nanti di https://solaeman.goatcounter.com).
+    2. Isi kode itu di GOATCOUNTER_CODE di bawah, lalu push.
+  Selama kosong, tidak ada apa pun yang dimuat. Kunjungan dari localhost (quarto preview) tidak dihitung.
+-->
+<script>
+  (function () {
+    var GOATCOUNTER_CODE = "";   // ← isi di sini, mis. "solaeman"
+    if (!GOATCOUNTER_CODE || /^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://gc.zgo.at/count.js";
+    s.setAttribute("data-goatcounter", "https://" + GOATCOUNTER_CODE + ".goatcounter.com/count");
+    document.head.appendChild(s);
+  })();
+</script>

@@ -2,7 +2,9 @@
 # Field:
 #   year, title, url (link paper/DOI), venue, kind (Conference paper / Journal article / Book review / ...),
 #   publisher, summary (1–2 kalimat)
-# Catatan: CV PDF memakai cv/_sections/publications.qmd — perbarui keduanya bila menambah publikasi.
+# Catatan: file ini satu-satunya sumber. cv/_sections/publications.qmd (CV PDF & halaman CV) dibuat
+#   otomatis dari file ini oleh scripts/build_cv_sections.py saat render — jangan edit file .qmd itu.
+#   Entri baru dari ORCID ditambahkan otomatis (scripts/orcid_sync.py) lewat Pull Request; cek summary/publisher-nya.
 - year: 2025
   title: "A Systematic Literature Review of Transfer Learning for Eye Tracking"
   url: "https://ieeexplore.ieee.org/document/10933367"

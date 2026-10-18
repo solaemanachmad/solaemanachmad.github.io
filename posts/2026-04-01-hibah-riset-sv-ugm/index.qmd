@@ -1,0 +1,10 @@
+---
+title: "Awarded the 2025 Research and Publication Grant, Vocational College UGM"
+description: "Received the Hibah Riset dan Pembuatan Artikel Publikasi 2025 from Sekolah Vokasi UGM under the Competitive cluster."
+date: 2026-04-01
+categories: [grant, research]
+---
+
+In April 2026 I received the **Hibah Riset dan Pembuatan Artikel Publikasi 2025** (Research and Publication Article Grant 2025) from [Sekolah Vokasi, Universitas Gadjah Mada](https://sv.ugm.ac.id/), under the **Competitive (Kompetitif)** cluster.
+
+<!-- Tambahkan: judul penelitian, tim, durasi, dan target luaran/publikasi. -->

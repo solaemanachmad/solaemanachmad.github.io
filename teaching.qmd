@@ -1,5 +1,7 @@
 ---
 title: "Teaching"
+description: "Courses taught by Achmad Solaeman in the Internet Engineering Technology program, Vocational College, Universitas Gadjah Mada, with meeting slides."
+body-classes: description-meta-only   # deskripsi hanya untuk mesin pencari, tidak tampil di halaman
 listing:
   id: courses
   contents: courses/*/index.qmd

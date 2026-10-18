@@ -1,3 +1,4 @@
+<!-- GENERATED from data/certificates.yml by scripts/build_cv_sections.py — do not edit -->
 - [IT Specialist – Artificial Intelligence](https://www.credly.com/earner/earned/badge/422dd365-f73a-4211-ab5d-9ac0e0d7d0bc) · Certiport · ID 422dd365-f73a-4211-ab5d-9ac0e0d7d0bc
 - [IT Specialist – Data Analytics](https://www.credly.com/earner/earned/badge/9282bd0b-43e6-4d67-b17e-4967f0547211) · Certiport · ID 9282bd0b-43e6-4d67-b17e-4967f0547211
 - [IT Specialist – Cybersecurity](https://www.credly.com/earner/earned/badge/f57f3d86-d556-4ace-96b6-f66a46167193) · Certiport · ID f57f3d86-d556-4ace-96b6-f66a46167193

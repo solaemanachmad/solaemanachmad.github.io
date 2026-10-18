@@ -1,7 +1,7 @@
 ---
 title: "Welcome to my new site"
 description: "Why I moved my CV to a Quarto website, and what you'll find here."
-date: 2026-10-16
+date: 2026-03-16
 categories: [news]
 ---
 

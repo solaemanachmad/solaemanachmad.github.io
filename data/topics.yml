@@ -1,0 +1,21 @@
+# CONTOH — tinjau dan sesuaikan sebelum dipublikasikan
+# Daftar topik Tugas Akhir untuk bagian "Student Projects" di halaman Research.
+# Field:
+#   title    : judul topik (bahasa Inggris)
+#   status   : available | ongoing | taken | draft
+#                available = terbuka untuk mahasiswa
+#                ongoing   = sedang dikerjakan mahasiswa (tampil redup + badge)
+#                taken     = sudah diambil / selesai (tampil redup + badge)
+#                draft     = TIDAK ditampilkan di situs (catatan pribadi)
+#   level    : jenjang, mis. "D4 / Tugas Akhir"
+#   tags     : daftar kata kunci, huruf kecil
+#   summary  : 1–2 kalimat ringkasan topik
+#   skills   : prasyarat singkat (opsional)
+#   url      : link referensi/detail (opsional)
+# Urutan di situs = urutan di file ini.
+- title: "Real-time eye-movement classification on a low-cost webcam"
+  status: available
+  level: "D4 / Tugas Akhir"
+  tags: [eye tracking, deep learning, time series]
+  summary: "Port a lightweight hybrid deep-learning model for fixation/saccade classification to webcam gaze data and evaluate accuracy versus latency on a laptop or mini PC."
+  skills: "Python, basic PyTorch or TensorFlow"

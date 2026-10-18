@@ -1,0 +1,31 @@
+<%
+// Papan topik Tugas Akhir dari data/topics.yml (lihat komentar di file itu).
+// status: available | ongoing | taken (redup) | draft (disembunyikan)
+const labels = { available: "Available", ongoing: "Ongoing", taken: "Taken" };
+const shown = items.filter(i => String(i.status || "available").toLowerCase() !== "draft");
+const enc = s => encodeURIComponent(String(s));
+const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+%>
+<% if (!shown.length) { %>
+<p class="topic-empty">No open topics are listed right now.</p>
+<% } else { %>
+<div class="topic-filter" role="group" aria-label="Filter topics by status">
+<button type="button" class="topic-filter-btn active" data-status="all">All</button>
+<% for (const s of Object.keys(labels)) { const n = shown.filter(i => String(i.status || "available").toLowerCase() === s).length; if (n) { %><button type="button" class="topic-filter-btn" data-status="<%= s %>"><%= labels[s] %> <span class="topic-count"><%= n %></span></button><% } } %>
+</div>
+<div class="topic-grid">
+<% for (const item of shown) { const st = labels[String(item.status || "available").toLowerCase()] ? String(item.status || "available").toLowerCase() : "available"; const tags = Array.isArray(item.tags) ? item.tags : (item.tags ? [item.tags] : []); %>
+<article class="topic-card topic-<%= st %>" data-status="<%= st %>">
+<div class="topic-top">
+<span class="topic-status topic-status-<%= st %>"><%= labels[st] %></span>
+<% if (item.level) { %><span class="topic-level"><%= esc(item.level) %></span><% } %>
+</div>
+<h3 class="topic-title"><% if (item.url) { %><a href="<%= esc(item.url) %>"><%= esc(item.title) %></a><% } else { %><%= esc(item.title) %><% } %></h3>
+<% if (item.summary) { %><p class="topic-summary"><%= esc(item.summary) %></p><% } %>
+<% if (tags.length) { %><ul class="topic-tags"><% for (const t of tags) { %><li><%= esc(t) %></li><% } %></ul><% } %>
+<% if (item.skills) { %><p class="topic-skills"><i class="bi bi-tools"></i> <span><strong>Skills:</strong> <%= esc(item.skills) %></span></p><% } %>
+<% if (st === "available") { %><a class="topic-contact" href="mailto:achmad.solaeman@ugm.ac.id?subject=<%= enc('Thesis topic: ' + item.title) %>"><i class="bi bi-envelope"></i> Discuss this topic</a><% } %>
+</article>
+<% } %>
+</div>
+<% } %>

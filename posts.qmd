@@ -1,5 +1,6 @@
 ---
 title: "Posts"
+description: "News, grants, notes, and updates from Achmad Solaeman's teaching and research."
 listing:
   contents: posts
   sort: "date desc"
@@ -11,3 +12,77 @@ listing:
   feed: true
 title-block-banner: false
 ---
+
+[<i class="bi bi-rss"></i> Subscribe (RSS)](posts.xml){.btn .btn-outline-primary .btn-sm .subscribe-btn title="Add this feed to a reader such as Feedly or Inoreader to get new posts automatically"}
+
+<!-- Hashtag (categories tiap post) dengan jumlahnya; klik untuk menyaring.
+     Diurutkan dari yang paling sering dipakai. Bila tag banyak, hanya 12 teratas yang tampil
+     (tombol "+N more" untuk sisanya) dan muncul kotak pencarian tag.
+     Link dari About berbentuk posts.html#category=<tag>. -->
+<div class="post-tagbar" aria-label="Filter by hashtag"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var TOP = 12;          // jumlah tag yang tampil sebelum "+N more"
+    var SEARCH_FROM = 20;  // kotak pencarian tag muncul bila tag lebih dari ini
+    var bar = document.querySelector(".post-tagbar");
+    var counts = {};
+    document.querySelectorAll(".quarto-listing [data-categories]").forEach(function (el) {
+      decodeURIComponent(atob(el.dataset.categories)).split(",").forEach(function (t) {
+        if (t) counts[t] = (counts[t] || 0) + 1;
+      });
+    });
+    var tags = Object.keys(counts).sort(function (a, b) {
+      return counts[b] - counts[a] || a.localeCompare(b);
+    });
+    function current() {
+      var m = location.hash.match(/category=([^&]*)/);
+      return m ? decodeURIComponent(m[1]) : "";
+    }
+    var expanded = false, query = "";
+
+    function draw() {
+      bar.innerHTML = "";
+      if (tags.length > SEARCH_FROM) {
+        var input = document.createElement("input");
+        input.type = "search"; input.className = "tag-search"; input.placeholder = "Search tags…";
+        input.value = query;
+        input.addEventListener("input", function () {
+          query = input.value.trim().toLowerCase();
+          draw();
+          var again = bar.querySelector(".tag-search");
+          again.focus(); again.setSelectionRange(again.value.length, again.value.length);
+        });
+        bar.appendChild(input);
+      }
+      var cur = current();
+      var list = query ? tags.filter(function (t) { return t.toLowerCase().indexOf(query) !== -1; }) : tags;
+      var shown = (expanded || query) ? list : list.slice(0, TOP);
+      // tag yang sedang aktif tetap terlihat walau tidak termasuk 12 teratas
+      if (cur && shown.indexOf(cur) === -1 && counts[cur]) shown = shown.concat([cur]);
+      chip("All", "", document.querySelectorAll(".quarto-listing .list > *").length, cur === "");
+      shown.forEach(function (t) { chip("#" + t, t, counts[t], t === cur); });
+      if (!query && list.length > TOP) {
+        var more = document.createElement("button");
+        more.type = "button"; more.className = "news-tag tag-more";
+        more.textContent = expanded ? "Show less" : "+" + (list.length - TOP) + " more";
+        more.addEventListener("click", function () { expanded = !expanded; draw(); });
+        bar.appendChild(more);
+      }
+    }
+    function chip(label, tag, n, active) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "news-tag" + (active ? " active" : "");
+      b.dataset.tag = tag;
+      b.innerHTML = label + ' <span class="news-tag-count">' + n + "</span>";
+      b.addEventListener("click", function () {
+        if (!window.quartoListingCategory) return;
+        window.quartoListingCategory(btoa(encodeURIComponent(tag)));
+        if (!tag) history.replaceState(null, "", location.pathname);
+        draw();
+      });
+      bar.appendChild(b);
+    }
+    draw();
+  });
+</script>

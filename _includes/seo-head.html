@@ -1,0 +1,65 @@
+<!--
+  SEO: data terstruktur (JSON-LD) tentang pemilik situs untuk Google & Google Scholar.
+  Dimuat di <head> setiap halaman lewat _quarto.yml (format.html.include-in-header).
+  Statis (tanpa JavaScript) agar pasti terbaca crawler; muncul di semua halaman tidak masalah.
+  Edit nama/jabatan/tautan di bawah bila berubah.
+-->
+<!-- Verifikasi Google Search Console (metode "HTML tag"): hapus tanda komentar dan tempel kodenya.
+<meta name="google-site-verification" content="PASTE_CODE_HERE">
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://solaemanachmad.github.io/#person",
+  "name": "Achmad Solaeman",
+  "jobTitle": "Junior Lecturer",
+  "description": "Junior Lecturer in Internet Engineering Technology, Vocational College (Sekolah Vokasi), Universitas Gadjah Mada. Research in deep learning, computer vision, time series classification, eye tracking, and medical image analysis.",
+  "url": "https://solaemanachmad.github.io/",
+  "image": "https://solaemanachmad.github.io/assets/images/profile.jpg",
+  "email": "mailto:achmad.solaeman@ugm.ac.id",
+  "affiliation": {
+    "@type": "Organization",
+    "name": "Universitas Gadjah Mada",
+    "url": "https://ugm.ac.id"
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Universitas Gadjah Mada",
+    "url": "https://ugm.ac.id",
+    "department": {
+      "@type": "Organization",
+      "name": "Internet Engineering Technology, Sekolah Vokasi (Vocational College)",
+      "url": "https://tri.sv.ugm.ac.id/"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Yogyakarta",
+      "addressCountry": "ID"
+    }
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Universitas Gadjah Mada",
+    "url": "https://ugm.ac.id"
+  },
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "ORCID",
+    "value": "0009-0002-9620-7411"
+  },
+  "sameAs": [
+    "https://orcid.org/0009-0002-9620-7411",
+    "https://scholar.google.com/citations?user=sPEG30wAAAAJ",
+    "https://www.linkedin.com/in/solaemanachmad/",
+    "https://github.com/solaemanachmad"
+  ],
+  "knowsAbout": [
+    "Deep learning",
+    "Computer vision",
+    "Time series classification",
+    "Eye tracking",
+    "Medical image analysis"
+  ]
+}
+</script>

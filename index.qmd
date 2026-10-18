@@ -1,17 +1,55 @@
 ---
 title: "About"
+description: "Achmad Solaeman, Junior Lecturer in Internet Engineering Technology at Universitas Gadjah Mada, working on deep learning, computer vision, and eye tracking."
+body-classes: description-meta-only   # deskripsi hanya untuk mesin pencari, tidak tampil di halaman
 listing:
-  id: certs
-  contents: data/certificates.yml
-  template: _templates/compact-list.ejs
-  sort: false
+  - id: news-recent
+    contents: posts          # What's New = 5 tulisan terbaru di posts/
+    template: _templates/news-list.ejs
+    sort: "date desc"
+    max-items: 5
+    date-format: "MMM YYYY"
+  - id: certs
+    contents: data/certificates.yml
+    template: _templates/compact-list.ejs
+    sort: false
+
+# ---- Area diskusi (giscus) di kolom kanan, di bawah What's New ----
+# Kotak "Discussion" otomatis tersembunyi selama bagian ini masih dikomentari.
+# Aktifkan setelah langkah di posts/_metadata.yml selesai (hapus tanda # di 7 baris berikut):
+comments:
+  giscus:
+    repo: solaemanachmad/solaemanachmad.github.io
+    repo-id: "R_kgDOVL_HvQ"
+    category: "Comments"
+    mapping: pathname
+    input-position: top
 ---
 
-[<i class="bi bi-file-earmark-person"></i> View CV (PDF)](cv/solaemanachmad_cv.pdf){.btn .btn-outline-primary .btn-sm .download-btn .deck-preview data-title="Curriculum Vitae — Achmad Solaeman" data-download="cv/solaemanachmad_cv.pdf" data-filename="solaemanachmad_cv.pdf"}
+::::: {.about-grid .column-page-right}
 
+:::: {.about-intro}
 I am a junior lecturer in the [Internet Engineering Technology (Teknologi Rekayasa Internet, TRI)](https://tri.sv.ugm.ac.id/) program at Universitas Gadjah Mada, Yogyakarta. My research focuses on **deep learning for computer vision and time series classification**, with work on eye tracking and medical image analysis.
+::::
 
+:::: {.about-side}
+::: {.about-news .side-card}
+<h2 class="side-card-title"><i class="bi bi-megaphone"></i> What's New</h2>
 
+::: {#news-recent}
+:::
+
+[All posts <i class="bi bi-arrow-right"></i>](posts.qmd){.news-more} [<i class="bi bi-rss"></i> RSS](posts.xml){.news-more .news-rss title="Subscribe via RSS"}
+:::
+
+::: {.about-discuss .side-card}
+<h2 class="side-card-title"><i class="bi bi-chat-dots"></i> Discussion</h2>
+<p class="side-card-note">Questions, ideas, or collaboration? Leave a comment (GitHub account required).</p>
+<div class="giscus"></div>
+:::
+::::
+
+:::: {.about-rest}
 ## Research Interests
 
 - Deep learning for computer vision
@@ -29,3 +67,6 @@ I am a junior lecturer in the [Internet Engineering Technology (Teknologi Rekaya
 
 ::: {#certs}
 :::
+::::
+
+:::::

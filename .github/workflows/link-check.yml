@@ -1,0 +1,66 @@
+# Cek tautan rusak (broken links) setiap minggu.
+# - Jalan otomatis tiap Minggu 23:00 UTC (= Senin 06:00 WIB), atau manual lewat tab Actions ("Run workflow").
+# - Memeriksa situs yang SUDAH dibangun (branch gh-pages), jadi tidak perlu render Quarto lagi.
+# - Jika ada tautan rusak, dibuat/diperbarui satu Issue berjudul "Broken links report" (label: broken-links).
+#   Workflow ini tidak pernah gagal karena tautan rusak; cukup lihat Issue tersebut.
+name: Check broken links
+
+on:
+  schedule:
+    - cron: "0 23 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout built site (gh-pages)
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+
+      # Catatan pengecualian:
+      # - linkedin.com, instagram.com, credly.com memblokir bot (sering membalas 999/403),
+      #   jadi selalu terlihat "rusak" walau sebenarnya normal -> dilewati.
+      # - 429 (terlalu banyak permintaan) dan 999 (kode khusus LinkedIn) dianggap OK.
+      # - Alamat email (mailto:) tidak diperiksa.
+      - name: Check links with lychee
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --max-concurrency 4
+            --accept 200,206,429,999
+            --exclude-mail
+            --exclude 'linkedin\.com'
+            --exclude 'instagram\.com'
+            --exclude 'credly\.com'
+            --timeout 20
+            '**/*.html'
+          output: lychee/out.md
+          fail: false
+
+      # Buat Issue baru, atau perbarui Issue lama jika masih terbuka (dicari lewat judul+label).
+      - name: Find existing report issue
+        if: steps.lychee.outputs.exit_code != 0
+        id: find-issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          num=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --label broken-links \
+                --search 'in:title "Broken links report"' --json number --jq '.[0].number // empty')
+          echo "number=$num" >> "$GITHUB_OUTPUT"
+
+      - name: Create or update issue
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: Broken links report
+          content-filepath: ./lychee/out.md
+          labels: broken-links
+          issue-number: ${{ steps.find-issue.outputs.number }}

@@ -1,6 +1,7 @@
 # Daftar layanan akademik untuk halaman Services (dikelompokkan per `year`).
 # Field: year, title (peran), venue, url, kind (Conference / Journal / ...), summary (opsional)
-# Catatan: CV PDF memakai cv/_sections/services.qmd — perbarui keduanya.
+# Catatan: file ini satu-satunya sumber. cv/_sections/services.qmd (CV PDF & halaman CV) dibuat
+#   otomatis dari file ini oleh scripts/build_cv_sections.py saat render — jangan edit file .qmd itu.
 - year: 2026
   title: "Technical Program Committee Member"
   venue: "DELCON 2026, BITS Pilani"

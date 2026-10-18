@@ -1,3 +1,4 @@
+<!-- GENERATED from data/publications.yml by scripts/build_cv_sections.py — do not edit -->
 ::: {.year-grid}
 ::: {.year}
 **2025**

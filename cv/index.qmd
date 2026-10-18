@@ -1,0 +1,52 @@
+---
+title: "Curriculum Vitae"
+description: "Curriculum vitae of Achmad Solaeman: education, experience, publications, service, and certificates."
+body-classes: description-meta-only   # deskripsi hanya untuk mesin pencari, tidak tampil di halaman
+# Versi web CV → _site/cv/index.html. Isinya sama dengan PDF (cv.qmd),
+# diambil dari file yang sama di cv/_sections/. Nomor telepon hanya ada di PDF.
+---
+
+::: {.cv-actions}
+[<i class="bi bi-download"></i> Download PDF](solaemanachmad_cv.pdf){.btn .btn-primary .btn-sm download="solaemanachmad_cv.pdf"}
+[<i class="bi bi-eye"></i> View PDF](solaemanachmad_cv.pdf){.btn .btn-outline-primary .btn-sm .deck-preview data-title="Curriculum Vitae — Achmad Solaeman" data-download="solaemanachmad_cv.pdf" data-filename="solaemanachmad_cv.pdf"}
+:::
+
+::: {.cv-page}
+
+## Education
+
+{{< include _sections/education.qmd >}}
+
+## Professional Experience
+
+{{< include _sections/experience.qmd >}}
+
+## Teaching
+
+{{< include _sections/teaching.qmd >}}
+
+## Publications
+
+{{< include _sections/publications.qmd >}}
+
+## Services
+
+{{< include _sections/services.qmd >}}
+
+## Projects
+
+{{< include _sections/projects.qmd >}}
+
+## Certificates
+
+{{< include _sections/certificates.qmd >}}
+
+## Skills
+
+{{< include _sections/skills.qmd >}}
+
+## Courses & Training
+
+{{< include _sections/courses.qmd >}}
+
+:::

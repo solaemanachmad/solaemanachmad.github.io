@@ -1,5 +1,7 @@
 ---
 title: "Services"
+description: "Academic service by Achmad Solaeman as a peer reviewer and program committee member."
+body-classes: description-meta-only   # deskripsi hanya untuk mesin pencari, tidak tampil di halaman
 listing:
   id: services
   contents: data/services.yml

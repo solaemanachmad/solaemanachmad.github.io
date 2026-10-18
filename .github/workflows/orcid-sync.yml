@@ -1,0 +1,55 @@
+# Weekly check of ORCID for new works; opens a Pull Request that appends them
+# to data/publications.yml (the CV is regenerated from that file on render).
+#
+# REQUIRED one-time repo setting, otherwise the PR step fails:
+#   Settings -> Actions -> General -> Workflow permissions ->
+#   tick "Allow GitHub Actions to create and approve pull requests".
+# Note: PRs opened with GITHUB_TOKEN do not trigger other workflows; after
+# merging, the push to main triggers "Publish CV site" as usual.
+name: ORCID sync
+
+on:
+  schedule:
+    - cron: "0 1 * * 1"   # every Monday 01:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install PyYAML
+        run: pip install pyyaml
+
+      - name: Fetch new works from ORCID
+        run: python3 scripts/orcid_sync.py
+
+      - name: Open Pull Request if publications changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: orcid-sync
+          delete-branch: true
+          add-paths: data/publications.yml
+          commit-message: "Add new publications from ORCID"
+          title: "New publications from ORCID"
+          body: |
+            This PR was opened automatically by the weekly **ORCID sync** workflow
+            (`scripts/orcid_sync.py`). New works found on ORCID
+            (0009-0002-9620-7411) were appended to `data/publications.yml`.
+
+            **Before merging, please review each new entry** (marked
+            `# TODO: added from ORCID`):
+            - write a 1–2 sentence `summary`,
+            - fill in `publisher`,
+            - check `venue`, `kind` and `year`, then remove the TODO comment.
+
+            After merging, the site and the CV PDF are rebuilt automatically.

@@ -1,6 +1,8 @@
 # Sertifikasi untuk halaman About (daftar ringkas) — urutan di sini = urutan tampil.
 # Field: title, issuer, url (link verifikasi/Credly), year (opsional)
-# Catatan: CV PDF memakai cv/_sections/certificates.qmd — perbarui keduanya.
+# Catatan: file ini satu-satunya sumber. cv/_sections/certificates.qmd (CV PDF & halaman CV) dibuat
+#   otomatis dari file ini oleh scripts/build_cv_sections.py saat render — jangan edit file .qmd itu.
+#   ID sertifikat diambil dari segmen terakhir URL Credly.
 - title: "IT Specialist – Artificial Intelligence"
   issuer: "Certiport"
   url: "https://www.credly.com/earner/earned/badge/422dd365-f73a-4211-ab5d-9ac0e0d7d0bc"

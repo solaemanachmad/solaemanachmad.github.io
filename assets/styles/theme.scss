@@ -463,3 +463,178 @@ body.view-list {
     &[hidden] { display: none; }
   }
 }
+
+// Halaman CV versi web (cv/index.qmd)
+.cv-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin: .25rem 0 1.5rem; }
+.cv-actions .btn-primary { color: $body-bg; }
+.cv-page {
+  h2 {
+    font-size: 1.15rem; text-transform: uppercase; letter-spacing: .05em;
+    padding-bottom: .3rem; border-bottom: 2px solid $ugm-gold;
+    margin-top: 2rem;
+  }
+  h3 { font-size: 1.02rem; font-weight: 600; margin: 1.1rem 0 .2rem; }
+  .meta { margin-bottom: .35rem; }
+  ul { margin-bottom: .6rem; }
+  .year-grid {
+    display: grid; grid-template-columns: 6.5rem 1fr; gap: .75rem;
+    margin-bottom: .9rem;
+    p { margin-bottom: .3rem; }
+  }
+  .year { color: $muted-color; }
+  .course-list ul { margin-bottom: 0; }
+  @media (max-width: 575.98px) {
+    .year-grid { grid-template-columns: 1fr; gap: .1rem; }
+  }
+}
+
+// ---------- About: konten + kolom kanan (What's New & Discussion) ----------
+.about-grid {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 0 2rem;
+  grid-template-areas: "intro" "side" "rest";
+}
+.about-intro { grid-area: intro; }
+.about-side  { grid-area: side; }
+.about-rest  { grid-area: rest; }
+@media (min-width: 1200px) {
+  .about-grid {
+    grid-template-columns: minmax(0, 1fr) 290px;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "intro side" "rest side";
+    align-items: start;
+  }
+  .about-side { margin-top: .3rem; }
+}
+.side-card {
+  background: $chip-bg; border-radius: $radius;
+  padding: .9rem 1rem .7rem; margin: .5rem 0 1.25rem;
+  .side-card-title {
+    font-size: 1rem; font-weight: 700; margin: 0 0 .4rem; padding: 0; border: 0;
+    display: flex; align-items: center; gap: .45rem;
+    i { color: $accent; }
+  }
+  .side-card-note { font-size: .82rem; color: $muted-color; margin: 0 0 .5rem; }
+}
+// Tanpa konfigurasi giscus (komentar belum aktif) kotak Discussion disembunyikan
+body:not(.has-giscus) .about-discuss { display: none; }
+.about-discuss .giscus { min-height: 3rem; }
+
+// Daftar What's New (template _templates/news-list.ejs, sumber: posts/)
+.news-list {
+  list-style: none; padding: 0; margin: 0;
+  .news-item { padding: .55rem 0; border-bottom: 1px dashed $rule-color; }
+  .news-item:last-child { border-bottom: 0; }
+  .news-date { display: block; color: $muted-color; font-size: .78rem; }
+  .news-body p { margin: 0; }
+  .news-title {
+    display: block; color: $body-color; text-decoration: none;
+    font-weight: 500; font-size: .92rem; line-height: 1.35;
+  }
+  .news-title:hover { color: $link-hover-color; text-decoration: underline; }
+  .news-tags { display: flex; flex-wrap: wrap; gap: .25rem; margin-top: .3rem; }
+}
+.news-tag {
+  font-size: .72rem; padding: .02rem .5rem; border-radius: 999px;
+  background: $body-bg; color: $link-color; text-decoration: none;
+}
+.news-tag:hover, .news-tag.active { background: $accent; color: #fff; }
+.news-more { display: inline-block; margin-top: .2rem; font-size: .85rem; text-decoration: none; }
+p:has(> .news-more) { margin-bottom: 0; display: flex; justify-content: space-between; }
+.subscribe-btn { margin: .25rem 0 .5rem; }
+
+// Hashtag di halaman Posts (dibuat oleh skrip di posts.qmd)
+.post-tagbar {
+  display: flex; flex-wrap: wrap; gap: .4rem; margin: .5rem 0 1rem;
+  .news-tag { background: $chip-bg; border: 0; font-size: .8rem; padding: .15rem .65rem; cursor: pointer; }
+  .news-tag:hover, .news-tag.active { background: $accent; color: #fff; }
+  .news-tag-count { opacity: .65; font-size: .72rem; }
+  .tag-more { background: transparent !important; border: 1px dashed $rule-color !important; color: $muted-color !important; }
+  .tag-search {
+    font-size: .8rem; padding: .1rem .6rem; border-radius: 999px;
+    border: 1px solid $rule-color; background: $body-bg; color: $body-color; width: 11rem;
+  }
+}
+
+// ---------- Topik Tugas Akhir (research.qmd, data/topics.yml) ----------
+// ---------- Papan topik Tugas Akhir (research.qmd, _templates/topic-cards.ejs) ----------
+.topic-filter {
+  display: flex; flex-wrap: wrap; gap: .4rem;
+  margin: .5rem 0 .9rem;
+}
+.topic-filter-btn {
+  border: 1px solid $rule-color; background: $body-bg; color: $muted-color;
+  font-size: .85rem; font-weight: 600;
+  padding: .25rem .85rem; border-radius: 999px; cursor: pointer;
+  &:hover { color: $year-color; border-color: $accent; }
+  &.active { background: $chip-bg; color: $year-color; border-color: $accent; }
+  .topic-count { font-weight: 400; opacity: .75; margin-left: .15rem; }
+}
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+.topic-card {
+  display: flex; flex-direction: column;
+  border: 1px solid $rule-color; border-top: 3px solid $accent;
+  border-radius: $radius;
+  padding: .8rem 1rem 1rem;
+  background: $body-bg;
+  transition: box-shadow .15s ease;
+  &:hover { box-shadow: $shadow-hover; }
+  &[hidden] { display: none !important; }
+  &.topic-ongoing, &.topic-taken {
+    border-top-color: $rule-color;
+    .topic-title, .topic-summary, .topic-tags, .topic-skills { opacity: .62; }
+  }
+}
+.topic-top {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .4rem;
+  margin-bottom: .5rem;
+  p { display: contents; margin: 0; }
+}
+.topic-status {
+  font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
+  padding: .1rem .55rem; border-radius: 999px; border: 1px solid transparent;
+  &::before { content: "\25CF"; margin-right: .3rem; font-size: .65rem; vertical-align: .08em; }
+  &.topic-status-available { background: rgba($accent, .18); color: $year-color; border-color: rgba($accent, .5); }
+  &.topic-status-ongoing   { background: $chip-bg; color: $link-color; border-color: $rule-color; }
+  &.topic-status-taken     { background: transparent; color: $muted-color; border-color: $rule-color; }
+}
+.topic-level { font-size: .78rem; color: $muted-color; }
+.topic-title {
+  font-size: 1rem; font-weight: 600; line-height: 1.35;
+  margin: 0 0 .35rem;
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: $link-hover-color; }
+}
+.topic-summary { font-size: .9rem; margin: 0 0 .6rem; }
+.topic-tags {
+  list-style: none; padding: 0; margin: 0 0 .6rem;
+  display: flex; flex-wrap: wrap; gap: .3rem;
+  li {
+    font-size: .74rem; background: $chip-bg; color: $body-color;
+    padding: .05rem .5rem; border-radius: .3rem;
+  }
+}
+.topic-skills {
+  display: flex; gap: .4rem; align-items: baseline;
+  font-size: .82rem; color: $muted-color; margin: 0 0 .7rem;
+  strong { font-weight: 600; }
+}
+.topic-contact {
+  margin-top: auto; align-self: flex-start;
+  display: inline-flex; align-items: center; gap: .35rem;
+  font-size: .85rem; font-weight: 600; text-decoration: none;
+  padding: .3rem .8rem; border-radius: 999px;
+  border: 1px solid $accent; color: $year-color !important;
+  &:hover, &:focus { background: $accent; color: $body-bg !important; }
+}
+.topic-empty { color: $muted-color; font-style: italic; }
+@media (max-width: 575.98px) {
+  .topic-grid { grid-template-columns: 1fr; }
+}
+.profile-links li[hidden] { display: none !important; }
+// Halaman dengan body-classes: description-meta-only → deskripsi hanya di <meta>, tidak ditampilkan
+body.description-meta-only #title-block-header .description { display: none; }

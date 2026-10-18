@@ -14,6 +14,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # PyYAML is needed by the pre-render script (scripts/build_cv_sections.py).
+      # setup-python avoids PEP 668 "externally-managed-environment" errors on ubuntu-24.04.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install PyYAML
+        run: pip install pyyaml
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 

@@ -1,8 +1,8 @@
 ---
 title: "Achmad Solaeman"
 subtitle: "Junior Lecturer · Internet Engineering Technology · Universitas Gadjah Mada"
-# CV hanya dibuat sebagai PDF → _site/cv/solaemanachmad_cv.pdf (tidak ada halaman web CV).
-# Dibuka lewat popup dari tombol di About dan kolom profil.
+# Versi PDF → _site/cv/solaemanachmad_cv.pdf. Versi web ada di cv/index.qmd
+# (dibuka dari tombol "Curriculum Vitae" di About; tombol Download PDF ada di sana).
 # Isi tiap bagian ada di cv/_sections/.
 format:
   typst:

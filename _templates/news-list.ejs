@@ -1,0 +1,14 @@
+<%
+// What's New di About: cuplikan tulisan terbaru dari folder posts/.
+// Judul → halaman post; hashtag (categories) → posts.html#category=<tag> (daftar Posts tersaring).
+// Isi tiap item sengaja ditulis dalam satu baris agar tidak dipecah menjadi beberapa paragraf.
+const tagLinks = (item) => (item.categories || []).map(tag => `<a class="news-tag" href="posts.html#category=${encodeURIComponent(tag)}">#${tag}</a>`).join("");
+%>
+<ul class="news-list list">
+<% for (const item of items) { %>
+<li class="news-item" <%= metadataAttrs(item) %>>
+<span class="news-date listing-date"><%= item.date %></span>
+<div class="news-body"><a class="news-title" href="<%- item.path %>"><%= item.title %></a><% if (item.categories) { %><span class="news-tags"><%= tagLinks(item) %></span><% } %></div>
+</li>
+<% } %>
+</ul>

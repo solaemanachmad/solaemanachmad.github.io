@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://solaemanachmad.github.io/sitemap.xml

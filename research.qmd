@@ -1,5 +1,12 @@
 ---
 title: "Research"
+description: "Research in deep learning for computer vision and time series classification, plus open final-project topics for Internet Engineering Technology students."
+body-classes: description-meta-only   # deskripsi hanya untuk mesin pencari, tidak tampil di halaman
+listing:
+  id: topics
+  contents: data/topics.yml
+  template: _templates/topic-cards.ejs
+  sort: false
 ---
 
 My work sits at the intersection of deep learning, human-centred sensing, and intelligent communication.
@@ -8,6 +15,32 @@ My work sits at the intersection of deep learning, human-centred sensing, and in
 
 **For Internet Engineering Technology students looking for a final-project (Tugas Akhir) topic.**
 
-A list of open research topics will be posted here soon. In the meantime, if you are interested in working on a project with me, send me an [email](mailto:achmad.solaeman@ugm.ac.id) and we can talk it through.
+Below are topics I am currently offering. If one catches your interest, use **Discuss this topic** on its card or send me an [email](mailto:achmad.solaeman@ugm.ac.id) and we can talk it through.
+
+::: {#topics}
+:::
 
 Have your own idea instead? I'm glad to hear it. Reach out by [email](mailto:achmad.solaeman@ugm.ac.id) and we can explore whether it fits.
+
+```{=html}
+<script>
+// Filter status topik (All / Available / Ongoing / Taken)
+document.addEventListener("DOMContentLoaded", function () {
+  var bar = document.querySelector(".topic-filter");
+  if (!bar) return;
+  var cards = document.querySelectorAll(".topic-card");
+  bar.addEventListener("click", function (e) {
+    var btn = e.target.closest(".topic-filter-btn");
+    if (!btn) return;
+    var s = btn.getAttribute("data-status");
+    bar.querySelectorAll(".topic-filter-btn").forEach(function (b) {
+      b.classList.toggle("active", b === btn);
+      b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+    });
+    cards.forEach(function (c) {
+      c.hidden = s !== "all" && c.getAttribute("data-status") !== s;
+    });
+  });
+});
+</script>
+```
