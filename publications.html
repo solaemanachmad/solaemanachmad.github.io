@@ -51,9 +51,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b40e99cb9966fa3a1807e4b809697cfc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-a408ddfdd2a517ea7924cd8a785e2ab0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-b40e99cb9966fa3a1807e4b809697cfc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-c2168e5ac240f8525d622b5e59b96698.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-be46af9124580d03d3f77c92affaf622.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-c2168e5ac240f8525d622b5e59b96698.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -1008,7 +1008,57 @@ document.addEventListener("click", function (e) {
     tabs.forEach(function (t) { t.addEventListener("click", function () { show(t.dataset.sem); }); });
     show(tabs[0].dataset.sem);
   })();
+
+  // Penanda pertemuan: "This week" / "Done" / "Up next" + progres semester.
+  // Tanggal: data-date per kartu (field `date` di meetings.yml), atau `start` mata kuliah + 7 hari per pertemuan.
+  (function () {
+    var box = document.querySelector(".course-progress");
+    var cards = Array.prototype.slice.call(document.querySelectorAll(".deck-card[data-meeting]"));
+    if (!box || !cards.length) return;
+    var DAY = 864e5;
+    function parse(s) { var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(s || ""); return m ? new Date(+m[1], m[2] - 1, +m[3]) : null; }
+    var start = parse(box.dataset.start);
+    var dated = cards.map(function (c) {
+      var d = parse(c.dataset.date) || (start ? new Date(start.getTime() + (Number(c.dataset.meeting) - 1) * 7 * DAY) : null);
+      return { el: c, date: d, n: Number(c.dataset.meeting) };
+    }).filter(function (x) { return x.date; });
+    if (!dated.length) return;
+    var MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    var fmt = function (d) { return d.getDate() + " " + MON[d.getMonth()]; };
+    var today = new Date(); today.setHours(0, 0, 0, 0);
+    var current = null, next = null, done = 0;
+    dated.forEach(function (x, i) {
+      var end = i + 1 < dated.length ? dated[i + 1].date : new Date(x.date.getTime() + 7 * DAY);
+      x.el.querySelector(".deck-date").textContent = " · " + fmt(x.date);
+      if (today >= end) { x.el.classList.add("is-done"); done++; }
+      else if (today >= x.date) { current = x; }
+      else if (!next) { next = x; }
+    });
+    function badge(x, text, cls) {
+      x.el.classList.add(cls);
+      var s = x.el.querySelector(".deck-status"); s.textContent = text; s.className = "deck-status " + cls;
+    }
+    var total = cards.length, html;
+    if (current) {
+      badge(current, "This week", "is-current");
+      html = '<span class="cp-label">This week</span><a href="#meeting-' + current.n + '">Meeting ' + current.n + " · " +
+        current.el.querySelector(".deck-title").textContent.trim() + "</a>";
+    } else if (next && done === 0) {
+      badge(next, "Up next", "is-next");
+      html = '<span class="cp-label">Starts</span><a href="#meeting-' + next.n + '">' + fmt(next.date) + "</a>";
+    } else if (next) {
+      badge(next, "Up next", "is-next");
+      html = '<span class="cp-label">Up next</span><a href="#meeting-' + next.n + '">Meeting ' + next.n + " · " + fmt(next.date) + "</a>";
+    } else {
+      html = '<span class="cp-label">Completed</span><span>All ' + total + " meetings done</span>";
+    }
+    var pos = current ? current.n : done;
+    box.innerHTML = '<div class="cp-text">' + html + '<span class="cp-count">' + pos + " / " + total + '</span></div>' +
+      '<div class="cp-bar"><span style="width:' + Math.round(100 * pos / total) + '%"></span></div>';
+    box.hidden = false;
+  })();
 </script>
+
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

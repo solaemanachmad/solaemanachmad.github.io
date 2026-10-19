@@ -51,9 +51,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b40e99cb9966fa3a1807e4b809697cfc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-a408ddfdd2a517ea7924cd8a785e2ab0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-b40e99cb9966fa3a1807e4b809697cfc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-c2168e5ac240f8525d622b5e59b96698.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-be46af9124580d03d3f77c92affaf622.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-c2168e5ac240f8525d622b5e59b96698.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -93,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-title','listing-subtitle','listing-description','listing-path','listing-code','listing-kind','listing-semester','listing-semesters','listing-order',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
       
-      searchColumns: ["listing-project","listing-website","listing-format","listing-engines","listing-language","listing-title-block-banner","listing-title","listing-subtitle","listing-code","listing-kind","listing-semester","listing-order","listing-description","listing-listing","listing-path","listing-outputHref","listing-author","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+      searchColumns: ["listing-project","listing-website","listing-format","listing-engines","listing-language","listing-title-block-banner","listing-title","listing-subtitle","listing-code","listing-kind","listing-semester","listing-start","listing-order","listing-description","listing-listing","listing-path","listing-outputHref","listing-author","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -195,6 +195,8 @@ ul.task-list li input[type="checkbox"] {
     document.head.appendChild(s);
   })();
 </script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&amp;display=swap" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
@@ -573,24 +575,30 @@ window.Quarto = {
 </header>
 
 
-<p>Courses I teach in the Internet Engineering Technology program, Vocational College, Universitas Gadjah Mada. Select a course to see its meetings and slides; tap an academic year to expand or collapse it.</p>
+<p>Courses I teach in the Internet Engineering Technology program, Vocational College, Universitas Gadjah Mada. Select a course to see its meetings and slides.</p>
 <div id="listing-courses" class="quarto-listing quarto-listing-container-custom">
-<div class="view-toolbar" role="group" aria-label="Layout" data-key="teaching" data-default="grid">
-<button type="button" class="view-btn" data-view="grid" title="Grid view">
-<i class="bi bi-grid-3x2-gap"></i> Grid
-</button>
-<button type="button" class="view-btn" data-view="list" title="List view">
-<i class="bi bi-list-ul"></i> List
-</button>
+<div class="svc-summary-bar teach-tiles">
+<div class="svc-tile">
+<i class="bi bi-journal-bookmark"></i><span class="svc-tile-num">6</span><span class="svc-tile-label">Courses</span>
+</div>
+<div class="svc-tile">
+<i class="bi bi-easel"></i><span class="svc-tile-num">3</span><span class="svc-tile-label">Lectures</span>
+</div>
+<div class="svc-tile">
+<i class="bi bi-pc-display"></i><span class="svc-tile-num">3</span><span class="svc-tile-label">Labs</span>
+</div>
+<div class="svc-tile">
+<i class="bi bi-calendar3"></i><span class="svc-tile-num">2</span><span class="svc-tile-label">Semesters</span>
+</div>
 </div>
 <details class="group-panel" open="">
 <summary class="group-title">
-<span>Academic Year 2026/2027</span><span class="group-count">2 courses</span><i class="bi bi-chevron-down group-caret"></i>
+<span>Academic Year 2026/2027 <span class="current-pill">Current</span></span><span class="group-count">2 courses</span><i class="bi bi-chevron-down group-caret"></i>
 </summary>
 <div class="course-grid">
-<div class="course-card" data-index="0" data-listing-file-modified-sort="1792382115874" data-listing-reading-time-sort="1" data-listing-word-count-sort="16">
+<div class="course-card" data-index="0" data-listing-file-modified-sort="1792386890475" data-listing-reading-time-sort="1" data-listing-word-count-sort="22">
 <div class="course-card-top">
-<p><span class="course-code">DB</span> <span class="course-kind">Lecture</span> <span class="term-tag term-odd">Odd semester</span></p>
+<span class="course-code">DB</span><span class="course-kind">Lecture</span><span class="term-tag term-odd">Odd semester</span>
 </div>
 <div class="course-card-body">
 <h3 class="anchored">
@@ -607,9 +615,9 @@ Fundamentals of relational databases: data modeling, normalization, and SQL.
 View meetings <i class="bi bi-arrow-right"></i>
 </div>
 </div>
-<div class="course-card" data-index="1" data-listing-file-modified-sort="1792382115874" data-listing-reading-time-sort="1" data-listing-word-count-sort="16">
+<div class="course-card" data-index="1" data-listing-file-modified-sort="1792386890475" data-listing-reading-time-sort="1" data-listing-word-count-sort="22">
 <div class="course-card-top">
-<p><span class="course-code">DIS</span> <span class="course-kind">Lab</span> <span class="term-tag term-odd">Odd semester</span></p>
+<span class="course-code">DIS</span><span class="course-kind">Lab</span><span class="term-tag term-odd">Odd semester</span>
 </div>
 <div class="course-card-body">
 <h3 class="anchored">
@@ -633,9 +641,9 @@ View meetings <i class="bi bi-arrow-right"></i>
 <span>Academic Year 2025/2026</span><span class="group-count">4 courses</span><i class="bi bi-chevron-down group-caret"></i>
 </summary>
 <div class="course-grid">
-<div class="course-card" data-index="2" data-listing-file-modified-sort="1792382115874" data-listing-reading-time-sort="1" data-listing-word-count-sort="16">
+<div class="course-card" data-index="2" data-listing-file-modified-sort="1792386890475" data-listing-reading-time-sort="1" data-listing-word-count-sort="22">
 <div class="course-card-top">
-<p><span class="course-code">IS2</span> <span class="course-kind">Lecture</span> <span class="term-tag term-even">Even semester</span></p>
+<span class="course-code">IS2</span><span class="course-kind">Lecture</span><span class="term-tag term-even">Even semester</span>
 </div>
 <div class="course-card-body">
 <h3 class="anchored">
@@ -652,9 +660,9 @@ Advanced topics in information and network security.
 View meetings <i class="bi bi-arrow-right"></i>
 </div>
 </div>
-<div class="course-card" data-index="3" data-listing-file-modified-sort="1792382115874" data-listing-reading-time-sort="1" data-listing-word-count-sort="16">
+<div class="course-card" data-index="3" data-listing-file-modified-sort="1792386890475" data-listing-reading-time-sort="1" data-listing-word-count-sort="22">
 <div class="course-card-top">
-<p><span class="course-code">OHS</span> <span class="course-kind">Lecture</span> <span class="term-tag term-even">Even semester</span></p>
+<span class="course-code">OHS</span><span class="course-kind">Lecture</span><span class="term-tag term-even">Even semester</span>
 </div>
 <div class="course-card-body">
 <h3 class="anchored">
@@ -671,9 +679,9 @@ Workplace health and safety principles for engineering practice.
 View meetings <i class="bi bi-arrow-right"></i>
 </div>
 </div>
-<div class="course-card" data-index="4" data-listing-file-modified-sort="1792382115874" data-listing-reading-time-sort="1" data-listing-word-count-sort="16">
+<div class="course-card" data-index="4" data-listing-file-modified-sort="1792386890475" data-listing-reading-time-sort="1" data-listing-word-count-sort="22">
 <div class="course-card-top">
-<p><span class="course-code">ND</span> <span class="course-kind">Lab</span> <span class="term-tag term-even">Even semester</span></p>
+<span class="course-code">ND</span><span class="course-kind">Lab</span><span class="term-tag term-even">Even semester</span>
 </div>
 <div class="course-card-body">
 <h3 class="anchored">
@@ -690,9 +698,9 @@ Designing, configuring, and testing computer networks in the lab.
 View meetings <i class="bi bi-arrow-right"></i>
 </div>
 </div>
-<div class="course-card" data-index="5" data-listing-file-modified-sort="1792382115874" data-listing-reading-time-sort="1" data-listing-word-count-sort="16">
+<div class="course-card" data-index="5" data-listing-file-modified-sort="1792386890475" data-listing-reading-time-sort="1" data-listing-word-count-sort="22">
 <div class="course-card-top">
-<p><span class="course-code">DBL</span> <span class="course-kind">Lab</span> <span class="term-tag term-even">Even semester</span></p>
+<span class="course-code">DBL</span><span class="course-kind">Lab</span><span class="term-tag term-even">Even semester</span>
 </div>
 <div class="course-card-body">
 <h3 class="anchored">
@@ -713,10 +721,27 @@ View meetings <i class="bi bi-arrow-right"></i>
 </details>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
-<section id="earlier-teaching" class="level2">
-<h2 class="anchored" data-anchor-id="earlier-teaching">Earlier Teaching</h2>
-<p><span class="meta">2015–2017 · Teaching Assistant · Universitas Gadjah Mada</span></p>
-<p>Laboratory sessions for Computer Networking, Network Security, Algorithms &amp; Data Structures, Computer Applications, and Fundamentals of Computer Engineering.</p>
+<section id="philosophy" class="level2">
+<h2 class="anchored" data-anchor-id="philosophy">Teaching Philosophy</h2>
+<div class="philosophy">
+<div class="philo-verse" lang="ar" dir="rtl">
+<p><span class="hemistich">إِذِ الْفَتَى حَسْبَ اعْتِقَادِهِ رُفِعْ</span><span class="verse-sep">۞</span><span class="hemistich">وَكُلُّ مَنْ لَمْ يَعْتَقِدْ لَمْ يَنْتَفِعْ</span></p>
+</div>
+<p><span class="philo-translit"><em>Idhi l-fatā ḥasba-ʿtiqādihī rufiʿ, wa-kullu man lam yaʿtaqid lam yantafiʿ.</em></span></p>
+<p><span class="philo-translation">“A learner rises in proportion to his conviction; whoever does not believe in what he learns will not benefit from it.”</span></p>
+<p><span class="philo-source">— al-ʿImrīṭī, <em>Naẓm al-ʿImrīṭī</em></span></p>
+</div>
+<p>This line from a classic poem on Arabic grammar is the heart of how I teach: students rise to the level of their conviction. My job is to help them believe that what they learn matters, and that they are able to master it.</p>
+<div class="philo-points">
+<p><span class="benefit"><i class="bi bi-lightbulb"></i><strong>Why before how</strong><span>Every topic starts from a real problem in networks, data, or systems, so students see why it is worth learning.</span></span> <span class="benefit"><i class="bi bi-tools"></i><strong>Learn by building</strong><span>Labs and small projects come before memorisation; understanding grows from making things work.</span></span> <span class="benefit"><i class="bi bi-graph-up-arrow"></i><strong>Confidence step by step</strong><span>Small wins, clear feedback, and room to ask questions turn “I can’t” into “I can”.</span></span></p>
+</div>
+<!-- Disembunyikan (saat masih mahasiswa). Hapus tanda komentar untuk menampilkan lagi.
+## Earlier Teaching
+
+[2015–2017 · Teaching Assistant · Universitas Gadjah Mada]{.meta}
+
+Laboratory sessions for Computer Networking, Network Security, Algorithms & Data Structures, Computer Applications, and Fundamentals of Computer Engineering.
+-->
 
 
 
@@ -818,7 +843,57 @@ View meetings <i class="bi bi-arrow-right"></i>
     tabs.forEach(function (t) { t.addEventListener("click", function () { show(t.dataset.sem); }); });
     show(tabs[0].dataset.sem);
   })();
+
+  // Penanda pertemuan: "This week" / "Done" / "Up next" + progres semester.
+  // Tanggal: data-date per kartu (field `date` di meetings.yml), atau `start` mata kuliah + 7 hari per pertemuan.
+  (function () {
+    var box = document.querySelector(".course-progress");
+    var cards = Array.prototype.slice.call(document.querySelectorAll(".deck-card[data-meeting]"));
+    if (!box || !cards.length) return;
+    var DAY = 864e5;
+    function parse(s) { var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(s || ""); return m ? new Date(+m[1], m[2] - 1, +m[3]) : null; }
+    var start = parse(box.dataset.start);
+    var dated = cards.map(function (c) {
+      var d = parse(c.dataset.date) || (start ? new Date(start.getTime() + (Number(c.dataset.meeting) - 1) * 7 * DAY) : null);
+      return { el: c, date: d, n: Number(c.dataset.meeting) };
+    }).filter(function (x) { return x.date; });
+    if (!dated.length) return;
+    var MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    var fmt = function (d) { return d.getDate() + " " + MON[d.getMonth()]; };
+    var today = new Date(); today.setHours(0, 0, 0, 0);
+    var current = null, next = null, done = 0;
+    dated.forEach(function (x, i) {
+      var end = i + 1 < dated.length ? dated[i + 1].date : new Date(x.date.getTime() + 7 * DAY);
+      x.el.querySelector(".deck-date").textContent = " · " + fmt(x.date);
+      if (today >= end) { x.el.classList.add("is-done"); done++; }
+      else if (today >= x.date) { current = x; }
+      else if (!next) { next = x; }
+    });
+    function badge(x, text, cls) {
+      x.el.classList.add(cls);
+      var s = x.el.querySelector(".deck-status"); s.textContent = text; s.className = "deck-status " + cls;
+    }
+    var total = cards.length, html;
+    if (current) {
+      badge(current, "This week", "is-current");
+      html = '<span class="cp-label">This week</span><a href="#meeting-' + current.n + '">Meeting ' + current.n + " · " +
+        current.el.querySelector(".deck-title").textContent.trim() + "</a>";
+    } else if (next && done === 0) {
+      badge(next, "Up next", "is-next");
+      html = '<span class="cp-label">Starts</span><a href="#meeting-' + next.n + '">' + fmt(next.date) + "</a>";
+    } else if (next) {
+      badge(next, "Up next", "is-next");
+      html = '<span class="cp-label">Up next</span><a href="#meeting-' + next.n + '">Meeting ' + next.n + " · " + fmt(next.date) + "</a>";
+    } else {
+      html = '<span class="cp-label">Completed</span><span>All ' + total + " meetings done</span>";
+    }
+    var pos = current ? current.n : done;
+    box.innerHTML = '<div class="cp-text">' + html + '<span class="cp-count">' + pos + " / " + total + '</span></div>' +
+      '<div class="cp-bar"><span style="width:' + Math.round(100 * pos / total) + '%"></span></div>';
+    box.hidden = false;
+  })();
 </script>
+
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
