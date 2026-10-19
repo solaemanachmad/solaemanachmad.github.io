@@ -95,6 +95,37 @@ def first(x):
     return (x[0] if isinstance(x, list) and x else x) or ""
 
 
+def short_venue(name, year):
+    """'2024 IEEE Region 10 Conference (TENCON)' -> 'TENCON 2024' for proceedings;
+    journals keep their full name."""
+    m = re.search(r"\(([A-Z][A-Za-z0-9&\-]{2,15})\)\s*$", name or "")
+    if m and re.search(r"conference|symposium|workshop|proceedings|congress|meeting",
+                       name, re.I):
+        acronym = m.group(1)
+        return f"{acronym} {year}" if str(year).isdigit() else acronym
+    return name
+
+
+def abstract_summary(raw, limit=320):
+    """First one or two sentences of a Crossref (JATS) abstract, or ''."""
+    if not raw:
+        return ""
+    text = re.sub(r"<[^>]+>", " ", raw)
+    text = re.sub(r"\s+", " ", text).strip()
+    text = re.sub(r"^(abstract|summary)[:.\s]+", "", text, flags=re.I)
+    sentences = re.split(r"(?<=[.!?])\s+", text)
+    out = ""
+    for sent in sentences:
+        if out and len(out) + len(sent) + 1 > limit:
+            break
+        out = (out + " " + sent).strip()
+        if len(out) > limit * 0.6:
+            break
+    if len(out) > limit:
+        out = out[:limit].rsplit(" ", 1)[0] + "…"
+    return out
+
+
 def enrich(w, m):
     """Fill a work dict with Crossref metadata `m` (keeps ORCID values as fallback)."""
     if not m:
@@ -115,7 +146,10 @@ def enrich(w, m):
         "year": year or w["year"],
         "kind": CROSSREF_KIND.get(m.get("type") or "", w["kind"]),
         "title": " ".join(str(first(m.get("title"))).split()) or w["title"],
+        "summary": abstract_summary(m.get("abstract")),
     })
+    if w["kind"] == "Conference paper":
+        w["venue"] = short_venue(w["venue"], w["year"])
     return w
 
 
@@ -171,7 +205,7 @@ def q(s):
 def to_yaml(w):
     year = w["year"] if str(w["year"]).isdigit() else q(str(w["year"]))
     lines = [
-        "# TODO: added from ORCID — write the summary, check venue, then remove this line",
+        "# Added automatically from ORCID/Crossref — review summary and venue when convenient",
         f"- year: {year}",
         f"  title: {q(w['title'])}",
     ]
@@ -188,7 +222,7 @@ def to_yaml(w):
     for k in ("volume", "issue", "pages"):
         if w.get(k):
             lines.append(f"  {k}: {q(w[k])}")
-    lines.append('  summary: ""')
+    lines.append(f"  summary: {q(w.get('summary', ''))}")
     return "\n".join(lines) + "\n"
 
 

@@ -1,11 +1,11 @@
-# Weekly check of ORCID for new works; opens a Pull Request that appends them
-# to data/publications.yml (the CV is regenerated from that file on render).
+# Setiap Senin: cek ORCID, tambahkan publikasi baru (dilengkapi dari Crossref: penulis, venue,
+# halaman, ringkasan dari abstrak) LANGSUNG ke data/publications.yml di branch main, lalu
+# menjalankan "Publish CV site" agar situs & CV ikut diperbarui. Tanpa Pull Request.
 #
-# REQUIRED one-time repo setting, otherwise the PR step fails:
-#   Settings -> Actions -> General -> Workflow permissions ->
-#   tick "Allow GitHub Actions to create and approve pull requests".
-# Note: PRs opened with GITHUB_TOKEN do not trigger other workflows; after
-# merging, the push to main triggers "Publish CV site" as usual.
+# Tidak setuju dengan entri yang ditambahkan? Edit/hapus di data/publications.yml, atau catat
+# DOI-nya di data/publications-ignore.yml agar tidak ditambahkan lagi.
+#
+# Perlu (sekali): Settings -> Actions -> General -> Workflow permissions -> "Read and write permissions".
 name: ORCID sync
 
 on:
@@ -14,8 +14,8 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: write   # commit ke main
+  actions: write    # menjalankan workflow "Publish CV site"
 
 jobs:
   sync:
@@ -30,31 +30,28 @@ jobs:
       - name: Install PyYAML
         run: pip install pyyaml
 
-      - name: Fetch new works from ORCID
-        run: python3 scripts/orcid_sync.py
+      - name: Fetch new works from ORCID (+ Crossref)
+        run: python3 scripts/orcid_sync.py | tee orcid-sync.log
 
-      - name: Open Pull Request if publications changed
-        uses: peter-evans/create-pull-request@v8
-        with:
-          branch: orcid-sync
-          delete-branch: true
-          add-paths: data/publications.yml
-          commit-message: "Add new publications from ORCID"
-          title: "New publications from ORCID"
-          body: |
-            This PR was opened automatically by the weekly **ORCID sync** workflow
-            (`scripts/orcid_sync.py`). New works found on ORCID
-            (0009-0002-9620-7411) were appended to `data/publications.yml`.
-            Works with a DOI were completed from Crossref (authors, venue,
-            publisher, pages, year, type).
+      - name: Commit new publications to main
+        id: commit
+        run: |
+          if git diff --quiet -- data/publications.yml; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No new publications." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/publications.yml
+          git commit -m "Add new publications from ORCID"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          { echo "### New publications added"; echo '```'; cat orcid-sync.log; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
 
-            **Before merging, for each new entry** (marked `# TODO: added from ORCID`):
-            - write a 1–2 sentence `summary`,
-            - optionally shorten `venue` (e.g. "TENCON 2024" instead of the full proceedings name),
-            - remove the TODO comment line.
-
-            Not your paper, or you do not want it listed? Add its DOI/title to
-            `data/publications-ignore.yml` in this PR and delete the entry.
-
-            After merging, the Publications page, the CV (web + PDF) and the
-            Google Scholar metadata are rebuilt automatically.
+      # Push dengan GITHUB_TOKEN tidak memicu workflow lain, jadi publish dijalankan manual di sini.
+      - name: Rebuild the site
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run publish.yml --ref main

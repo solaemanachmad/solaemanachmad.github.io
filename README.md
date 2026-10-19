@@ -84,9 +84,10 @@ Files and folders starting with `_` are not rendered as pages by Quarto.
 `data/publications.yml`, `data/services.yml` and `data/certificates.yml` are the only place to edit these lists.
 Before every full render, `scripts/build_cv_sections.py` (Quarto `pre-render`, needs PyYAML) regenerates
 `cv/_sections/{publications,services,certificates}.qmd` for the web CV and the PDF CV — do not edit those files by hand.
-Every Monday the **ORCID sync** workflow (`scripts/orcid_sync.py`) checks ORCID 0009-0002-9620-7411 and opens a PR
-adding any new works to `data/publications.yml`, completed from Crossref (authors, venue, publisher, pages); write the `summary` before merging
-(enable *Settings → Actions → General → Allow GitHub Actions to create and approve pull requests*).
+Every Monday the **ORCID sync** workflow (`scripts/orcid_sync.py`) checks ORCID 0009-0002-9620-7411 and adds any new works
+**directly** to `data/publications.yml` on `main` (no Pull Request), completed from Crossref: authors, short venue
+(e.g. "TENCON 2026"), publisher, pages, and a summary taken from the abstract when available. It then triggers
+"Publish CV site". Edit or delete an entry afterwards if needed; list unwanted works in `data/publications-ignore.yml`.
 Test locally with `python3 scripts/orcid_sync.py --dry-run`.
 
 ### Search engines & link checking
