@@ -1,10 +1,14 @@
 ---
-title: "Awarded the 2025 Research and Publication Grant, Vocational College UGM"
-description: "Received the Hibah Riset dan Pembuatan Artikel Publikasi 2025 from Sekolah Vokasi UGM under the Competitive cluster."
+title: "Awarded the 2026 Research and Publication Grant, Vocational College UGM"
+description: "Received the Hibah Riset dan Pembuatan Artikel Publikasi 2026 from Sekolah Vokasi UGM (Competitive cluster) for an intelligent root cause analysis system for network faults."
 date: 2026-04-01
 categories: [grant, research]
 ---
 
-In April 2026 I received the **Hibah Riset dan Pembuatan Artikel Publikasi 2025** (Research and Publication Article Grant 2025) from [Sekolah Vokasi, Universitas Gadjah Mada](https://sv.ugm.ac.id/), under the **Competitive (Kompetitif)** cluster.
+In April 2026 I received the **Hibah Riset dan Pembuatan Artikel Publikasi 2026** (Research and Publication Article Grant 2026) from [Sekolah Vokasi, Universitas Gadjah Mada](https://sv.ugm.ac.id/), under the **Competitive (Kompetitif)** cluster.
 
-<!-- Tambahkan: judul penelitian, tim, durasi, dan target luaran/publikasi. -->
+The grant funds my project **[Intelligent Root Cause Analysis System for Network Faults](../../research.qmd#project-rca-network-faults)**, which combines time-series analysis of network telemetry with a large language model to identify, and explain, the underlying cause of network faults.
+
+Students interested in contributing can find open positions and related thesis topics on the [Research](../../research.qmd#join) page.
+
+<!-- Tambahkan bila perlu: tim, durasi, dan target luaran/publikasi. -->

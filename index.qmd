@@ -1,7 +1,7 @@
 ---
 title: "About"
 description: "Achmad Solaeman, Junior Lecturer in Internet Engineering Technology at Universitas Gadjah Mada, working on deep learning, computer vision, and eye tracking."
-body-classes: description-meta-only   # deskripsi hanya untuk mesin pencari, tidak tampil di halaman
+body-classes: description-meta-only about-page   # deskripsi hanya untuk mesin pencari, tidak tampil di halaman
 listing:
   - id: news-recent
     contents: posts          # What's New = 5 tulisan terbaru di posts/
@@ -12,6 +12,10 @@ listing:
   - id: certs
     contents: data/certificates.yml
     template: _templates/compact-list.ejs
+    sort: false
+  - id: training
+    contents: data/training.yml
+    template: _templates/training-list.ejs
     sort: false
 
 # ---- Area diskusi (giscus) di kolom kanan, di bawah What's New ----
@@ -52,9 +56,8 @@ I am a junior lecturer in the [Internet Engineering Technology (Teknologi Rekaya
 :::: {.about-rest}
 ## Research Interests
 
-- Deep learning for computer vision
-- Time series classification and eye tracking
-- Medical image analysis
+- Applied artificial intelligence
+- Human-centred sensing
 - Intelligent communication systems
 
 ## Education
@@ -63,9 +66,20 @@ I am a junior lecturer in the [Internet Engineering Technology (Teknologi Rekaya
 
 **B.App.Eng. in [Internet Engineering Technology](https://tri.sv.ugm.ac.id/)**, Universitas Gadjah Mada, 2018
 
-## Certifications
+## Certifications & Training
+
+::: {.panel-tabset .cred-tabs}
+### <i class="bi bi-patch-check"></i> Certifications
 
 ::: {#certs}
+:::
+
+### <i class="bi bi-mortarboard"></i> Training
+
+::: {#training}
+:::
+
+[Full list in the CV <i class="bi bi-arrow-right"></i>](cv/index.qmd#courses-training){.news-more}
 :::
 ::::
 

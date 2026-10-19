@@ -477,7 +477,7 @@ body.view-list {
   .meta { margin-bottom: .35rem; }
   ul { margin-bottom: .6rem; }
   .year-grid {
-    display: grid; grid-template-columns: 6.5rem 1fr; gap: .75rem;
+    display: grid; grid-template-columns: 7.5rem 1fr; gap: .75rem;
     margin-bottom: .9rem;
     p { margin-bottom: .3rem; }
   }
@@ -498,7 +498,8 @@ body.view-list {
 .about-rest  { grid-area: rest; }
 @media (min-width: 1200px) {
   .about-grid {
-    grid-template-columns: minmax(0, 1fr) 290px;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    column-gap: 3rem;
     grid-template-rows: auto 1fr;
     grid-template-areas: "intro side" "rest side";
     align-items: start;
@@ -638,3 +639,304 @@ p:has(> .news-more) { margin-bottom: 0; display: flex; justify-content: space-be
 .profile-links li[hidden] { display: none !important; }
 // Halaman dengan body-classes: description-meta-only → deskripsi hanya di <meta>, tidak ditampilkan
 body.description-meta-only #title-block-header .description { display: none; }
+
+// ---------- Services: dikelompokkan per jenis peran (_templates/service-groups.ejs) ----------
+.svc-summary-bar {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: .75rem; margin: .25rem 0 .9rem;
+  > p { display: contents; }   // Quarto membungkus kotak-kotak dalam <p>
+}
+.svc-tile {
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; gap: .1rem;
+  padding: .85rem 1rem .8rem; border-radius: $radius;
+  background: $chip-bg; color: $body-color !important; text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+  i {
+    position: absolute; right: .7rem; top: .6rem;
+    font-size: 1.6rem; color: $accent; opacity: .35;
+  }
+  .svc-tile-num { font-size: 1.9rem; font-weight: 800; line-height: 1; color: $year-color; }
+  .svc-tile-label { font-size: .8rem; font-weight: 600; color: $muted-color; }
+  &:hover { transform: translateY(-2px); border-color: $accent; box-shadow: $shadow-hover; i { opacity: .8; } }
+}
+.svc-stats {
+  display: flex; flex-wrap: wrap; gap: .35rem 1.25rem;
+  font-size: .85rem; color: $muted-color; margin: 0 0 1.75rem;
+  strong { color: $year-color; }
+}
+.svc-group { margin-bottom: 2rem; scroll-margin-top: 5rem; }
+.svc-group-title {
+  display: flex; align-items: center; gap: .75rem;
+  padding-bottom: .55rem; margin-bottom: .35rem;
+  border-bottom: 2px solid $accent;
+  .svc-group-icon {
+    flex: 0 0 auto; width: 2.2rem; height: 2.2rem; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: $chip-bg; color: $accent; font-size: 1.05rem;
+  }
+  .svc-group-text { flex: 1; display: flex; flex-direction: column; line-height: 1.2; }
+  .svc-group-label {
+    font-size: .9rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: $year-color;
+  }
+  .svc-group-sub { font-size: .78rem; color: $muted-color; margin-top: .1rem; }
+  .svc-count {
+    font-size: .75rem; font-weight: 700;
+    background: $chip-bg; color: $year-color; border-radius: 999px; padding: .1rem .6rem;
+  }
+}
+.svc-list { list-style: none; padding: 0; margin: 0; }
+.svc-item {
+  display: flex; align-items: baseline; gap: 1rem;
+  padding: .7rem .25rem .7rem 1rem; border-left: 3px solid $rule-color;
+  transition: border-color .15s ease, background-color .15s ease;
+  & + .svc-item { border-top: 1px dashed $rule-color; }
+  &:hover { border-left-color: $accent; background: rgba($accent, .05); }
+  p { margin: 0; }
+}
+.svc-extra { display: none; }
+.svc-open .svc-extra { display: flex; }
+.svc-main { flex: 1; min-width: 0; }
+.svc-role { display: block; font-weight: 600; line-height: 1.35; }
+.svc-venue {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .3rem .6rem;
+  font-size: .9rem; color: $muted-color; margin-top: .15rem;
+  a { color: $muted-color; text-decoration-color: $rule-color; }
+  a:hover { color: $link-hover-color; }
+}
+.svc-kind {
+  font-size: .66rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
+  background: $chip-bg; color: $year-color; padding: .05rem .45rem; border-radius: .3rem;
+}
+.svc-summary { display: block; font-size: .88rem; margin-top: .25rem; }
+.svc-period {
+  flex: 0 0 auto; font-size: .8rem; font-weight: 700; color: $year-color; white-space: nowrap;
+  background: $chip-bg; border-radius: 999px; padding: .1rem .6rem;
+}
+.svc-more {
+  margin: .6rem 0 0 1rem; border: 1px dashed $rule-color; background: transparent;
+  color: $link-color; font-size: .82rem; font-weight: 600;
+  padding: .25rem .9rem; border-radius: 999px; cursor: pointer;
+  &:hover { border-color: $accent; }
+}
+@media (max-width: 575.98px) {
+  .svc-summary-bar { grid-template-columns: repeat(2, 1fr); }
+  .svc-item { flex-direction: column; gap: .3rem; }
+  .svc-open .svc-extra { display: flex; }
+  .svc-period { order: -1; }
+}
+
+// Tab Certifications / Training di About
+.cred-tabs {
+  .nav-tabs { border-bottom: 1px solid $rule-color; gap: .25rem; }
+  .nav-link {
+    border: 0 !important; border-bottom: 2px solid transparent !important;
+    color: $muted-color; font-weight: 600; font-size: .9rem; padding: .45rem .9rem;
+    background: none !important;
+    i { color: $accent; margin-right: .2rem; }
+  }
+  .nav-link.active { color: $year-color; border-bottom-color: $accent !important; }
+  .tab-content { border: 0; padding: .25rem 0 0; }
+}
+.training-list i { color: $accent; }
+
+// ---------- Research: bidang, proyek, posisi, manfaat (research.qmd) ----------
+.research-areas, .benefit-grid {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .75rem; margin: 1rem 0 1rem;
+  > p { display: contents; }
+}
+.area-tile, .benefit {
+  display: flex; flex-direction: column; gap: .2rem;
+  padding: .9rem 1rem; border-radius: $radius; background: $chip-bg;
+  i { font-size: 1.35rem; color: $accent; margin-bottom: .2rem; }
+  strong { color: $year-color; font-size: .95rem; line-height: 1.25; }
+  span { font-size: .8rem; color: $muted-color; line-height: 1.35; }
+}
+.benefit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
+.benefit {
+  display: grid; grid-template-columns: auto 1fr; column-gap: .8rem; row-gap: .15rem;
+  background: transparent; border: 1px dashed $rule-color;
+  i { grid-row: span 2; margin: 0; }
+}
+@media (max-width: 767.98px) {
+  .research-areas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .benefit-grid { grid-template-columns: 1fr; }
+}
+.research-jump {
+  display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 1rem;
+  > p { display: contents; }
+  a {
+    font-size: .82rem; font-weight: 600; text-decoration: none;
+    padding: .25rem .8rem; border-radius: 999px; border: 1px solid $rule-color; color: $year-color;
+    i { color: $accent; margin-right: .2rem; }
+    &:hover { border-color: $accent; background: $chip-bg; }
+  }
+}
+#research-projects, #join, #thesis-topics, #how-to-apply, .project-card { scroll-margin-top: 5rem; }
+
+.project-list { display: flex; flex-direction: column; gap: 1rem; margin: .5rem 0 1rem; }
+.project-card {
+  position: relative; border: 1px solid $rule-color; border-left: 4px solid $accent;
+  border-radius: $radius; padding: 1rem 1.2rem 1rem; background: $body-bg;
+  transition: box-shadow .15s ease;
+  &:hover { box-shadow: $shadow-hover; }
+  &.project-completed { border-left-color: $rule-color; }
+  p { margin: 0; }
+}
+.project-head {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .45rem .8rem; margin-bottom: .5rem;
+}
+.project-status {
+  font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
+  padding: .1rem .6rem; border-radius: 999px;
+  &::before { content: "\25CF"; margin-right: .3rem; font-size: .65rem; vertical-align: .08em; }
+  &.project-status-ongoing   { background: rgba($accent, .18); color: $year-color; }
+  &.project-status-planned   { background: $chip-bg; color: $link-color; }
+  &.project-status-completed { background: transparent; color: $muted-color; border: 1px solid $rule-color; }
+}
+.project-period { font-size: .8rem; color: $muted-color; i { margin-right: .15rem; } }
+.project-recruiting {
+  margin-left: auto; font-size: .78rem; font-weight: 700; text-decoration: none;
+  padding: .15rem .7rem; border-radius: 999px; background: $accent; color: #fff !important;
+  animation: pulse-ring 2.4s ease-out infinite;
+}
+@keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 rgba($accent, .5); } 70%, 100% { box-shadow: 0 0 0 8px rgba($accent, 0); } }
+@media (prefers-reduced-motion: reduce) { .project-recruiting { animation: none; } }
+.project-title { font-size: 1.2rem !important; font-weight: 700; line-height: 1.3; margin: 0 0 .6rem !important; color: $year-color; }
+.project-funding {
+  display: flex; gap: .7rem; align-items: flex-start;
+  background: $chip-bg; border-radius: .5rem; padding: .6rem .8rem; margin-bottom: .7rem;
+  > i { font-size: 1.3rem; color: $accent; line-height: 1; margin-top: .1rem; }
+  font-size: .88rem; line-height: 1.35;
+  .project-funding-label { color: $muted-color; font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; display: block; }
+  strong a { color: inherit; text-decoration: none; }
+  .project-funding-meta { display: block; color: $muted-color; font-size: .82rem; }
+}
+.project-summary { font-size: .93rem; margin-bottom: .6rem !important; }
+.project-links {
+  display: flex; flex-wrap: wrap; gap: .3rem 1.1rem; margin-top: .2rem;
+  a { font-size: .84rem; font-weight: 600; text-decoration: none; i { color: $accent; margin-right: .15rem; } }
+}
+
+.position-list { display: flex; flex-direction: column; gap: .7rem; margin: .5rem 0; }
+.position-card {
+  display: flex; align-items: center; gap: 1rem;
+  border: 1px solid $accent; border-radius: $radius; padding: .85rem 1rem; background: rgba($accent, .05);
+  p { margin: 0; }
+}
+.position-main { flex: 1; min-width: 0; }
+.position-project { font-size: .75rem; text-transform: uppercase; letter-spacing: .04em;
+  a { color: $muted-color; text-decoration: none; } }
+.position-role { font-size: 1rem !important; font-weight: 700; margin: .1rem 0 .3rem !important; }
+.position-tasks { font-size: .88rem; }
+.position-meta { display: flex; flex-wrap: wrap; gap: .2rem 1rem; margin-top: .35rem; font-size: .8rem; color: $muted-color;
+  i { color: $accent; margin-right: .15rem; } }
+.position-apply {
+  flex: 0 0 auto; font-weight: 700; font-size: .88rem; text-decoration: none;
+  padding: .45rem 1.1rem; border-radius: 999px; background: $accent; color: #fff !important;
+  &:hover { filter: brightness(1.08); }
+}
+.position-none {
+  display: flex; gap: .8rem; align-items: flex-start;
+  border: 1px dashed $rule-color; border-radius: $radius; padding: .85rem 1rem; font-size: .9rem;
+  > i { font-size: 1.3rem; color: $accent; }
+  p { margin: 0; }
+}
+.topic-project {
+  display: inline-flex; align-items: center; gap: .3rem; align-self: flex-start;
+  font-size: .78rem; font-weight: 600; text-decoration: none; margin: -.2rem 0 .6rem;
+  i { color: $accent; }
+}
+@media (max-width: 575.98px) {
+  .position-card { flex-direction: column; align-items: flex-start; }
+  .project-recruiting { margin-left: 0; }
+}
+
+
+// ---------- Tata letak halaman di layar lebar (≥1200px), berlaku untuk SEMUA halaman ----------
+// Grid bawaan Quarto menyisakan celah kosong lebar di kiri kolom isi. Grid itu diganti:
+//   [ kolom isi (rata kiri, jarak 2.5rem dari kolom profil) ][ daftar isi/TOC tulisan, bila ada ]
+// Halaman biasa dibatasi 900px agar baris teks tetap nyaman dibaca; About memakai lebar penuh
+// karena punya kolom kanan sendiri (What's New & Discussion).
+@media (min-width: 1200px) {
+  #quarto-content {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    align-items: start;
+  }
+  #quarto-content > main.content {
+    display: block !important;
+    grid-column: 1 / 2 !important; grid-row: 1;
+    justify-self: start; width: 100%;
+    min-width: 0; max-width: 900px;
+    padding-left: 2.5rem;
+  }
+  body.about-page #quarto-content > main.content { max-width: none; }
+  #quarto-content > #quarto-margin-sidebar {
+    grid-column: 2 / 3 !important; grid-row: 1;
+    width: 230px; margin-left: 2.5rem;
+    position: sticky; top: 5rem;
+  }
+  #quarto-content > #quarto-sidebar { display: none; }
+}
+
+// ---------- Publications (_templates/pub-list.ejs) ----------
+.pub-head { margin-bottom: 1.25rem; .pub-stats { margin-bottom: .6rem; } }
+.pub-year { display: grid; grid-template-columns: 5rem minmax(0, 1fr); gap: 0 1rem; margin-bottom: 1.2rem; }
+.pub-year[hidden] { display: none; }
+.pub-year-label {
+  font-size: 1.15rem; font-weight: 800; color: $year-color; padding-top: .55rem;
+  border-top: 2px solid $accent;
+}
+.pub-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid $rule-color; }
+.pub-item {
+  padding: .75rem 0 .8rem; border-bottom: 1px dashed $rule-color;
+  &[hidden] { display: none; }
+  p { margin: 0; }
+}
+.pub-title {
+  font-weight: 600; font-size: 1.02rem; line-height: 1.35; color: $year-color;
+  a { color: inherit; font-weight: inherit; text-decoration: none; }
+  a:hover { color: $link-hover-color; text-decoration: underline; }
+}
+.pub-authors { font-size: .9rem; margin-top: .2rem; strong { color: $year-color; } }
+.pub-venue {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .2rem .4rem;
+  font-size: .85rem; color: $muted-color; margin-top: .15rem;
+}
+.pub-kind {
+  margin-left: .35rem; font-size: .66rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
+  padding: .05rem .45rem; border-radius: .3rem; background: $chip-bg; color: $year-color;
+  &.pub-kind-journal { background: rgba($accent, .2); }
+}
+.pub-actions { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .5rem; }
+.pub-btn {
+  display: inline-flex; align-items: center; gap: .25rem;
+  font-size: .76rem; font-weight: 600; text-decoration: none; cursor: pointer;
+  padding: .12rem .6rem; border-radius: 999px;
+  border: 1px solid $rule-color; background: transparent; color: $year-color !important;
+  i { color: $accent; }
+  &:hover, &.active { border-color: $accent; background: $chip-bg; }
+}
+.pub-panel {
+  margin-top: .55rem; padding: .7rem .85rem; border-radius: .5rem;
+  background: $chip-bg; font-size: .88rem;
+  &[hidden] { display: none; }
+}
+.pub-cite-row { display: flex; align-items: center; justify-content: space-between; margin: .1rem 0 .3rem; }
+.pub-cite-row + .pub-cite-text + .pub-cite-row { margin-top: .7rem; }
+.pub-cite-label { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: $muted-color; }
+.pub-copy {
+  border: 0; background: $body-bg; color: $link-color; font-size: .74rem; font-weight: 600;
+  padding: .1rem .55rem; border-radius: 999px; cursor: pointer;
+}
+.pub-bib {
+  margin: 0; padding: .5rem .65rem; border-radius: .4rem; background: $body-bg; color: $body-color;
+  font-size: .76rem; white-space: pre-wrap; word-break: break-word; border: 0;
+}
+@media (max-width: 575.98px) {
+  .pub-year { grid-template-columns: 1fr; }
+  .pub-year-label { border-top: 0; padding-top: 0; margin-bottom: .3rem; }
+}

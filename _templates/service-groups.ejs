@@ -1,0 +1,42 @@
+<%
+// Services per jenis peran (field `role` di data/services.yml), diurutkan mengikuti Tri Dharma:
+// layanan profesional → pengabdian → narasumber → institusi → keanggotaan.
+// Ringkasan (kotak angka) di atas bisa diklik untuk lompat ke kelompoknya.
+// Kelompok dengan lebih dari SHOW entri dilipat; tombol "Show all" membuka sisanya.
+const SHOW = 5;
+const GROUPS = [
+  { key: "program-committee", label: "Program Committee",   sub: "Technical program & scientific committees", icon: "bi-people" },
+  { key: "peer-review",       label: "Peer Review",         sub: "Reviewer for journals and conferences",     icon: "bi-journal-check" },
+  { key: "editorial",         label: "Editorial",           sub: "Editor & editorial board roles",            icon: "bi-pencil-square" },
+  { key: "community-service", label: "Community Service",   sub: "Pengabdian kepada Masyarakat, KKN",         icon: "bi-heart" },
+  { key: "talks",             label: "Invited Talks & Workshops", sub: "Speaker, trainer, judge",             icon: "bi-mic" },
+  { key: "institutional",     label: "Institutional Service", sub: "Committees, accreditation, laboratory",   icon: "bi-building" },
+  { key: "membership",        label: "Memberships",         sub: "Professional associations",                 icon: "bi-person-badge" },
+  { key: "other",             label: "Other Service",       sub: "",                                          icon: "bi-award" },
+];
+const known = (r) => GROUPS.some(g => g.key === r) ? r : "other";
+const rank = (y) => isNaN(Number(y)) ? 1e9 : Number(y);
+const esc = (t) => String(t ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const groups = GROUPS.map(g => ({ ...g, items: items
+  .filter(i => known(i.role) === g.key)
+  .sort((a, b) => rank(b.year) - rank(a.year)) }))
+  .filter(g => g.items.length);
+const venues = new Set(items.map(i => i.venue).filter(Boolean)).size;
+const years = items.map(i => Number(i.year)).filter(n => !isNaN(n));
+const since = items.map(i => Number(i.since)).filter(n => !isNaN(n)).concat(years);
+%>
+<div class="svc-summary-bar">
+<% for (const g of groups) { %><a class="svc-tile" href="#svc-<%= g.key %>"><i class="bi <%= g.icon %>"></i><span class="svc-tile-num"><%= g.items.length %></span><span class="svc-tile-label"><%= g.label %></span></a><% } %>
+</div>
+<p class="svc-stats"><span><strong><%= items.length %></strong> activit<%= items.length === 1 ? "y" : "ies" %></span><span><strong><%= venues %></strong> venue<%= venues === 1 ? "" : "s" %></span><% if (since.length) { %><span>active since <strong><%= Math.min(...since) %></strong></span><% } %></p>
+<% for (const g of groups) { %>
+<section class="svc-group" id="svc-<%= g.key %>">
+<div class="svc-group-title" role="heading" aria-level="2"><span class="svc-group-icon"><i class="bi <%= g.icon %>"></i></span><span class="svc-group-text"><span class="svc-group-label"><%= g.label %></span><% if (g.sub) { %><span class="svc-group-sub"><%= g.sub %></span><% } %></span><span class="svc-count"><%= g.items.length %></span></div>
+<ul class="svc-list">
+<% g.items.forEach((i, n) => { %>
+<li class="svc-item<%= n >= SHOW ? ' svc-extra' : '' %>"><div class="svc-main"><span class="svc-role"><%= esc(i.title) %></span><span class="svc-venue"><% if (i.url) { %><a href="<%- i.url %>"><%= esc(i.venue) %></a><% } else { %><%= esc(i.venue) %><% } %><% if (i.kind) { %><span class="svc-kind"><%= esc(i.kind) %></span><% } %></span><% if (i.summary) { %><span class="svc-summary"><%= esc(i.summary) %></span><% } %></div><span class="svc-period"><%= esc(i.period || i.year) %></span></li>
+<% }) %>
+</ul>
+<% if (g.items.length > SHOW) { %><button type="button" class="svc-more" data-more="Show all (<%= g.items.length %>)" data-less="Show fewer">Show all (<%= g.items.length %>)</button><% } %>
+</section>
+<% } %>

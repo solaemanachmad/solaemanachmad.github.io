@@ -1,0 +1,23 @@
+<%
+// Proyek riset dari data/projects.yml. status: ongoing | completed | planned | draft (disembunyikan).
+const esc = (t) => String(t ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const LABEL = { ongoing: "Ongoing", completed: "Completed", planned: "Planned" };
+const st = (p) => LABEL[String(p.status || "ongoing").toLowerCase()] ? String(p.status || "ongoing").toLowerCase() : "ongoing";
+const order = { ongoing: 0, planned: 1, completed: 2 };
+const list = items.filter(p => String(p.status || "").toLowerCase() !== "draft")
+  .sort((a, b) => order[st(a)] - order[st(b)]);
+const open = (p) => (p.positions || []).filter(x => String(x.status || "").toLowerCase() === "open");
+%>
+<% if (!list.length) { %><p class="topic-empty">Project descriptions are coming soon.</p><% } %>
+<div class="project-list">
+<% for (const p of list) { const s = st(p); const pos = open(p); const slots = pos.reduce((n, x) => n + (Number(x.slots) || 1), 0); const f = p.funding || null; %>
+<article class="project-card project-<%= s %>" id="project-<%= esc(p.id) %>">
+<div class="project-head"><span class="project-status project-status-<%= s %>"><%= LABEL[s] %></span><% if (p.period) { %><span class="project-period"><i class="bi bi-calendar3"></i> <%= esc(p.period) %></span><% } %><% if (pos.length) { %><a class="project-recruiting" href="#join"><i class="bi bi-person-plus"></i> Recruiting · <%= slots %> position<%= slots === 1 ? "" : "s" %></a><% } %></div>
+<h3 class="project-title"><%= esc(p.title) %></h3>
+<% if (f) { %><div class="project-funding"><i class="bi bi-award"></i><div><span class="project-funding-label">Funded by</span> <strong><% if (f.url) { %><a href="<%- f.url %>"><%= esc(f.name) %></a><% } else { %><%= esc(f.name) %><% } %></strong><span class="project-funding-meta"><%= esc([f.funder, f.scheme].filter(Boolean).join(" · ")) %></span></div></div><% } %>
+<% if (p.summary) { %><p class="project-summary"><%= esc(p.summary) %></p><% } %>
+<% if (p.tags && p.tags.length) { %><ul class="topic-tags"><% for (const t of p.tags) { %><li><%= esc(t) %></li><% } %></ul><% } %>
+<div class="project-links"><% for (const o of (p.outputs || [])) { %><a href="<%- o.url %>"><i class="bi bi-file-earmark-text"></i> <%= esc(o.label) %></a><% } %><% if (p.post) { %><a href="<%- p.post %>"><i class="bi bi-megaphone"></i> Announcement</a><% } %><a href="#thesis-topics"><i class="bi bi-mortarboard"></i> Related thesis topics</a></div>
+</article>
+<% } %>
+</div>

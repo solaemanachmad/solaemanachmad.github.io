@@ -1,0 +1,51 @@
+# Proyek riset yang Anda pimpin (sering berbasis hibah) — bagian "Research Projects" di halaman Research.
+# Mahasiswa dapat bergabung sebagai asisten riset lewat daftar `positions`.
+#
+# Field:
+#   id:        kode singkat unik (huruf kecil-tanda hubung), dipakai untuk link #project-<id>
+#              dan untuk menautkan topik TA (field `project:` di data/topics.yml)
+#   title:     judul proyek
+#   status:    ongoing | completed | planned | draft (draft = tidak ditampilkan)
+#   period:    mis. "2026" atau "2026–2027"
+#   summary:   2–3 kalimat: masalah, pendekatan, target
+#   tags:      kata kunci huruf kecil
+#   funding:   (opsional) nama hibah, pemberi dana, skema/klaster
+#     name / funder / scheme / url
+#   outputs:   (opsional) daftar luaran: - {label: "...", url: "..."}  (paper, dataset, kode, post)
+#   post:      (opsional) link ke post terkait, mis. "posts/2026-04-01-hibah-riset-sv-ugm/"
+#   positions: (opsional) posisi untuk mahasiswa:
+#     - role: "Data Engineer (network telemetry)"
+#       status: open | closed | draft   (open = tampil di "Join a Project", draft = tersembunyi)
+#       slots: 2
+#       commitment: "±8 hours/week, 1 semester"
+#       tasks: "Collect and label network fault logs; build the time-series pipeline."
+#       skills: "Python, Linux, basic networking"
+#
+# Manfaat bagi mahasiswa (ditulis di halaman): peluang co-author publikasi & bagian proyek dapat menjadi Tugas Akhir.
+
+- id: rca-network-faults
+  title: "Intelligent Root Cause Analysis System for Network Faults"
+  status: ongoing
+  period: "2026"
+  summary: "When a network fails, operators face a flood of alarms and metrics. This project treats fault identification as a time-series classification problem: models learn to recognise the type of fault from network telemetry, and a large language model helps turn the result into an explanation operators can act on."
+  tags: [fault identification, time-series classification, network telemetry, large language model]
+  funding:
+    name: "Hibah Riset dan Pembuatan Artikel Publikasi 2026"
+    funder: "Sekolah Vokasi, Universitas Gadjah Mada"
+    url: "https://sv.ugm.ac.id/"
+    scheme: "Competitive cluster"
+  post: "posts/2026-04-01-hibah-riset-sv-ugm/"
+  positions:
+    # CONTOH — ubah status ke "open" bila memang sedang mencari mahasiswa
+    - role: "Research Assistant — network telemetry & data pipeline"
+      status: draft
+      slots: 1
+      commitment: "±8 hours/week, one semester"
+      tasks: "Collect and label network fault scenarios in the lab, then build the time-series data pipeline."
+      skills: "Python, Linux, basic computer networking"
+    - role: "Research Assistant — LLM-based analysis"
+      status: draft
+      slots: 1
+      commitment: "±8 hours/week, one semester"
+      tasks: "Prototype prompts and retrieval for explaining detected anomalies; evaluate explanations with network operators."
+      skills: "Python, basic machine learning, interest in LLMs"

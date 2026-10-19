@@ -24,6 +24,7 @@ const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(
 <% if (item.summary) { %><p class="topic-summary"><%= esc(item.summary) %></p><% } %>
 <% if (tags.length) { %><ul class="topic-tags"><% for (const t of tags) { %><li><%= esc(t) %></li><% } %></ul><% } %>
 <% if (item.skills) { %><p class="topic-skills"><i class="bi bi-tools"></i> <span><strong>Skills:</strong> <%= esc(item.skills) %></span></p><% } %>
+<% if (item.project) { %><a class="topic-project" href="#project-<%= esc(item.project) %>"><i class="bi bi-diagram-3"></i> Part of a research project</a><% } %>
 <% if (st === "available") { %><a class="topic-contact" href="mailto:achmad.solaeman@ugm.ac.id?subject=<%= enc('Thesis topic: ' + item.title) %>"><i class="bi bi-envelope"></i> Discuss this topic</a><% } %>
 </article>
 <% } %>

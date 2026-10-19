@@ -1,14 +1,67 @@
-# Daftar layanan akademik untuk halaman Services (dikelompokkan per `year`).
-# Field: year, title (peran), venue, url, kind (Conference / Journal / ...), summary (opsional)
+# Layanan akademik untuk halaman Services (dikelompokkan per jenis peran `role`).
 # Catatan: file ini satu-satunya sumber. cv/_sections/services.qmd (CV PDF & halaman CV) dibuat
 #   otomatis dari file ini oleh scripts/build_cv_sections.py saat render — jangan edit file .qmd itu.
-- year: 2026
+#
+# Field:
+#   role:    kelompok, salah satu dari (urutan tampil mengikuti daftar ini):
+#              program-committee  TPC / scientific committee konferensi
+#              peer-review        reviewer jurnal / konferensi
+#              editorial          editor, editorial board, guest editor
+#              community-service  Pengabdian kepada Masyarakat (PkM), DPL KKN, pelatihan untuk sekolah/UMKM/desa
+#              talks              narasumber, pemateri workshop, juri lomba, moderator
+#              institutional      panitia prodi/fakultas/universitas, tim akreditasi, koordinator lab, dosen wali
+#              membership         keanggotaan asosiasi (IEEE, APTIKOM, dll.)
+#              other              lainnya
+#   title:   nama peran, mis. "Reviewer", "DPL KKN-PPM UGM", "Invited Speaker"
+#   venue:   jurnal / konferensi / lembaga / lokasi;   url: link (opsional)
+#   kind:    label kecil, mis. Journal, Conference, PkM, KKN, Workshop, Faculty
+#   year:    tahun (angka) atau "Ongoing" — untuk urutan (terbaru di atas)
+#   period:  teks periode yang tampil, mis. "2024–present" (opsional; bawaan = year)
+#   since:   tahun mulai (angka, opsional) — dipakai untuk "active since"
+#   summary: catatan singkat 1 kalimat (opsional)
+#
+# Tips agar tetap rapi walau entri banyak:
+#   - Satu baris per venue, bukan per tahun: reviewer IEEE Access 3 tahun → period: "2024–present".
+#   - Kelompok dengan > 5 entri otomatis dilipat ("Show all").
+#
+# Contoh:
+# - role: community-service
+#   year: 2026
+#   title: "Field Supervisor (DPL), KKN-PPM UGM"
+#   venue: "Kab. Gunungkidul, D.I. Yogyakarta"
+#   kind: "KKN"
+#   summary: "Supervised 30 students in a digital literacy and village information system program."
+# - role: talks
+#   year: 2026
+#   title: "Invited Speaker — Deep Learning for Eye Tracking"
+#   venue: "Workshop name, Organizer"
+#   kind: "Workshop"
+# - role: membership
+#   year: "Ongoing"
+#   since: 2025
+#   period: "2025–present"
+#   title: "Member"
+#   venue: "IEEE"
+#   url: "https://www.ieee.org/"
+#   kind: "Association"
+
+- role: program-committee
+  year: 2026
   title: "Technical Program Committee Member"
   venue: "DELCON 2026, BITS Pilani"
   url: "https://www.bits-pilani.ac.in/delcon2026/tpc-members/"
   kind: "Conference"
-- year: "Ongoing"
+- role: peer-review
+  year: "Ongoing"
+  period: "Ongoing"   # ganti dengan mis. "2025–present" bila tahun mulainya diketahui
   title: "Reviewer"
   venue: "Journal of Internet and Software Engineering (JISE)"
   url: "https://jurnal.ugm.ac.id/v3/JISE/"
   kind: "Journal"
+- role: community-service
+  year: 2026
+  title: "Community Service Team — IoT-based Smart School Learning for Vocational High School Students"
+  venue: "SMK Negeri 2 Depok, Sleman · with PT Lifemedia Yogyakarta"
+  url: "https://tedi.sv.ugm.ac.id/id/2026/08/20/dtedi-sv-ugm-dan-pt-lifemedia-kembangkan-pembelajaran-iot-untuk-perkuat-kompetensi-siswa-smk/"
+  kind: "PkM"
+  summary: "A community service program by the Department of Electrical Engineering and Informatics (DTEDI), Vocational College UGM, delivering an IoT Smart School training module aligned with Kurikulum Merdeka, a lab-scale trainer kit, and a project-based workshop for students."

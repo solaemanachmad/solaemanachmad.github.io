@@ -1,0 +1,57 @@
+<%
+// Daftar publikasi (data/publications.yml): per tahun, terbaru di atas.
+// Nama sendiri ditebalkan; tombol DOI, Summary (lipat), dan Cite (BibTeX + teks sitasi, bisa disalin).
+const ME = /solaeman/i;
+const esc = (t) => String(t ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const cat = (k) => /conference/i.test(k || "") ? "conference" : (/journal/i.test(k || "") ? "journal" : "other");
+const authorsOf = (p) => Array.isArray(p.authors) ? p.authors : (p.authors ? String(p.authors).split(/\s*,\s*/) : []);
+const rank = (y) => isNaN(Number(y)) ? 1e9 : Number(y);
+const list = [...items].sort((a, b) => rank(b.year) - rank(a.year));
+const years = [];
+for (const p of list) { const y = String(p.year ?? ""); let g = years.find(x => x.y === y); if (!g) years.push(g = { y, items: [] }); g.items.push(p); }
+const counts = { journal: 0, conference: 0, other: 0 };
+list.forEach(p => counts[cat(p.kind)]++);
+const nums = list.map(p => Number(p.year)).filter(n => !isNaN(n));
+const last = (n) => { const parts = String(n).trim().split(/\s+/); return parts[parts.length - 1]; };
+const initials = (n) => { const parts = String(n).trim().split(/\s+/); return parts.slice(0, -1).map(x => x[0] + ".").join(" ") + " " + last(n); };
+const bibAuthor = (n) => { const parts = String(n).trim().split(/\s+/); return last(n) + ", " + parts.slice(0, -1).join(" "); };
+function bibtex(p) {
+  const a = authorsOf(p);
+  const first = (String(p.title).match(/[A-Za-z]+/g) || ["paper"]).find(w => w.length > 3) || "paper";
+  const key = (a.length ? last(a[0]) : "solaeman").toLowerCase() + (p.year || "") + first.toLowerCase();
+  const conf = cat(p.kind) === "conference";
+  const f = [["title", "{" + p.title + "}"], ["author", a.map(bibAuthor).join(" and ")],
+    [conf ? "booktitle" : "journal", p.venue], ["publisher", p.publisher], ["year", p.year],
+    ["volume", p.volume], ["number", p.issue], ["pages", p.pages ? String(p.pages).replace(/-/, "--") : ""], ["doi", p.doi]]
+    .filter(([, v]) => v !== undefined && v !== null && String(v) !== "");
+  return "@" + (conf ? "inproceedings" : "article") + "{" + key + ",\n" + f.map(([k, v]) => "  " + k + " = {" + v + "}").join(",\n") + "\n}";
+}
+function plain(p) {
+  const a = authorsOf(p).map(initials);
+  const au = a.length > 1 ? a.slice(0, -1).join(", ") + ", and " + a[a.length - 1] : (a[0] || "");
+  return [au + ', "' + p.title + '," ' + (p.venue || ""), p.volume ? "vol. " + p.volume : "", p.pages ? "pp. " + p.pages : "", p.year, p.doi ? "doi: " + p.doi : ""]
+    .filter(Boolean).join(", ") + ".";
+}
+let n = 0;
+%>
+<div class="pub-head">
+<p class="svc-stats pub-stats"><span><strong><%= list.length %></strong> publication<%= list.length === 1 ? "" : "s" %></span><% if (counts.journal) { %><span><strong><%= counts.journal %></strong> journal</span><% } %><% if (counts.conference) { %><span><strong><%= counts.conference %></strong> conference</span><% } %><% if (counts.other) { %><span><strong><%= counts.other %></strong> other</span><% } %><% if (nums.length) { %><span><%= Math.min(...nums) === Math.max(...nums) ? Math.min(...nums) : Math.min(...nums) + "–" + Math.max(...nums) %></span><% } %></p>
+<div class="topic-filter pub-filter" role="group" aria-label="Filter by type"><button type="button" class="topic-filter-btn active" data-cat="all">All</button><% for (const [k, label] of [["journal", "Journal"], ["conference", "Conference"], ["other", "Other"]]) { if (counts[k]) { %><button type="button" class="topic-filter-btn" data-cat="<%= k %>"><%= label %> <span class="topic-count"><%= counts[k] %></span></button><% } } %></div>
+</div>
+<% for (const g of years) { %>
+<section class="pub-year" data-year="<%= esc(g.y) %>">
+<div class="pub-year-label" role="heading" aria-level="2"><%= esc(g.y) %></div>
+<ol class="pub-list">
+<% for (const p of g.items) { n++; const a = authorsOf(p); const id = "pub-" + n; %>
+<li class="pub-item" data-cat="<%= cat(p.kind) %>">
+<div class="pub-title"><% if (p.url) { %><a href="<%- p.url %>"><%= esc(p.title) %></a><% } else { %><%= esc(p.title) %><% } %></div>
+<% if (a.length) { %><div class="pub-authors"><%= a.map(x => ME.test(x) ? "<strong>" + esc(x) + "</strong>" : esc(x)).join(", ") %></div><% } %>
+<div class="pub-venue"><em><%= esc(p.venue) %></em><%= esc([p.publisher, p.volume ? "vol. " + p.volume : "", p.pages ? "pp. " + p.pages : ""].filter(Boolean).map(x => " · " + x).join("")) %><span class="pub-kind pub-kind-<%= cat(p.kind) %>"><%= esc(p.kind || "Other") %></span></div>
+<div class="pub-actions"><% if (p.doi) { %><a class="pub-btn" href="https://doi.org/<%- p.doi %>"><i class="bi bi-link-45deg"></i> DOI</a><% } %><% if (p.summary) { %><button type="button" class="pub-btn" data-toggle="<%= id %>-sum" aria-expanded="false"><i class="bi bi-text-paragraph"></i> Summary</button><% } %><button type="button" class="pub-btn" data-toggle="<%= id %>-cite" aria-expanded="false"><i class="bi bi-quote"></i> Cite</button></div>
+<% if (p.summary) { %><div class="pub-panel" id="<%= id %>-sum" hidden><%= esc(p.summary) %></div><% } %>
+<div class="pub-panel pub-cite" id="<%= id %>-cite" hidden><div class="pub-cite-row"><span class="pub-cite-label">Citation (IEEE)</span><button type="button" class="pub-copy" data-copy="<%= id %>-txt"><i class="bi bi-clipboard"></i> Copy</button></div><div class="pub-cite-text" id="<%= id %>-txt"><%= esc(plain(p)) %></div><div class="pub-cite-row"><span class="pub-cite-label">BibTeX</span><button type="button" class="pub-copy" data-copy="<%= id %>-bib"><i class="bi bi-clipboard"></i> Copy</button></div><pre class="pub-bib" id="<%= id %>-bib"><%= esc(bibtex(p)) %></pre></div>
+</li>
+<% } %>
+</ol>
+</section>
+<% } %>

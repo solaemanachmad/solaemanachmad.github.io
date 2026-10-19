@@ -1,26 +1,66 @@
 ---
 title: "Research"
-description: "Research in deep learning for computer vision and time series classification, plus open final-project topics for Internet Engineering Technology students."
+description: "Research projects, open research-assistant positions, and final-project topics in deep learning, time series, and network intelligence by Achmad Solaeman."
 body-classes: description-meta-only   # deskripsi hanya untuk mesin pencari, tidak tampil di halaman
 listing:
-  id: topics
-  contents: data/topics.yml
-  template: _templates/topic-cards.ejs
-  sort: false
+  - id: projects
+    contents: data/projects.yml
+    template: _templates/project-cards.ejs
+    sort: false
+  - id: positions
+    contents: data/projects.yml
+    template: _templates/positions-list.ejs
+    sort: false
+  - id: topics
+    contents: data/topics.yml
+    template: _templates/topic-cards.ejs
+    sort: false
 ---
 
-My work sits at the intersection of deep learning, human-centred sensing, and intelligent communication.
+My work sits at the intersection of deep learning, human-centred sensing, and intelligent networks. Students are welcome in two ways: **join one of my research projects** as a research assistant, or **do your final project** on a topic I supervise. Often the two go together.
 
-## Student Projects
+::: {.research-areas}
+[<i class="bi bi-eye"></i><strong>Human Sensing</strong><span>Gaze-based interaction</span>]{.area-tile}
+[<i class="bi bi-heart-pulse"></i><strong>Applied AI</strong><span>Computer vision, natural language processing</span>]{.area-tile}
+[<i class="bi bi-graph-up"></i><strong>Intelligent Communication System</strong><span>eye-movement classification, fault identification</span>]{.area-tile}
+:::
 
-**For Internet Engineering Technology students looking for a final-project (Tugas Akhir) topic.**
+::: {.research-jump}
+[<i class="bi bi-kanban"></i> Projects](#research-projects) [<i class="bi bi-person-plus"></i> Join a project](#join) [<i class="bi bi-mortarboard"></i> Thesis topics](#thesis-topics) [<i class="bi bi-question-circle"></i> How to apply](#how-to-apply)
+:::
 
-Below are topics I am currently offering. If one catches your interest, use **Discuss this topic** on its card or send me an [email](mailto:achmad.solaeman@ugm.ac.id) and we can talk it through.
+## Research Projects {#research-projects}
+
+Funded and ongoing projects I lead. Students contribute as research assistants.
+
+::: {#projects}
+:::
+
+## Join a Project {#join}
+
+::: {#positions}
+:::
+
+::: {.benefit-grid}
+[<i class="bi bi-journal-text"></i><strong>Co-authorship</strong><span>Students who make a substantial contribution are invited as co-authors on the resulting publications.</span>]{.benefit}
+[<i class="bi bi-mortarboard"></i><strong>A ready-made final project</strong><span>A well-defined part of the project can become your Tugas Akhir, with data and guidance already in place.</span>]{.benefit}
+:::
+
+## Thesis Topics {#thesis-topics}
+
+**For Internet Engineering Technology students looking for a final-project topic.** Topics marked *Part of a research project* are carried out inside one of the projects above.
 
 ::: {#topics}
 :::
 
 Have your own idea instead? I'm glad to hear it. Reach out by [email](mailto:achmad.solaeman@ugm.ac.id) and we can explore whether it fits.
+
+## How to Apply {#how-to-apply}
+
+1. **Pick** a position or topic above (or describe your own idea).
+2. **Email me** using the *Apply* / *Discuss this topic* button, attaching a short CV, your latest transcript, and two or three sentences on why it interests you.
+3. **Meet** for a 20-minute chat about the scope, timeline, and expectations.
+4. **Start** with a small warm-up task so we both know it is a good fit.
 
 ```{=html}
 <script>

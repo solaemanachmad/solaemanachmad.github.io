@@ -1,0 +1,70 @@
+project:
+  type: website
+  output-dir: _site
+  # Dijalankan sebelum render:
+  #  - cv/_sections/{publications,services,certificates}.qmd dari data/*.yml
+  #  - data JSON-LD publikasi (_includes/publications-jsonld.html) untuk mesin pencari
+  pre-render:
+    - python3 scripts/build_cv_sections.py
+    - python3 scripts/build_jsonld.py
+  resources:
+    - assets/images/
+    - assets/vendor/
+    - robots.txt
+    # Slide PDF & thumbnail yang disimpan di folder mata kuliah
+    - "courses/**/*.pdf"
+    - "courses/**/thumbs/*"
+
+website:
+  title: "Achmad Solaeman"
+  description: "Junior Lecturer in Internet Engineering Technology, Universitas Gadjah Mada. Lightweight deep learning for time-series classification: eye movements and network faults."
+  site-url: "https://solaemanachmad.github.io"
+  favicon: assets/images/profile.jpg
+  # Kartu pratinjau saat link dibagikan (WhatsApp, LinkedIn, X, dll.)
+  image: assets/images/profile.jpg
+  open-graph: true
+  twitter-card:
+    card-style: summary   # foto persegi; summary_large_image akan memotongnya
+  page-navigation: false
+  navbar:
+    left:
+      - href: index.qmd
+        text: About
+      - href: research.qmd
+        text: Research
+      - href: publications.qmd
+        text: Publications
+      - href: teaching.qmd
+        text: Teaching
+      - href: services.qmd
+        text: Services
+      - href: posts.qmd
+        text: Posts
+  page-footer:
+    left: "© 2026 Achmad Solaeman"
+    right: "Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme:
+      light: [cosmo, assets/styles/theme.scss]
+      dark: [cosmo, assets/styles/theme.scss, assets/styles/theme-dark.scss]
+    toc: false
+    respect-user-color-scheme: true
+    smooth-scroll: true
+    link-external-newwindow: true
+    link-external-icon: false
+    # Ikon Google Scholar & ORCID (Academicons 1.9.5, disimpan lokal di assets/vendor)
+    css:
+      - assets/vendor/academicons/css/academicons.min.css
+    # Data terstruktur untuk Google (Person), verifikasi Search Console, dan statistik pengunjung
+    include-in-header:
+      - _includes/seo-head.html
+      - _includes/analytics.html
+    # Kolom profil kiri, tampil di setiap halaman. Edit link-nya di _includes/profile.html
+    include-before-body:
+      - _includes/profile.html
+    # Jendela preview (slide & CV) dan tombol Grid/List, dipakai di banyak halaman
+    include-after-body:
+      - _includes/deck-viewer.html
+      - _includes/view-toggle.html

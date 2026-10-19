@@ -1,0 +1,97 @@
+---
+title: "Research"
+description: "Lightweight deep learning for time-series classification, applied to eye-movement recognition and network fault identification. Research projects, open positions, and thesis topics by Achmad Solaeman."
+body-classes: description-meta-only   # deskripsi hanya untuk mesin pencari, tidak tampil di halaman
+listing:
+  - id: projects
+    contents: data/projects.yml
+    template: _templates/project-cards.ejs
+    sort: false
+  - id: positions
+    contents: data/projects.yml
+    template: _templates/positions-list.ejs
+    sort: false
+  - id: topics
+    contents: data/topics.yml
+    template: _templates/topic-cards.ejs
+    sort: false
+---
+
+::: {.research-core}
+[Core expertise]{.core-label}
+
+[Lightweight deep learning for **time-series classification**]{.core-title}
+
+[Many real-world signals arrive as streams over time, from the movements of a person's eyes to the counters of a network router. I design compact, fast models that recognise patterns in these signals with short input windows and modest hardware, so they can run close to where the data is produced.]{.core-text}
+
+[<i class="bi bi-lightning-charge"></i> Short input windows & low latency]{.core-chip} [<i class="bi bi-cpu"></i> Small models for modest hardware]{.core-chip} [<i class="bi bi-arrow-repeat"></i> Transfer learning for scarce data]{.core-chip}
+:::
+
+::: {.research-domains}
+[[<i class="bi bi-eye"></i>]{.domain-icon}[Application domain]{.domain-label}[Human sensing: eye movements]{.domain-title}[Classifying fixations, saccades, and other eye movements from gaze signals for assistive and gaze-based interaction.]{.domain-text}[Master's thesis · ICADEIS 2025 review](publications.qmd){.domain-link}]{.domain-card}
+[[<i class="bi bi-diagram-3"></i>]{.domain-icon}[Application domain]{.domain-label}[Network operations: fault identification]{.domain-title}[Identifying the type and cause of network faults from time-series telemetry, framed as a classification problem.]{.domain-text}[Funded project, 2026](#project-rca-network-faults){.domain-link}]{.domain-card}
+:::
+
+[**Earlier work:** efficient medical image processing — fast ellipse fitting for fetal head measurement on ultrasound images ([TENCON 2024](publications.qmd)).]{.earlier-work}
+
+Students are welcome in two ways: **join one of my research projects** as a research assistant, or **do your final project (Tugas Akhir)** on a topic I supervise. Often the two go together.
+
+::: {.research-jump}
+[<i class="bi bi-kanban"></i> Projects](#research-projects) [<i class="bi bi-person-plus"></i> Join a project](#join) [<i class="bi bi-mortarboard"></i> Thesis topics](#thesis-topics) [<i class="bi bi-question-circle"></i> How to apply](#how-to-apply)
+:::
+
+## Research Projects {#research-projects}
+
+Funded and ongoing projects I lead. Students contribute as research assistants.
+
+::: {#projects}
+:::
+
+## Join a Project {#join}
+
+::: {#positions}
+:::
+
+::: {.benefit-grid}
+[<i class="bi bi-journal-text"></i><strong>Co-authorship</strong><span>Students who make a substantial contribution are invited as co-authors on the resulting publications.</span>]{.benefit}
+[<i class="bi bi-mortarboard"></i><strong>A ready-made final project</strong><span>A well-defined part of the project can become your Tugas Akhir, with data and guidance already in place.</span>]{.benefit}
+:::
+
+## Thesis Topics {#thesis-topics}
+
+**For Internet Engineering Technology students looking for a final-project (Tugas Akhir) topic.** Topics marked *Part of a research project* are carried out inside one of the projects above.
+
+::: {#topics}
+:::
+
+Have your own idea instead? I'm glad to hear it. Reach out by [email](mailto:achmad.solaeman@ugm.ac.id) and we can explore whether it fits.
+
+## How to Apply {#how-to-apply}
+
+1. **Pick** a position or topic above (or describe your own idea).
+2. **Email me** using the *Apply* / *Discuss this topic* button, attaching a short CV, your latest transcript, and two or three sentences on why it interests you.
+3. **Meet** for a 20-minute chat about the scope, timeline, and expectations.
+4. **Start** with a small warm-up task so we both know it is a good fit.
+
+```{=html}
+<script>
+// Filter status topik (All / Available / Ongoing / Taken)
+document.addEventListener("DOMContentLoaded", function () {
+  var bar = document.querySelector(".topic-filter");
+  if (!bar) return;
+  var cards = document.querySelectorAll(".topic-card");
+  bar.addEventListener("click", function (e) {
+    var btn = e.target.closest(".topic-filter-btn");
+    if (!btn) return;
+    var s = btn.getAttribute("data-status");
+    bar.querySelectorAll(".topic-filter-btn").forEach(function (b) {
+      b.classList.toggle("active", b === btn);
+      b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+    });
+    cards.forEach(function (c) {
+      c.hidden = s !== "all" && c.getAttribute("data-status") !== s;
+    });
+  });
+});
+</script>
+```

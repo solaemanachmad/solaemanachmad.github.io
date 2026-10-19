@@ -1,12 +1,23 @@
-# Daftar publikasi untuk halaman Publications (urutan bebas; dikelompokkan per `year`).
+# Daftar publikasi untuk halaman Publications (dikelompokkan per `year`, terbaru di atas).
 # Field:
-#   year, title, url (link paper/DOI), venue, kind (Conference paper / Journal article / Book review / ...),
-#   publisher, summary (1–2 kalimat)
+#   year:      tahun terbit
+#   title:     judul;   url: link paper (DOI atau halaman penerbit)
+#   authors:   daftar penulis sesuai urutan di paper (nama Anda otomatis ditebalkan)
+#   venue:     nama jurnal/konferensi;   publisher: penerbit
+#   kind:      Journal article / Conference paper / Book review / Book chapter / ...
+#              (filter di halaman: Journal = "Journal article", Conference = "Conference paper", sisanya Other)
+#   doi:       DOI tanpa https://doi.org/  (untuk tombol DOI, sitasi, dan data Google Scholar)
+#   pages:     halaman, mis. "161-164" (opsional);   volume / issue (opsional)
+#   summary:   ringkasan 1–2 kalimat (muncul lewat tombol "Summary")
 # Catatan: file ini satu-satunya sumber. cv/_sections/publications.qmd (CV PDF & halaman CV) dibuat
 #   otomatis dari file ini oleh scripts/build_cv_sections.py saat render — jangan edit file .qmd itu.
-#   Entri baru dari ORCID ditambahkan otomatis (scripts/orcid_sync.py) lewat Pull Request; cek summary/publisher-nya.
+#   Publikasi yang sengaja TIDAK ditampilkan dicatat di data/publications-ignore.yml
+#   (agar sinkronisasi ORCID mingguan tidak menambahkannya lagi).
 - year: 2025
   title: "A Systematic Literature Review of Transfer Learning for Eye Tracking"
+  authors: ["Achmad Solaeman", "Syukron Abu Ishaq Alfarozi", "Sunu Wibirama"]
+  doi: "10.1109/ICADEIS65852.2025.10933367"
+  pages: "1-7"
   url: "https://ieeexplore.ieee.org/document/10933367"
   venue: "ICADEIS 2025"
   kind: "Conference paper"
@@ -14,6 +25,9 @@
   summary: "A review of 29 studies (2018–2024) showing how transfer learning addresses data scarcity and individual variability in gaze classification and estimation, with best practices for preprocessing and fine-tuning."
 - year: 2024
   title: "Robust Fetal Head Circumference Calculation on Ultrasound Images Using Just-in-Time Compiled Ellipse Fitting"
+  authors: ["Pandega Abyan Zumarsyah", "Achmad Solaeman", "Fhareza Alvindo", "Hanung Adi Nugroho"]
+  doi: "10.1109/TENCON61640.2024.10903012"
+  pages: "161-164"
   url: "https://ieeexplore.ieee.org/document/10903012"
   venue: "TENCON 2024"
   kind: "Conference paper"
@@ -21,6 +35,9 @@
   summary: "A fast, memory-efficient method based on JIT-compiled Randomized Hough Transform ellipse fitting, reaching Dice 0.93 and Hausdorff 3.88 mm in 0.41 s per image with under 800 kB of memory."
 - year: 2024
   title: "Personalized medicine meets artificial intelligence: beyond \"hype\", towards the metaverse"
+  authors: ["Eko Wahyudi", "Nur Eko Windianto", "Gheri Febri Ananda", "Achmad Solaeman", "Wisnu Setiawan"]
+  doi: "10.1080/17538157.2024.2347230"
+  pages: "149-152"
   url: "https://www.tandfonline.com/doi/full/10.1080/17538157.2024.2347230"
   venue: "Informatics for Health and Social Care"
   kind: "Book review"

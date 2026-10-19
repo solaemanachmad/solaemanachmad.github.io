@@ -1,4 +1,19 @@
 <!-- GENERATED from data/services.yml by scripts/build_cv_sections.py — do not edit -->
+### Program Committee
+
+::: {.year-grid}
+::: {.year}
+**2026**
+:::
+::: {.entries}
+**Technical Program Committee Member**
+
+[[DELCON 2026, BITS Pilani](https://www.bits-pilani.ac.in/delcon2026/tpc-members/) · Conference]{.meta}
+:::
+:::
+
+### Peer Review
+
 ::: {.year-grid}
 ::: {.year}
 **Ongoing**
@@ -10,13 +25,17 @@
 :::
 :::
 
+### Community Service
+
 ::: {.year-grid}
 ::: {.year}
 **2026**
 :::
 ::: {.entries}
-**Technical Program Committee Member**
+**Community Service Team — IoT-based Smart School Learning for Vocational High School Students**
 
-[[DELCON 2026, BITS Pilani](https://www.bits-pilani.ac.in/delcon2026/tpc-members/) · Conference]{.meta}
+[[SMK Negeri 2 Depok, Sleman · with PT Lifemedia Yogyakarta](https://tedi.sv.ugm.ac.id/id/2026/08/20/dtedi-sv-ugm-dan-pt-lifemedia-kembangkan-pembelajaran-iot-untuk-perkuat-kompetensi-siswa-smk/) · PkM]{.meta}
+
+A community service program by the Department of Electrical Engineering and Informatics (DTEDI), Vocational College UGM, delivering an IoT Smart School training module aligned with Kurikulum Merdeka, a lab-scale trainer kit, and a project-based workshop for students.
 :::
 :::

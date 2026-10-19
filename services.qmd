@@ -1,17 +1,26 @@
 ---
 title: "Services"
-description: "Academic service by Achmad Solaeman as a peer reviewer and program committee member."
+description: "Academic service by Achmad Solaeman: peer review, program committees, community service, invited talks, and professional memberships."
 body-classes: description-meta-only   # deskripsi hanya untuk mesin pencari, tidak tampil di halaman
 listing:
   id: services
   contents: data/services.yml
-  template: _templates/year-cards.ejs
+  template: _templates/service-groups.ejs
   sort: false
 ---
 
-Academic service as a reviewer and program committee member.
-
-<div class="view-config" data-key="services" data-default="grid" hidden></div>
+Professional, community, and institutional service — reviewing, program committees, community engagement, invited talks, and memberships.
 
 ::: {#services}
 :::
+
+<script>
+  // Tombol "Show all" pada kelompok yang panjang
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest(".svc-more");
+    if (!b) return;
+    var g = b.closest(".svc-group");
+    var open = g.classList.toggle("svc-open");
+    b.textContent = open ? b.dataset.less : b.dataset.more;
+  });
+</script>

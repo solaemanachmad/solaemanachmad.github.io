@@ -1,0 +1,10 @@
+<%
+// Tab "Training" di About: data/training.yml, terbaru di atas.
+const esc = (t) => String(t ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+const list = [...items].sort((a, b) => String(b.date ?? "").localeCompare(String(a.date ?? "")));
+%>
+<ul class="compact-list training-list">
+<% for (const t of list) { %>
+<li><i class="bi bi-mortarboard"></i><span class="compact-title"><% if (t.url) { %><a href="<%- t.url %>"><%= esc(t.title) %></a><% } else { %><%= esc(t.title) %><% } %></span><span class="compact-meta"><%= esc([t.provider, t.period || String(t.date ?? "").slice(0, 4)].filter(Boolean).join(" · ")) %></span></li>
+<% } %>
+</ul>

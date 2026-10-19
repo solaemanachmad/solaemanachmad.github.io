@@ -7,7 +7,9 @@
 ::: {}
 **[A Systematic Literature Review of Transfer Learning for Eye Tracking](https://ieeexplore.ieee.org/document/10933367)**
 
-[ICADEIS 2025 · Conference paper · IEEE]{.meta}
+**Achmad Solaeman**, Syukron Abu Ishaq Alfarozi, Sunu Wibirama
+
+[ICADEIS 2025 · Conference paper · IEEE · pp. 1-7 · [doi:10.1109/ICADEIS65852.2025.10933367](https://doi.org/10.1109/ICADEIS65852.2025.10933367)]{.meta}
 
 A review of 29 studies (2018–2024) showing how transfer learning addresses data scarcity and individual variability in gaze classification and estimation, with best practices for preprocessing and fine-tuning.
 :::
@@ -22,7 +24,9 @@ A review of 29 studies (2018–2024) showing how transfer learning addresses dat
 ::: {}
 **[Robust Fetal Head Circumference Calculation on Ultrasound Images Using Just-in-Time Compiled Ellipse Fitting](https://ieeexplore.ieee.org/document/10903012)**
 
-[TENCON 2024 · Conference paper · IEEE]{.meta}
+Pandega Abyan Zumarsyah, **Achmad Solaeman**, Fhareza Alvindo, Hanung Adi Nugroho
+
+[TENCON 2024 · Conference paper · IEEE · pp. 161-164 · [doi:10.1109/TENCON61640.2024.10903012](https://doi.org/10.1109/TENCON61640.2024.10903012)]{.meta}
 
 A fast, memory-efficient method based on JIT-compiled Randomized Hough Transform ellipse fitting, reaching Dice 0.93 and Hausdorff 3.88 mm in 0.41 s per image with under 800 kB of memory.
 :::
@@ -30,7 +34,9 @@ A fast, memory-efficient method based on JIT-compiled Randomized Hough Transform
 ::: {}
 **[Personalized medicine meets artificial intelligence: beyond "hype", towards the metaverse](https://www.tandfonline.com/doi/full/10.1080/17538157.2024.2347230)**
 
-[Informatics for Health and Social Care · Book review · Taylor & Francis]{.meta}
+Eko Wahyudi, Nur Eko Windianto, Gheri Febri Ananda, **Achmad Solaeman**, Wisnu Setiawan
+
+[Informatics for Health and Social Care · Book review · Taylor & Francis · pp. 149-152 · [doi:10.1080/17538157.2024.2347230](https://doi.org/10.1080/17538157.2024.2347230)]{.meta}
 
 A review of a book on how AI and personalized medicine are shaping digital health, data-driven care, and patient outcomes.
 :::

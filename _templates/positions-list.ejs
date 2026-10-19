@@ -1,0 +1,27 @@
+<%
+// Posisi asisten riset yang terbuka (positions dengan status: open) dari data/projects.yml.
+const esc = (t) => String(t ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const enc = (t) => encodeURIComponent(String(t));
+const rows = [];
+for (const p of items) {
+  if (String(p.status || "").toLowerCase() === "draft") continue;
+  for (const x of (p.positions || [])) if (String(x.status || "").toLowerCase() === "open") rows.push({ p, x });
+}
+%>
+<% if (!rows.length) { %>
+<div class="position-none"><i class="bi bi-hourglass-split"></i><div><strong>No open positions right now.</strong> Interested in joining a project later? <a href="mailto:achmad.solaeman@ugm.ac.id?subject=<%= enc('Research assistant interest') %>">Send me an email</a> with your interests and I will keep you in mind.</div></div>
+<% } else { %>
+<div class="position-list">
+<% for (const { p, x } of rows) { %>
+<article class="position-card">
+<div class="position-main">
+<span class="position-project"><a href="#project-<%= esc(p.id) %>"><%= esc(p.title) %></a></span>
+<h3 class="position-role"><%= esc(x.role) %></h3>
+<% if (x.tasks) { %><p class="position-tasks"><%= esc(x.tasks) %></p><% } %>
+<div class="position-meta"><% if (x.slots) { %><span><i class="bi bi-people"></i> <%= esc(x.slots) %> slot<%= Number(x.slots) === 1 ? "" : "s" %></span><% } %><% if (x.commitment) { %><span><i class="bi bi-clock"></i> <%= esc(x.commitment) %></span><% } %><% if (x.skills) { %><span><i class="bi bi-tools"></i> <%= esc(x.skills) %></span><% } %></div>
+</div>
+<a class="position-apply" href="mailto:achmad.solaeman@ugm.ac.id?subject=<%= enc('Application: ' + x.role + ' — ' + p.title) %>"><i class="bi bi-send"></i> Apply</a>
+</article>
+<% } %>
+</div>
+<% } %>

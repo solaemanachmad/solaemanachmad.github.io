@@ -12,10 +12,12 @@
 #   summary  : 1–2 kalimat ringkasan topik
 #   skills   : prasyarat singkat (opsional)
 #   url      : link referensi/detail (opsional)
+#   project  : (opsional) id proyek di data/projects.yml bila topik ini bagian dari proyek riset Anda
 # Urutan di situs = urutan di file ini.
-- title: "Real-time eye-movement classification on a low-cost webcam"
-  status: available
-  level: "D4 / Tugas Akhir"
-  tags: [eye tracking, deep learning, time series]
-  summary: "Port a lightweight hybrid deep-learning model for fixation/saccade classification to webcam gaze data and evaluate accuracy versus latency on a laptop or mini PC."
-  skills: "Python, basic PyTorch or TensorFlow"
+- title: "Intelligent Root Cause Analysis System for Network Faults"
+  status: draft
+  level: "D4 / Final Project"
+  tags: [root cause analysis, large language model, time series]
+  summary: "Develop an intelligent root cause analysis system using a large language model to analyze time series data and identify the underlying causes of observed phenomena."
+  skills: "Python, AI Engineering, Time Series Analysis"
+  project: rca-network-faults

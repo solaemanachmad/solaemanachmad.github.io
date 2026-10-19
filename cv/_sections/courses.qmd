@@ -1,3 +1,4 @@
+<!-- GENERATED from data/training.yml by scripts/build_cv_sections.py — do not edit -->
 ### Artificial Intelligence & Big Data — Digital Talent Scholarship
 
 [[Ministry of Communication and Information Technology, Republic of Indonesia](https://digitalent.kominfo.go.id/) · Yogyakarta · 10/2018 – 12/2018]{.meta}

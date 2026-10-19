@@ -5,7 +5,7 @@ body-classes: description-meta-only   # deskripsi hanya untuk mesin pencari, tid
 listing:
   id: pubs
   contents: data/publications.yml
-  template: _templates/year-cards.ejs
+  template: _templates/pub-list.ejs
   sort: false
 # Data publikasi untuk mesin pencari (dibuat otomatis oleh scripts/build_jsonld.py)
 include-in-header:
@@ -14,8 +14,36 @@ include-in-header:
 
 The complete and most recent list of my papers is available on [Google Scholar](https://scholar.google.com/citations?user=sPEG30wAAAAJ).
 
-<!-- Tampilan bawaan halaman ini: list (pembaca tetap bisa memilih Grid) -->
-<div class="view-config" data-key="publications" data-default="list" hidden></div>
-
 ::: {#pubs}
 :::
+
+```{=html}
+<script>
+// Filter jenis, tombol Summary/Cite, dan salin sitasi
+document.addEventListener("click", function (e) {
+  var f = e.target.closest(".pub-filter .topic-filter-btn");
+  if (f) {
+    var c = f.dataset.cat;
+    document.querySelectorAll(".pub-filter .topic-filter-btn").forEach(function (b) { b.classList.toggle("active", b === f); });
+    document.querySelectorAll(".pub-item").forEach(function (li) { li.hidden = c !== "all" && li.dataset.cat !== c; });
+    document.querySelectorAll(".pub-year").forEach(function (sec) { sec.hidden = !sec.querySelector(".pub-item:not([hidden])"); });
+    return;
+  }
+  var t = e.target.closest(".pub-btn[data-toggle]");
+  if (t) {
+    var panel = document.getElementById(t.dataset.toggle);
+    var open = panel.hidden;
+    panel.hidden = !open;
+    t.setAttribute("aria-expanded", open ? "true" : "false");
+    t.classList.toggle("active", open);
+    return;
+  }
+  var c2 = e.target.closest(".pub-copy");
+  if (c2) {
+    var txt = document.getElementById(c2.dataset.copy).textContent;
+    var done = function () { var old = c2.innerHTML; c2.innerHTML = '<i class="bi bi-check2"></i> Copied'; setTimeout(function () { c2.innerHTML = old; }, 1500); };
+    if (navigator.clipboard) navigator.clipboard.writeText(txt).then(done, done); else done();
+  }
+});
+</script>
+```

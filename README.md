@@ -62,9 +62,11 @@ Files and folders starting with `_` are not rendered as pages by Quarto.
 | I want to…                      | Edit                                                              |
 |---------------------------------|-------------------------------------------------------------------|
 | Add news / grant (What's New)   | write a post in `posts/<yyyy-mm-dd-title>/index.qmd` with `categories: [grant, ...]`; the 5 latest appear in What's New on About |
-| Add a publication               | `data/publications.yml` only (CV is generated; new ORCID works arrive as a weekly PR) |
-| Add a service (reviewer, TPC)   | `data/services.yml` only                                          |
+| Add a publication               | `data/publications.yml` only — include `authors`, `doi`, `pages` (CV, Cite/BibTeX and Google data are generated; new ORCID works arrive as a weekly PR; hide a work via `data/publications-ignore.yml`) |
+| Add a service                   | `data/services.yml` only — `role`: program-committee, peer-review, editorial, community-service (PkM, KKN/DPL), talks, institutional, membership |
+| Add a training / course attended | `data/training.yml` (About → Training tab, and CV "Courses & Training") |
 | Add a certificate               | `data/certificates.yml` only                                      |
+| Add a research project / open a position | `data/projects.yml` (`positions[].status: open` → shows in *Join a Project* with an Apply button; `draft` = hidden) |
 | Add/close a thesis topic        | `data/topics.yml` (`status`: available / ongoing / taken / draft = hidden) |
 | Booking link (office hours)     | `data-url` of the *Book a meeting* line in `_includes/profile.html` (hidden while empty) |
 | Visitor statistics              | `GOATCOUNTER_CODE` in `_includes/analytics.html` (off while empty) |
@@ -74,7 +76,7 @@ Files and folders starting with `_` are not rendered as pages by Quarto.
 | Teach a course again            | add a line to `semesters:` in `courses/<course>/index.qmd` (see below) |
 | Write a post                    | create `posts/<yyyy-mm-dd-title>/index.qmd` (or via GitHub, see *New post*) |
 | Change contacts / profile links | `_includes/profile.html`                                          |
-| Change the CV content (web + PDF) | `cv/_sections/*.qmd` (section order: `cv/index.qmd` and `cv/cv.qmd`) |
+| Change the CV content (web + PDF) | `cv/_sections/*.qmd`, except publications/services/certificates/courses which are generated from `data/*.yml` (section order: `cv/index.qmd` and `cv/cv.qmd`) |
 | Change colours / appearance     | `assets/styles/theme.scss` (dark mode: `theme-dark.scss`)         |
 
 ### Publications, services & certificates (single source of truth)
@@ -82,7 +84,7 @@ Files and folders starting with `_` are not rendered as pages by Quarto.
 Before every full render, `scripts/build_cv_sections.py` (Quarto `pre-render`, needs PyYAML) regenerates
 `cv/_sections/{publications,services,certificates}.qmd` for the web CV and the PDF CV — do not edit those files by hand.
 Every Monday the **ORCID sync** workflow (`scripts/orcid_sync.py`) checks ORCID 0009-0002-9620-7411 and opens a PR
-adding any new works to `data/publications.yml`; fill in `summary`/`publisher` before merging
+adding any new works to `data/publications.yml`, completed from Crossref (authors, venue, publisher, pages); write the `summary` before merging
 (enable *Settings → Actions → General → Allow GitHub Actions to create and approve pull requests*).
 Test locally with `python3 scripts/orcid_sync.py --dry-run`.
 

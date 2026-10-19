@@ -1,0 +1,4 @@
+# Publikasi yang sengaja tidak ditampilkan di situs/CV.
+# scripts/orcid_sync.py melewati DOI/judul di sini, sehingga tidak diusulkan lagi lewat PR mingguan.
+- doi: "10.25134/9kjdz259"
+  title: "Exploring English Proficiency Levels of Indonesian University Students through EnglishScore Based Assessment"

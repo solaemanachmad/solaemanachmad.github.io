@@ -45,11 +45,16 @@ jobs:
             This PR was opened automatically by the weekly **ORCID sync** workflow
             (`scripts/orcid_sync.py`). New works found on ORCID
             (0009-0002-9620-7411) were appended to `data/publications.yml`.
+            Works with a DOI were completed from Crossref (authors, venue,
+            publisher, pages, year, type).
 
-            **Before merging, please review each new entry** (marked
-            `# TODO: added from ORCID`):
+            **Before merging, for each new entry** (marked `# TODO: added from ORCID`):
             - write a 1–2 sentence `summary`,
-            - fill in `publisher`,
-            - check `venue`, `kind` and `year`, then remove the TODO comment.
+            - optionally shorten `venue` (e.g. "TENCON 2024" instead of the full proceedings name),
+            - remove the TODO comment line.
 
-            After merging, the site and the CV PDF are rebuilt automatically.
+            Not your paper, or you do not want it listed? Add its DOI/title to
+            `data/publications-ignore.yml` in this PR and delete the entry.
+
+            After merging, the Publications page, the CV (web + PDF) and the
+            Google Scholar metadata are rebuilt automatically.

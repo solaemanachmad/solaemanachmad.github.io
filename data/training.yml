@@ -1,0 +1,34 @@
+# Pengembangan diri: pelatihan, kursus, bootcamp, program sertifikasi, workshop yang DIIKUTI.
+# (Kegiatan sebagai pemateri/narasumber masuk data/services.yml dengan role: talks.)
+# Catatan: file ini satu-satunya sumber. cv/_sections/courses.qmd (bagian "Courses & Training" di
+#   CV PDF & halaman CV) dibuat otomatis dari file ini oleh scripts/build_cv_sections.py — jangan edit .qmd itu.
+#   Di About, tab "Training" menampilkan semua entri (terbaru di atas).
+#
+# Field:
+#   title:    nama pelatihan
+#   provider: penyelenggara;  url: link penyelenggara/sertifikat (opsional)
+#   kind:     Training / Course / Bootcamp / Workshop / Certification program / Conference
+#   location: kota atau "Online" (opsional)
+#   date:     tanggal mulai YYYY-MM-DD atau YYYY-MM — untuk urutan (wajib)
+#   period:   teks periode yang tampil, mis. "10/2018 – 12/2018" (opsional; bawaan = tahun dari date)
+#   summary:  1 kalimat isi/hasil pelatihan (opsional)
+#
+# Contoh yang umum bagi dosen (hapus # dan sesuaikan):
+# - title: "Pelatihan Peningkatan Keterampilan Dasar Teknik Instruksional (PEKERTI)"
+#   provider: "Universitas Gadjah Mada"
+#   kind: "Training"
+#   date: 2026-05
+#   period: "05/2026"
+# - title: "Applied Approach (AA)"
+#   provider: "Universitas Gadjah Mada"
+#   kind: "Training"
+#   date: 2026-08
+
+- title: "Artificial Intelligence & Big Data — Digital Talent Scholarship"
+  provider: "Ministry of Communication and Information Technology, Republic of Indonesia"
+  url: "https://digitalent.kominfo.go.id/"
+  kind: "Training"
+  location: "Yogyakarta"
+  date: 2018-10
+  period: "10/2018 – 12/2018"
+  summary: "Foundational and practical training in data preprocessing, machine learning models, and real-world applications."
