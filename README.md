@@ -187,8 +187,7 @@ published by GitHub Actions (`.github/workflows/publish.yml`), usually within a 
 
 For longer edits, press `.` on the repository page to open the web editor (github.dev).
 
-**Reader comments (giscus / GitHub Discussions)**: setup steps are in `posts/_metadata.yml`;
-uncomment the same block in `index.qmd` to show the *Discussion* box on About.
+**Reader comments (giscus / GitHub Discussions)**: active on About (Discussion box) and on every post. Comments are stored in the repository's Discussions, category "Comments"; moderate them there. Settings: `comments:` in `index.qmd` and `posts/_metadata.yml`.
 
 ## Running locally
 

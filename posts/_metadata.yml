@@ -3,16 +3,14 @@ author: "Achmad Solaeman"
 toc: true
 title-block-banner: false
 
-# ---- Komentar pembaca (giscus, memakai GitHub Discussions) ----
-# Repo sudah public. Langkah aktivasi (sekali saja):
-#   1. GitHub repo → Settings → General → Features → centang "Discussions".
-#   2. Tab Discussions → kategori (ikon pensil) → New category: nama "Comments",
-#      format "Announcement" (hanya Anda & giscus yang membuat thread baru; pengunjung tetap bisa membalas).
-#   3. Pasang aplikasi giscus untuk repo ini: https://github.com/apps/giscus
-#   4. Hapus tanda # pada blok di bawah, juga blok yang sama di index.qmd (About).
-# comments:
-#   giscus:
-#     repo: solaemanachmad/solaemanachmad.github.io
-#     repo-id: "R_kgDOVL_HvQ"
-#     category: "Comments"
-#     mapping: pathname
+# ---- Komentar pembaca (giscus, memakai GitHub Discussions, kategori "Comments") ----
+# Aktif. Setiap tulisan punya thread diskusi sendiri (dicocokkan lewat alamat halaman).
+comments:
+  giscus:
+    repo: solaemanachmad/solaemanachmad.github.io
+    repo-id: "R_kgDOVL_HvQ"
+    category: "Comments"
+    category-id: "DIC_kwDOVL_Hvc4DI--3"
+    mapping: pathname
+    reactions-enabled: true
+    input-position: top

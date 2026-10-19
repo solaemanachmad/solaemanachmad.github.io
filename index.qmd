@@ -19,13 +19,13 @@ listing:
     sort: false
 
 # ---- Area diskusi (giscus) di kolom kanan, di bawah What's New ----
-# Kotak "Discussion" otomatis tersembunyi selama bagian ini masih dikomentari.
-# Aktifkan setelah langkah di posts/_metadata.yml selesai (hapus tanda # di 7 baris berikut):
+# Komentar disimpan di GitHub Discussions (kategori "Comments"). Hapus blok ini untuk menonaktifkan.
 comments:
   giscus:
     repo: solaemanachmad/solaemanachmad.github.io
     repo-id: "R_kgDOVL_HvQ"
     category: "Comments"
+    category-id: "DIC_kwDOVL_Hvc4DI--3"
     mapping: pathname
     input-position: top
 ---
