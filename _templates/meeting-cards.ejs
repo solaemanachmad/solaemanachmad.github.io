@@ -2,6 +2,8 @@
 // Kartu pertemuan dari meetings.yml. Field per item:
 //   meeting (nomor), title, description, slides (URL), image (opsional, thumbnail),
 //   semester (opsional, mis. "2026/2027": hanya tampil di tab semester itu)
+//   date (opsional, YYYY-MM-DD): tanggal pertemuan. Bila kosong, dihitung dari `start` di index.qmd
+//        mata kuliah (+7 hari per pertemuan). Dipakai untuk penanda "This week" / "Done" / "Up next".
 // URL Google Slides / Google Drive otomatis diubah menjadi link preview & download.
 function deckLinks(url) {
   if (!url) return null;
@@ -38,8 +40,8 @@ const semTabs = [...new Set(items.map(i => i.semester).filter(Boolean).map(Strin
 <% } %>
 <div class="deck-grid">
 <% for (const item of items) { const L = deckLinks(item.slides); %>
-<article class="deck-card<%= L ? '' : ' is-pending' %>" data-sem="<%= item.semester ? String(item.semester) : 'all' %>">
-<div class="deck-thumb">
+<article class="deck-card<%= L ? '' : ' is-pending' %>" data-sem="<%= item.semester ? String(item.semester) : 'all' %>" data-meeting="<%= item.meeting %>"<% if (item.date) { %> data-date="<%= (item.date instanceof Date ? item.date.toISOString() : String(item.date)).slice(0, 10) %>"<% } %> id="meeting-<%= item.meeting %>">
+<div class="deck-thumb"><span class="deck-status"></span>
 <% if (item.image) { %>
 <img src="<%- item.image %>" alt="" loading="lazy">
 <% } else { %>
@@ -53,7 +55,7 @@ const semTabs = [...new Set(items.map(i => i.semester).filter(Boolean).map(Strin
 <% } %>
 </div>
 <div class="deck-body">
-<div class="deck-meta">Meeting <%= item.meeting %><% if (!L) { %> · <span class="deck-soon">slides coming soon</span><% } %></div>
+<div class="deck-meta">Meeting <%= item.meeting %><span class="deck-date"></span><% if (!L) { %> · <span class="deck-soon">slides coming soon</span><% } %></div>
 <h3 class="deck-title"><%= item.title %></h3>
 <% if (item.description) { %><p class="deck-desc"><%= item.description %></p><% } %>
 </div>

@@ -71,6 +71,7 @@ Files and folders starting with `_` are not rendered as pages by Quarto.
 | Booking link (office hours)     | `data-url` of the *Book a meeting* line in `_includes/profile.html` (hidden while empty) |
 | Visitor statistics              | `GOATCOUNTER_CODE` in `_includes/analytics.html` (off while empty) |
 | Search Console verification     | uncomment the meta tag in `_includes/seo-head.html`               |
+| Mark "This week" on a course page | set `start:` (date of meeting 1) in `courses/<course>/index.qmd`; override single meetings with `date:` in `meetings.yml` (e.g. midterm week) |
 | Add slides to a meeting         | `courses/<course>/meetings.yml` → fill in `slides:`               |
 | Add a new course                | copy a folder in `courses/`, then edit `index.qmd` & `meetings.yml` |
 | Teach a course again            | add a line to `semesters:` in `courses/<course>/index.qmd` (see below) |

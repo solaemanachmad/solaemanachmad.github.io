@@ -4,6 +4,10 @@ subtitle: "Basis Data"
 code: "DB"
 kind: "Lecture"
 semester: "Odd Semester 2026/2027"
+# Tanggal pertemuan 1 (YYYY-MM-DD). Bila diisi, halaman otomatis menandai pertemuan
+# "This week", yang sudah lewat (Done), dan progres semester. Tanggal per pertemuan bisa
+# ditimpa dengan field `date` di meetings.yml (mis. bila ada minggu UTS/libur).
+start: ""
 order: 20260803   # urutan tampil (lebih besar = lebih atas)
 description: "Fundamentals of relational databases: data modeling, normalization, and SQL."
 listing:
@@ -16,6 +20,8 @@ listing:
 [[← All courses](../../teaching.qmd) · Odd Semester 2026/2027 · Internet Engineering Technology · Universitas Gadjah Mada]{.meta}
 
 ## Meetings
+
+<div class="course-progress" data-start="{{< meta start >}}" hidden></div>
 
 ::: {#meetings}
 :::

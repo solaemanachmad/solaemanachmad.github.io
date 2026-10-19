@@ -33,7 +33,7 @@ comments:
 ::::: {.about-grid .column-page-right}
 
 :::: {.about-intro}
-I am a junior lecturer in the [Internet Engineering Technology (Teknologi Rekayasa Internet, TRI)](https://tri.sv.ugm.ac.id/) program at Universitas Gadjah Mada, Yogyakarta. My research focuses on **deep learning for computer vision and time series classification**, with work on eye tracking and medical image analysis.
+I am a junior lecturer in the [Internet Engineering Technology](https://tri.sv.ugm.ac.id/) program at Universitas Gadjah Mada, Yogyakarta. My research focuses on **intelligent communication systems**, with work on eye tracking, human-centred sensing, and applied artificial intelligence.
 ::::
 
 :::: {.about-side}

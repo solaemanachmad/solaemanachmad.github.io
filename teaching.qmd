@@ -8,15 +8,44 @@ listing:
   template: _templates/course-cards.ejs
   sort: "order desc"
   fields: [title, subtitle, description, path, code, kind, semester, semesters, order]
+# Huruf Arab untuk kutipan teaching philosophy
+include-in-header:
+  - text: |
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 ---
 
-Courses I teach in the Internet Engineering Technology program, Vocational College, Universitas Gadjah Mada. Select a course to see its meetings and slides; tap an academic year to expand or collapse it.
+Courses I teach in the Internet Engineering Technology program, Vocational College, Universitas Gadjah Mada. Select a course to see its meetings and slides.
 
 ::: {#courses}
 :::
 
+## Teaching Philosophy {#philosophy}
+
+::: {.philosophy}
+::: {.philo-verse lang="ar" dir="rtl"}
+[إِذِ الْفَتَى حَسْبَ اعْتِقَادِهِ رُفِعْ]{.hemistich}[۞]{.verse-sep}[وَكُلُّ مَنْ لَمْ يَعْتَقِدْ لَمْ يَنْتَفِعْ]{.hemistich}
+:::
+
+[*Idhi l-fatā ḥasba-ʿtiqādihī rufiʿ, wa-kullu man lam yaʿtaqid lam yantafiʿ.*]{.philo-translit}
+
+[“A learner rises in proportion to his conviction; whoever does not believe in what he learns will not benefit from it.”]{.philo-translation}
+
+[— al-ʿImrīṭī, *Naẓm al-ʿImrīṭī*]{.philo-source}
+:::
+
+This line from a classic poem on Arabic grammar is the heart of how I teach: students rise to the level of their conviction. My job is to help them believe that what they learn matters, and that they are able to master it.
+
+::: {.philo-points}
+[<i class="bi bi-lightbulb"></i><strong>Why before how</strong><span>Every topic starts from a real problem in networks, data, or systems, so students see why it is worth learning.</span>]{.benefit}
+[<i class="bi bi-tools"></i><strong>Learn by building</strong><span>Labs and small projects come before memorisation; understanding grows from making things work.</span>]{.benefit}
+[<i class="bi bi-graph-up-arrow"></i><strong>Confidence step by step</strong><span>Small wins, clear feedback, and room to ask questions turn "I can't" into "I can".</span>]{.benefit}
+:::
+
+<!-- Disembunyikan (saat masih mahasiswa). Hapus tanda komentar untuk menampilkan lagi.
 ## Earlier Teaching
 
 [2015–2017 · Teaching Assistant · Universitas Gadjah Mada]{.meta}
 
 Laboratory sessions for Computer Networking, Network Security, Algorithms & Data Structures, Computer Applications, and Fundamentals of Computer Engineering.
+-->
