@@ -12,11 +12,11 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       # PyYAML is needed by the pre-render script (scripts/build_cv_sections.py).
       # setup-python avoids PEP 668 "externally-managed-environment" errors on ubuntu-24.04.
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.x"
 

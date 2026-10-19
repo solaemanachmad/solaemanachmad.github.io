@@ -21,9 +21,9 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.x"
 
@@ -34,7 +34,7 @@ jobs:
         run: python3 scripts/orcid_sync.py
 
       - name: Open Pull Request if publications changed
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
           branch: orcid-sync
           delete-branch: true
