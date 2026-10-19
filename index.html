@@ -51,9 +51,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-66f4e2ffd714046053294c85584342e8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-6af17a47e8c76a2d5c76c2a1f7033b20.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-66f4e2ffd714046053294c85584342e8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b40e99cb9966fa3a1807e4b809697cfc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-a408ddfdd2a517ea7924cd8a785e2ab0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b40e99cb9966fa3a1807e4b809697cfc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -126,6 +126,34 @@ ul.task-list li input[type="checkbox"] {
 
     window['quarto-listings'] = window['quarto-listings'] || {};
     window['quarto-listings']['listing-certs'] = new List('listing-certs', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-training .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-provider','listing-url','listing-kind','listing-location','listing-date','listing-period','listing-summary',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      
+      searchColumns: ["listing-title","listing-provider","listing-url","listing-kind","listing-location","listing-date","listing-period","listing-summary"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-training'] = new List('listing-training', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -214,7 +242,7 @@ ul.task-list li input[type="checkbox"] {
 -->
 <script>
   (function () {
-    var GOATCOUNTER_CODE = "";   // ← isi di sini, mis. "solaeman"
+    var GOATCOUNTER_CODE = "solaemanachmad";   // ← isi di sini, mis. "solaeman"
     if (!GOATCOUNTER_CODE || /^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
     var s = document.createElement("script");
     s.async = true;
@@ -265,7 +293,7 @@ window.Quarto = {
 <meta name="twitter:card" content="summary">
 </head>
 
-<body class="nav-fixed description-meta-only fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed description-meta-only about-page fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -612,13 +640,13 @@ window.Quarto = {
 </h2>
 <div id="listing-news-recent" class="quarto-listing quarto-listing-container-custom">
 <ul class="news-list list">
-<li class="news-item" data-index="0" data-categories="Z3JhbnQlMkNyZXNlYXJjaA==" data-listing-date-sort="1775001600000" data-listing-file-modified-sort="1792342847294" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="39">
+<li class="news-item" data-index="0" data-categories="Z3JhbnQlMkNyZXNlYXJjaA==" data-listing-date-sort="1775001600000" data-listing-file-modified-sort="1792382115881" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="88">
 <span class="news-date listing-date">Apr 2026</span>
 <div class="news-body">
-<a class="news-title" href="./posts/2026-04-01-hibah-riset-sv-ugm/index.html">Awarded the 2025 Research and Publication Grant, Vocational College UGM</a><span class="news-tags"><a class="news-tag" href="posts.html#category=grant">#grant</a><a class="news-tag" href="posts.html#category=research">#research</a></span>
+<a class="news-title" href="./posts/2026-04-01-hibah-riset-sv-ugm/index.html">Awarded the 2026 Research and Publication Grant, Vocational College UGM</a><span class="news-tags"><a class="news-tag" href="posts.html#category=grant">#grant</a><a class="news-tag" href="posts.html#category=research">#research</a></span>
 </div>
 </li>
-<li class="news-item" data-index="1" data-categories="bmV3cw==" data-listing-date-sort="1773619200000" data-listing-file-modified-sort="1792342847294" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="63">
+<li class="news-item" data-index="1" data-categories="bmV3cw==" data-listing-date-sort="1773619200000" data-listing-file-modified-sort="1792382115881" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="63">
 <span class="news-date listing-date">Mar 2026</span>
 <div class="news-body">
 <a class="news-title" href="./posts/2026-03-16-welcome/index.html">Welcome to my new site</a><span class="news-tags"><a class="news-tag" href="posts.html#category=news">#news</a></span>
@@ -645,9 +673,8 @@ Questions, ideas, or collaboration? Leave a comment (GitHub account required).
 <section id="research-interests" class="level2">
 <h2 class="anchored" data-anchor-id="research-interests">Research Interests</h2>
 <ul>
-<li>Deep learning for computer vision</li>
-<li>Time series classification and eye tracking</li>
-<li>Medical image analysis</li>
+<li>Applied artificial intelligence</li>
+<li>Human-centred sensing</li>
 <li>Intelligent communication systems</li>
 </ul>
 </section>
@@ -656,8 +683,12 @@ Questions, ideas, or collaboration? Leave a comment (GitHub account required).
 <p><strong>M.Eng. in <a href="https://pasca.jteti.ugm.ac.id/">Information Technology</a></strong>, Universitas Gadjah Mada, 2025</p>
 <p><strong>B.App.Eng. in <a href="https://tri.sv.ugm.ac.id/">Internet Engineering Technology</a></strong>, Universitas Gadjah Mada, 2018</p>
 </section>
-<section id="certifications" class="level2">
-<h2 class="anchored" data-anchor-id="certifications">Certifications</h2>
+<section id="certifications-training" class="level2">
+<h2 class="anchored" data-anchor-id="certifications-training">Certifications &amp; Training</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset cred-tabs">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href=""><i class="bi bi-patch-check"></i> Certifications</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href=""><i class="bi bi-mortarboard"></i> Training</a></li></ul>
+<div class="tab-content cred-tabs">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div id="listing-certs" class="quarto-listing quarto-listing-container-custom">
 <ul class="compact-list">
 <li>
@@ -686,6 +717,20 @@ Questions, ideas, or collaboration? Leave a comment (GitHub account required).
 </li>
 </ul>
 <div class="listing-no-matching d-none">No matching items</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div id="listing-training" class="quarto-listing quarto-listing-container-custom">
+<ul class="compact-list training-list">
+<li>
+<i class="bi bi-mortarboard"></i><span class="compact-title"><a href="https://digitalent.kominfo.go.id/">Artificial Intelligence &amp; Big Data — Digital Talent Scholarship</a></span><span class="compact-meta">Ministry of Communication and Information Technology, Republic of Indonesia · 10/2018 – 12/2018</span>
+</li>
+</ul>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+<p><a href="./cv/index.html#courses-training" class="news-more">Full list in the CV <i class="bi bi-arrow-right"></i></a></p>
+</div>
+</div>
 </div>
 </section>
 </div>

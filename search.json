@@ -4,21 +4,42 @@
     "href": "research.html",
     "title": "Research",
     "section": "",
-    "text": "Achmad Solaeman\n  Junior Lecturer, DTEDIUniversitas Gadjah Mada\n  \n  \n    Follow\n  \n  \n    Yogyakarta, Indonesia\n    Email\n    LinkedIn\n    Instagram\n    GitHub\n    Google Scholar\n    ORCID\n    \n    Book a meeting\n    Curriculum Vitae\nMy work sits at the intersection of deep learning, human-centred sensing, and intelligent communication."
+    "text": "Achmad Solaeman\n  Junior Lecturer, DTEDIUniversitas Gadjah Mada\n  \n  \n    Follow\n  \n  \n    Yogyakarta, Indonesia\n    Email\n    LinkedIn\n    Instagram\n    GitHub\n    Google Scholar\n    ORCID\n    \n    Book a meeting\n    Curriculum Vitae\nMy work sits at the intersection of deep learning, human-centred sensing, and intelligent networks. Students are welcome in two ways: join one of my research projects as a research assistant, or do your final project on a topic I supervise. Often the two go together."
   },
   {
-    "objectID": "research.html#student-projects",
-    "href": "research.html#student-projects",
+    "objectID": "research.html#research-projects",
+    "href": "research.html#research-projects",
     "title": "Research",
-    "section": "Student Projects",
-    "text": "Student Projects\nFor Internet Engineering Technology students looking for a final-project (Tugas Akhir) topic.\nBelow are topics I am currently offering. If one catches your interest, use Discuss this topic on its card or send me an email and we can talk it through.\n\n\n\nAll\n\n\nAvailable 1\n\n\n\n\n\nAvailable D4 / Tugas Akhir\n\n\nReal-time eye-movement classification on a low-cost webcam\n\n\nPort a lightweight hybrid deep-learning model for fixation/saccade classification to webcam gaze data and evaluate accuracy versus latency on a laptop or mini PC.\n\n\n\neye tracking\n\n\ndeep learning\n\n\ntime series\n\n\n\n Skills: Python, basic PyTorch or TensorFlow\n\n Discuss this topic\n\n\nNo matching items\n\nHave your own idea instead? I’m glad to hear it. Reach out by email and we can explore whether it fits."
+    "section": "Research Projects",
+    "text": "Research Projects\nFunded and ongoing projects I lead. Students contribute as research assistants.\n\n\n\n\nOngoing 2026\n\n\nIntelligent Root Cause Analysis System for Network Faults\n\n\n\n\nFunded by Hibah Riset dan Pembuatan Artikel Publikasi 2026Sekolah Vokasi, Universitas Gadjah Mada · Competitive cluster\n\n\n\nWhen a network fails, operators face a flood of alarms and metrics. This project builds an intelligent root cause analysis system that combines time-series analysis of network telemetry with a large language model to pinpoint the underlying cause of a fault and explain it in plain language.\n\n\n\nroot cause analysis\n\n\nlarge language model\n\n\ntime series\n\n\nnetwork operations\n\n\n\n Announcement Related thesis topics\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "research.html#join",
+    "href": "research.html#join",
+    "title": "Research",
+    "section": "Join a Project",
+    "text": "Join a Project\n\n\n\n\nNo open positions right now. Interested in joining a project later? Send me an email with your interests and I will keep you in mind.\n\n\nNo matching items\n\n\nCo-authorshipStudents who make a substantial contribution are invited as co-authors on the resulting publications. A ready-made final projectA well-defined part of the project can become your Tugas Akhir, with data and guidance already in place."
+  },
+  {
+    "objectID": "research.html#thesis-topics",
+    "href": "research.html#thesis-topics",
+    "title": "Research",
+    "section": "Thesis Topics",
+    "text": "Thesis Topics\nFor Internet Engineering Technology students looking for a final-project topic. Topics marked Part of a research project are carried out inside one of the projects above.\n\n\nNo open topics are listed right now.\n\nNo matching items\n\nHave your own idea instead? I’m glad to hear it. Reach out by email and we can explore whether it fits."
+  },
+  {
+    "objectID": "research.html#how-to-apply",
+    "href": "research.html#how-to-apply",
+    "title": "Research",
+    "section": "How to Apply",
+    "text": "How to Apply\n\nPick a position or topic above (or describe your own idea).\nEmail me using the Apply / Discuss this topic button, attaching a short CV, your latest transcript, and two or three sentences on why it interests you.\nMeet for a 20-minute chat about the scope, timeline, and expectations.\nStart with a small warm-up task so we both know it is a good fit."
   },
   {
     "objectID": "posts.html",
     "href": "posts.html",
     "title": "Posts",
     "section": "",
-    "text": "Achmad Solaeman\n  Junior Lecturer, DTEDIUniversitas Gadjah Mada\n  \n  \n    Follow\n  \n  \n    Yogyakarta, Indonesia\n    Email\n    LinkedIn\n    Instagram\n    GitHub\n    Google Scholar\n    ORCID\n    \n    Book a meeting\n    Curriculum Vitae\n  \n\n\n\n\n\n\n Subscribe (RSS)\n\n\n\n\n\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nAwarded the 2025 Research and Publication Grant, Vocational College UGM\n\n\nReceived the Hibah Riset dan Pembuatan Artikel Publikasi 2025 from Sekolah Vokasi UGM under the Competitive cluster.\n\n\n\n\n\n1 Apr 2026\n\n\nAchmad Solaeman\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to my new site\n\n\nWhy I moved my CV to a Quarto website, and what you’ll find here.\n\n\n\n\n\n16 Mar 2026\n\n\nAchmad Solaeman\n\n\n\n\n\nNo matching items"
+    "text": "Achmad Solaeman\n  Junior Lecturer, DTEDIUniversitas Gadjah Mada\n  \n  \n    Follow\n  \n  \n    Yogyakarta, Indonesia\n    Email\n    LinkedIn\n    Instagram\n    GitHub\n    Google Scholar\n    ORCID\n    \n    Book a meeting\n    Curriculum Vitae\n  \n\n\n\n\n\n\n Subscribe (RSS)\n\n\n\n\n\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nAwarded the 2026 Research and Publication Grant, Vocational College UGM\n\n\nReceived the Hibah Riset dan Pembuatan Artikel Publikasi 2026 from Sekolah Vokasi UGM (Competitive cluster) for an intelligent root cause analysis system for network faults.\n\n\n\n\n\n1 Apr 2026\n\n\nAchmad Solaeman\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to my new site\n\n\nWhy I moved my CV to a Quarto website, and what you’ll find here.\n\n\n\n\n\n16 Mar 2026\n\n\nAchmad Solaeman\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "courses/database-lab/index.html",
@@ -74,7 +95,7 @@
     "href": "services.html",
     "title": "Services",
     "section": "",
-    "text": "Achmad Solaeman\n  Junior Lecturer, DTEDIUniversitas Gadjah Mada\n  \n  \n    Follow\n  \n  \n    Yogyakarta, Indonesia\n    Email\n    LinkedIn\n    Instagram\n    GitHub\n    Google Scholar\n    ORCID\n    \n    Book a meeting\n    Curriculum Vitae\n  \n\n\n\n\n\n\nAcademic service as a reviewer and program committee member.\n\n\n\n\n\n\n Grid\n\n\n List\n\n\n\n\nOngoing1 item\n\n\n\n\nJournal \n\n\nReviewer\n\n\nJournal of Internet and Software Engineering (JISE)\n\n\n\n\n\n\n20261 item\n\n\n\n\nConference \n\n\nTechnical Program Committee Member\n\n\nDELCON 2026, BITS Pilani\n\n\n\n\nNo matching items"
+    "text": "Achmad Solaeman\n  Junior Lecturer, DTEDIUniversitas Gadjah Mada\n  \n  \n    Follow\n  \n  \n    Yogyakarta, Indonesia\n    Email\n    LinkedIn\n    Instagram\n    GitHub\n    Google Scholar\n    ORCID\n    \n    Book a meeting\n    Curriculum Vitae\n  \n\n\n\n\n\n\nProfessional, community, and institutional service — reviewing, program committees, community engagement, invited talks, and memberships.\n\n\n1Program Committee1Peer Review1Community Service\n\n\n3 activities3 venuesactive since 2026\n\n\n\nProgram CommitteeTechnical program & scientific committees1\n\n\n\n\nTechnical Program Committee MemberDELCON 2026, BITS PilaniConference\n\n2026\n\n\n\n\n\nPeer ReviewReviewer for journals and conferences1\n\n\n\n\nReviewerJournal of Internet and Software Engineering (JISE)Journal\n\nOngoing\n\n\n\n\n\nCommunity ServicePengabdian kepada Masyarakat, KKN1\n\n\n\n\nCommunity Service Team — IoT-based Smart School Learning for Vocational High School StudentsSMK Negeri 2 Depok, Sleman · with PT Lifemedia YogyakartaPkMA community service program by the Department of Electrical Engineering and Informatics (DTEDI), Vocational College UGM, delivering an IoT Smart School training module aligned with Kurikulum Merdeka, a lab-scale trainer kit, and a project-based workshop for students.\n\n2026\n\n\n\nNo matching items"
   },
   {
     "objectID": "teaching.html",
@@ -102,7 +123,7 @@
     "href": "index.html#research-interests",
     "title": "About",
     "section": "Research Interests",
-    "text": "Research Interests\n\nDeep learning for computer vision\nTime series classification and eye tracking\nMedical image analysis\nIntelligent communication systems"
+    "text": "Research Interests\n\nApplied artificial intelligence\nHuman-centred sensing\nIntelligent communication systems"
   },
   {
     "objectID": "index.html#education",
@@ -112,11 +133,11 @@
     "text": "Education\nM.Eng. in Information Technology, Universitas Gadjah Mada, 2025\nB.App.Eng. in Internet Engineering Technology, Universitas Gadjah Mada, 2018"
   },
   {
-    "objectID": "index.html#certifications",
-    "href": "index.html#certifications",
+    "objectID": "index.html#certifications-training",
+    "href": "index.html#certifications-training",
     "title": "About",
-    "section": "Certifications",
-    "text": "Certifications\n\n\n\nIT Specialist – Artificial IntelligenceCertiport\n\n\nIT Specialist – Data AnalyticsCertiport\n\n\nIT Specialist – CybersecurityCertiport\n\n\nIT Specialist – NetworkingCertiport\n\n\nMicrosoft Certified: Azure Data FundamentalsMicrosoft\n\n\nMicrosoft Office Specialist: Expert (Office 2019)Microsoft\n\n\nMicrosoft Certified Educator (MCE)Microsoft\n\n\nPMI Project Management Ready™PMI\n\n\nNo matching items"
+    "section": "Certifications & Training",
+    "text": "Certifications & Training\n\n Certifications Training\n\n\n\n\n\nIT Specialist – Artificial IntelligenceCertiport\n\n\nIT Specialist – Data AnalyticsCertiport\n\n\nIT Specialist – CybersecurityCertiport\n\n\nIT Specialist – NetworkingCertiport\n\n\nMicrosoft Certified: Azure Data FundamentalsMicrosoft\n\n\nMicrosoft Office Specialist: Expert (Office 2019)Microsoft\n\n\nMicrosoft Certified Educator (MCE)Microsoft\n\n\nPMI Project Management Ready™PMI\n\n\nNo matching items\n\n\n\n\n\n\nArtificial Intelligence & Big Data — Digital Talent ScholarshipMinistry of Communication and Information Technology, Republic of Indonesia · 10/2018 – 12/2018\n\n\nNo matching items\n\nFull list in the CV"
   },
   {
     "objectID": "cv/index.html",
@@ -151,14 +172,14 @@
     "href": "cv/index.html#publications",
     "title": "Curriculum Vitae",
     "section": "Publications",
-    "text": "Publications\n\n\n\n2025\n\n\n\nA Systematic Literature Review of Transfer Learning for Eye Tracking\nICADEIS 2025 · Conference paper · IEEE\nA review of 29 studies (2018–2024) showing how transfer learning addresses data scarcity and individual variability in gaze classification and estimation, with best practices for preprocessing and fine-tuning.\n\n\n\n\n\n2024\n\n\n\nRobust Fetal Head Circumference Calculation on Ultrasound Images Using Just-in-Time Compiled Ellipse Fitting\nTENCON 2024 · Conference paper · IEEE\nA fast, memory-efficient method based on JIT-compiled Randomized Hough Transform ellipse fitting, reaching Dice 0.93 and Hausdorff 3.88 mm in 0.41 s per image with under 800 kB of memory.\n\n\nPersonalized medicine meets artificial intelligence: beyond “hype”, towards the metaverse\nInformatics for Health and Social Care · Book review · Taylor & Francis\nA review of a book on how AI and personalized medicine are shaping digital health, data-driven care, and patient outcomes."
+    "text": "Publications\n\n\n\n2025\n\n\n\nA Systematic Literature Review of Transfer Learning for Eye Tracking\nAchmad Solaeman, Syukron Abu Ishaq Alfarozi, Sunu Wibirama\nICADEIS 2025 · Conference paper · IEEE · pp. 1-7 · doi:10.1109/ICADEIS65852.2025.10933367\nA review of 29 studies (2018–2024) showing how transfer learning addresses data scarcity and individual variability in gaze classification and estimation, with best practices for preprocessing and fine-tuning.\n\n\n\n\n\n2024\n\n\n\nRobust Fetal Head Circumference Calculation on Ultrasound Images Using Just-in-Time Compiled Ellipse Fitting\nPandega Abyan Zumarsyah, Achmad Solaeman, Fhareza Alvindo, Hanung Adi Nugroho\nTENCON 2024 · Conference paper · IEEE · pp. 161-164 · doi:10.1109/TENCON61640.2024.10903012\nA fast, memory-efficient method based on JIT-compiled Randomized Hough Transform ellipse fitting, reaching Dice 0.93 and Hausdorff 3.88 mm in 0.41 s per image with under 800 kB of memory.\n\n\nPersonalized medicine meets artificial intelligence: beyond “hype”, towards the metaverse\nEko Wahyudi, Nur Eko Windianto, Gheri Febri Ananda, Achmad Solaeman, Wisnu Setiawan\nInformatics for Health and Social Care · Book review · Taylor & Francis · pp. 149-152 · doi:10.1080/17538157.2024.2347230\nA review of a book on how AI and personalized medicine are shaping digital health, data-driven care, and patient outcomes."
   },
   {
     "objectID": "cv/index.html#services",
     "href": "cv/index.html#services",
     "title": "Curriculum Vitae",
     "section": "Services",
-    "text": "Services\n\n\n\nOngoing\n\n\nReviewer\nJournal of Internet and Software Engineering (JISE) · Journal\n\n\n\n\n2026\n\n\nTechnical Program Committee Member\nDELCON 2026, BITS Pilani · Conference"
+    "text": "Services\n\n\nProgram Committee\n\n\n2026\n\n\nTechnical Program Committee Member\nDELCON 2026, BITS Pilani · Conference\n\n\n\n\nPeer Review\n\n\nOngoing\n\n\nReviewer\nJournal of Internet and Software Engineering (JISE) · Journal\n\n\n\n\nCommunity Service\n\n\n2026\n\n\nCommunity Service Team — IoT-based Smart School Learning for Vocational High School Students\nSMK Negeri 2 Depok, Sleman · with PT Lifemedia Yogyakarta · PkM\nA community service program by the Department of Electrical Engineering and Informatics (DTEDI), Vocational College UGM, delivering an IoT Smart School training module aligned with Kurikulum Merdeka, a lab-scale trainer kit, and a project-based workshop for students."
   },
   {
     "objectID": "cv/index.html#projects",
@@ -186,14 +207,14 @@
     "href": "cv/index.html#courses-training",
     "title": "Curriculum Vitae",
     "section": "Courses & Training",
-    "text": "Courses & Training\n\nArtificial Intelligence & Big Data — Digital Talent Scholarship\nMinistry of Communication and Information Technology, Republic of Indonesia · Yogyakarta · 10/2018 – 12/2018\nFoundational and practical training in data preprocessing, machine learning models, and real-world applications."
+    "text": "Courses & Training\n\n\nArtificial Intelligence & Big Data — Digital Talent Scholarship\nMinistry of Communication and Information Technology, Republic of Indonesia · Yogyakarta · 10/2018 – 12/2018\nFoundational and practical training in data preprocessing, machine learning models, and real-world applications."
   },
   {
     "objectID": "posts/2026-04-01-hibah-riset-sv-ugm/index.html",
     "href": "posts/2026-04-01-hibah-riset-sv-ugm/index.html",
-    "title": "Awarded the 2025 Research and Publication Grant, Vocational College UGM",
+    "title": "Awarded the 2026 Research and Publication Grant, Vocational College UGM",
     "section": "",
-    "text": "Achmad Solaeman\n  Junior Lecturer, DTEDIUniversitas Gadjah Mada\n  \n  \n    Follow\n  \n  \n    Yogyakarta, Indonesia\n    Email\n    LinkedIn\n    Instagram\n    GitHub\n    Google Scholar\n    ORCID\n    \n    Book a meeting\n    Curriculum Vitae\n  \n\n\n\n\n\n\nIn April 2026 I received the Hibah Riset dan Pembuatan Artikel Publikasi 2025 (Research and Publication Article Grant 2025) from Sekolah Vokasi, Universitas Gadjah Mada, under the Competitive (Kompetitif) cluster."
+    "text": "Achmad Solaeman\n  Junior Lecturer, DTEDIUniversitas Gadjah Mada\n  \n  \n    Follow\n  \n  \n    Yogyakarta, Indonesia\n    Email\n    LinkedIn\n    Instagram\n    GitHub\n    Google Scholar\n    ORCID\n    \n    Book a meeting\n    Curriculum Vitae\n  \n\n\n\n\n\n\nIn April 2026 I received the Hibah Riset dan Pembuatan Artikel Publikasi 2026 (Research and Publication Article Grant 2026) from Sekolah Vokasi, Universitas Gadjah Mada, under the Competitive (Kompetitif) cluster.\nThe grant funds my project Intelligent Root Cause Analysis System for Network Faults, which combines time-series analysis of network telemetry with a large language model to identify, and explain, the underlying cause of network faults.\nStudents interested in contributing can find open positions and related thesis topics on the Research page."
   },
   {
     "objectID": "courses/k3/index.html",
@@ -242,6 +263,6 @@
     "href": "publications.html",
     "title": "Publications",
     "section": "",
-    "text": "Achmad Solaeman\n  Junior Lecturer, DTEDIUniversitas Gadjah Mada\n  \n  \n    Follow\n  \n  \n    Yogyakarta, Indonesia\n    Email\n    LinkedIn\n    Instagram\n    GitHub\n    Google Scholar\n    ORCID\n    \n    Book a meeting\n    Curriculum Vitae\n  \n\n\n\n\n\n\nThe complete and most recent list of my papers is available on Google Scholar.\n\n\n\n\n\n\n\n Grid\n\n\n List\n\n\n\n\n20251 item\n\n\n\n\nConference paper \n\n\nA Systematic Literature Review of Transfer Learning for Eye Tracking\n\n\nICADEIS 2025 · IEEE\n\n\nA review of 29 studies (2018–2024) showing how transfer learning addresses data scarcity and individual variability in gaze classification and estimation, with best practices for preprocessing and fine-tuning.\n\n\n\n\n\n\n20242 items\n\n\n\n\nConference paper \n\n\nRobust Fetal Head Circumference Calculation on Ultrasound Images Using Just-in-Time Compiled Ellipse Fitting\n\n\nTENCON 2024 · IEEE\n\n\nA fast, memory-efficient method based on JIT-compiled Randomized Hough Transform ellipse fitting, reaching Dice 0.93 and Hausdorff 3.88 mm in 0.41 s per image with under 800 kB of memory.\n\n\n\n\nBook review \n\n\nPersonalized medicine meets artificial intelligence: beyond “hype”, towards the metaverse\n\n\nInformatics for Health and Social Care · Taylor & Francis\n\n\nA review of a book on how AI and personalized medicine are shaping digital health, data-driven care, and patient outcomes.\n\n\n\n\nNo matching items"
+    "text": "Achmad Solaeman\n  Junior Lecturer, DTEDIUniversitas Gadjah Mada\n  \n  \n    Follow\n  \n  \n    Yogyakarta, Indonesia\n    Email\n    LinkedIn\n    Instagram\n    GitHub\n    Google Scholar\n    ORCID\n    \n    Book a meeting\n    Curriculum Vitae\n  \n\n\n\n\n\n\nThe complete and most recent list of my papers is available on Google Scholar.\n\n\n\n3 publications2 conference1 other2024–2025\n\n\n\nAll\n\n\nConference 2\n\n\nOther 1\n\n\n\n\n\n2025\n\n\n\n\nA Systematic Literature Review of Transfer Learning for Eye Tracking\n\n\nAchmad Solaeman, Syukron Abu Ishaq Alfarozi, Sunu Wibirama\n\n\nICADEIS 2025 · IEEE · pp. 1-7Conference paper\n\n\n DOI Summary Cite\n\n\nA review of 29 studies (2018–2024) showing how transfer learning addresses data scarcity and individual variability in gaze classification and estimation, with best practices for preprocessing and fine-tuning.\n\n\n\nCitation (IEEE) Copy\n\n\nA. Solaeman, S. A. I. Alfarozi, and S. Wibirama, \"A Systematic Literature Review of Transfer Learning for Eye Tracking,\" ICADEIS 2025, pp. 1-7, 2025, doi: 10.1109/ICADEIS65852.2025.10933367.\n\n\nBibTeX Copy\n\n@inproceedings{solaeman2025systematic,\n  title = {{A Systematic Literature Review of Transfer Learning for Eye Tracking}},\n  author = {Solaeman, Achmad and Alfarozi, Syukron Abu Ishaq and Wibirama, Sunu},\n  booktitle = {ICADEIS 2025},\n  publisher = {IEEE},\n  year = {2025},\n  pages = {1--7},\n  doi = {10.1109/ICADEIS65852.2025.10933367}\n}\n\n\n\n\n\n\n2024\n\n\n\n\nRobust Fetal Head Circumference Calculation on Ultrasound Images Using Just-in-Time Compiled Ellipse Fitting\n\n\nPandega Abyan Zumarsyah, Achmad Solaeman, Fhareza Alvindo, Hanung Adi Nugroho\n\n\nTENCON 2024 · IEEE · pp. 161-164Conference paper\n\n\n DOI Summary Cite\n\n\nA fast, memory-efficient method based on JIT-compiled Randomized Hough Transform ellipse fitting, reaching Dice 0.93 and Hausdorff 3.88 mm in 0.41 s per image with under 800 kB of memory.\n\n\n\nCitation (IEEE) Copy\n\n\nP. A. Zumarsyah, A. Solaeman, F. Alvindo, and H. A. Nugroho, \"Robust Fetal Head Circumference Calculation on Ultrasound Images Using Just-in-Time Compiled Ellipse Fitting,\" TENCON 2024, pp. 161-164, 2024, doi: 10.1109/TENCON61640.2024.10903012.\n\n\nBibTeX Copy\n\n@inproceedings{zumarsyah2024robust,\n  title = {{Robust Fetal Head Circumference Calculation on Ultrasound Images Using Just-in-Time Compiled Ellipse Fitting}},\n  author = {Zumarsyah, Pandega Abyan and Solaeman, Achmad and Alvindo, Fhareza and Nugroho, Hanung Adi},\n  booktitle = {TENCON 2024},\n  publisher = {IEEE},\n  year = {2024},\n  pages = {161--164},\n  doi = {10.1109/TENCON61640.2024.10903012}\n}\n\n\n\n\nPersonalized medicine meets artificial intelligence: beyond \"hype\", towards the metaverse\n\n\nEko Wahyudi, Nur Eko Windianto, Gheri Febri Ananda, Achmad Solaeman, Wisnu Setiawan\n\n\nInformatics for Health and Social Care · Taylor & Francis · pp. 149-152Book review\n\n\n DOI Summary Cite\n\n\nA review of a book on how AI and personalized medicine are shaping digital health, data-driven care, and patient outcomes.\n\n\n\nCitation (IEEE) Copy\n\n\nE. Wahyudi, N. E. Windianto, G. F. Ananda, A. Solaeman, and W. Setiawan, \"Personalized medicine meets artificial intelligence: beyond \"hype\", towards the metaverse,\" Informatics for Health and Social Care, pp. 149-152, 2024, doi: 10.1080/17538157.2024.2347230.\n\n\nBibTeX Copy\n\n@article{wahyudi2024personalized,\n  title = {{Personalized medicine meets artificial intelligence: beyond \"hype\", towards the metaverse}},\n  author = {Wahyudi, Eko and Windianto, Nur Eko and Ananda, Gheri Febri and Solaeman, Achmad and Setiawan, Wisnu},\n  journal = {Informatics for Health and Social Care},\n  publisher = {Taylor & Francis},\n  year = {2024},\n  pages = {149--152},\n  doi = {10.1080/17538157.2024.2347230}\n}\n\n\n\n\nNo matching items"
   }
 ]

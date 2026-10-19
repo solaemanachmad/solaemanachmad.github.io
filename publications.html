@@ -51,9 +51,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-66f4e2ffd714046053294c85584342e8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-6af17a47e8c76a2d5c76c2a1f7033b20.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-66f4e2ffd714046053294c85584342e8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b40e99cb9966fa3a1807e4b809697cfc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-a408ddfdd2a517ea7924cd8a785e2ab0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b40e99cb9966fa3a1807e4b809697cfc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -91,9 +91,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-year','listing-title','listing-url','listing-venue','listing-kind','listing-publisher','listing-summary',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-year','listing-title','listing-authors','listing-doi','listing-pages','listing-url','listing-venue','listing-kind','listing-publisher','listing-summary',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-year","listing-title","listing-url","listing-venue","listing-kind","listing-publisher","listing-summary"],
+      searchColumns: ["listing-year","listing-title","listing-authors","listing-doi","listing-pages","listing-url","listing-venue","listing-kind","listing-publisher","listing-summary"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -186,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
 -->
 <script>
   (function () {
-    var GOATCOUNTER_CODE = "";   // ← isi di sini, mis. "solaeman"
+    var GOATCOUNTER_CODE = "solaemanachmad";   // ← isi di sini, mis. "solaeman"
     if (!GOATCOUNTER_CODE || /^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
     var s = document.createElement("script");
     s.async = true;
@@ -222,6 +222,14 @@ ul.task-list li input[type="checkbox"] {
             "sameAs": [
               "https://orcid.org/0009-0002-9620-7411"
             ]
+          },
+          {
+            "@type": "Person",
+            "name": "Syukron Abu Ishaq Alfarozi"
+          },
+          {
+            "@type": "Person",
+            "name": "Sunu Wibirama"
           }
         ],
         "isPartOf": {
@@ -233,7 +241,13 @@ ul.task-list li input[type="checkbox"] {
           "name": "IEEE"
         },
         "abstract": "A review of 29 studies (2018–2024) showing how transfer learning addresses data scarcity and individual variability in gaze classification and estimation, with best practices for preprocessing and fine-tuning.",
-        "genre": "Conference paper"
+        "genre": "Conference paper",
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "DOI",
+          "value": "10.1109/ICADEIS65852.2025.10933367"
+        },
+        "sameAs": "https://doi.org/10.1109/ICADEIS65852.2025.10933367"
       }
     },
     {
@@ -248,12 +262,24 @@ ul.task-list li input[type="checkbox"] {
         "author": [
           {
             "@type": "Person",
+            "name": "Pandega Abyan Zumarsyah"
+          },
+          {
+            "@type": "Person",
             "@id": "https://solaemanachmad.github.io/#person",
             "name": "Achmad Solaeman",
             "url": "https://solaemanachmad.github.io/",
             "sameAs": [
               "https://orcid.org/0009-0002-9620-7411"
             ]
+          },
+          {
+            "@type": "Person",
+            "name": "Fhareza Alvindo"
+          },
+          {
+            "@type": "Person",
+            "name": "Hanung Adi Nugroho"
           }
         ],
         "isPartOf": {
@@ -265,7 +291,13 @@ ul.task-list li input[type="checkbox"] {
           "name": "IEEE"
         },
         "abstract": "A fast, memory-efficient method based on JIT-compiled Randomized Hough Transform ellipse fitting, reaching Dice 0.93 and Hausdorff 3.88 mm in 0.41 s per image with under 800 kB of memory.",
-        "genre": "Conference paper"
+        "genre": "Conference paper",
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "DOI",
+          "value": "10.1109/TENCON61640.2024.10903012"
+        },
+        "sameAs": "https://doi.org/10.1109/TENCON61640.2024.10903012"
       }
     },
     {
@@ -280,12 +312,28 @@ ul.task-list li input[type="checkbox"] {
         "author": [
           {
             "@type": "Person",
+            "name": "Eko Wahyudi"
+          },
+          {
+            "@type": "Person",
+            "name": "Nur Eko Windianto"
+          },
+          {
+            "@type": "Person",
+            "name": "Gheri Febri Ananda"
+          },
+          {
+            "@type": "Person",
             "@id": "https://solaemanachmad.github.io/#person",
             "name": "Achmad Solaeman",
             "url": "https://solaemanachmad.github.io/",
             "sameAs": [
               "https://orcid.org/0009-0002-9620-7411"
             ]
+          },
+          {
+            "@type": "Person",
+            "name": "Wisnu Setiawan"
           }
         ],
         "isPartOf": {
@@ -297,7 +345,13 @@ ul.task-list li input[type="checkbox"] {
           "name": "Taylor & Francis"
         },
         "abstract": "A review of a book on how AI and personalized medicine are shaping digital health, data-driven care, and patient outcomes.",
-        "genre": "Book review"
+        "genre": "Book review",
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "DOI",
+          "value": "10.1080/17538157.2024.2347230"
+        },
+        "sameAs": "https://doi.org/10.1080/17538157.2024.2347230"
       }
     }
   ]
@@ -682,77 +736,178 @@ window.Quarto = {
 
 
 <p>The complete and most recent list of my papers is available on <a href="https://scholar.google.com/citations?user=sPEG30wAAAAJ">Google Scholar</a>.</p>
-<!-- Tampilan bawaan halaman ini: list (pembaca tetap bisa memilih Grid) -->
-<div class="view-config" data-key="publications" data-default="list" hidden="">
-
-</div>
 <div id="listing-pubs" class="quarto-listing quarto-listing-container-custom">
-<div class="view-toolbar" role="group" aria-label="Layout">
-<button type="button" class="view-btn" data-view="grid" title="Grid view">
-<i class="bi bi-grid-3x2-gap"></i> Grid
+<div class="pub-head">
+<p class="svc-stats pub-stats">
+<span><strong>3</strong> publications</span><span><strong>2</strong> conference</span><span><strong>1</strong> other</span><span>2024–2025</span>
+</p>
+<div class="topic-filter pub-filter" role="group" aria-label="Filter by type">
+<button type="button" class="topic-filter-btn active" data-cat="all">
+All
 </button>
-<button type="button" class="view-btn" data-view="list" title="List view">
-<i class="bi bi-list-ul"></i> List
+<button type="button" class="topic-filter-btn" data-cat="conference">
+Conference <span class="topic-count">2</span>
+</button>
+<button type="button" class="topic-filter-btn" data-cat="other">
+Other <span class="topic-count">1</span>
 </button>
 </div>
-<details class="group-panel" open="">
-<summary class="group-title">
-<span>2025</span><span class="group-count">1 item</span><i class="bi bi-chevron-down group-caret"></i>
-</summary>
-<div class="entry-grid">
-<article class="entry-card">
-<div class="entry-top">
-<p><span class="entry-kind">Conference paper</span> <a class="entry-link" href="https://ieeexplore.ieee.org/document/10933367" title="Open" aria-label="Open link"><i class="bi bi-box-arrow-up-right"></i></a></p>
 </div>
-<h3 class="entry-title anchored">
+<section class="pub-year" data-year="2025">
+<div class="pub-year-label" role="heading" aria-level="2">
+2025
+</div>
+<ol class="pub-list">
+<li class="pub-item" data-cat="conference">
+<div class="pub-title">
 <a href="https://ieeexplore.ieee.org/document/10933367">A Systematic Literature Review of Transfer Learning for Eye Tracking</a>
-</h3>
-<p class="entry-meta">
-ICADEIS 2025 · IEEE
-</p>
-<p class="entry-summary">
+</div>
+<div class="pub-authors">
+<strong>Achmad Solaeman</strong>, Syukron Abu Ishaq Alfarozi, Sunu Wibirama
+</div>
+<div class="pub-venue">
+<em>ICADEIS 2025</em> · IEEE · pp.&nbsp;1-7<span class="pub-kind pub-kind-conference">Conference paper</span>
+</div>
+<div class="pub-actions">
+<a class="pub-btn" href="https://doi.org/10.1109/ICADEIS65852.2025.10933367"><i class="bi bi-link-45deg"></i> DOI</a><button type="button" class="pub-btn" data-toggle="pub-1-sum" aria-expanded="false"><i class="bi bi-text-paragraph"></i> Summary</button><button type="button" class="pub-btn" data-toggle="pub-1-cite" aria-expanded="false"><i class="bi bi-quote"></i> Cite</button>
+</div>
+<div id="pub-1-sum" class="pub-panel" hidden="">
 A review of 29 studies (2018–2024) showing how transfer learning addresses data scarcity and individual variability in gaze classification and estimation, with best practices for preprocessing and fine-tuning.
-</p>
-</article>
 </div>
-</details>
-<details class="group-panel" open="">
-<summary class="group-title">
-<span>2024</span><span class="group-count">2 items</span><i class="bi bi-chevron-down group-caret"></i>
-</summary>
-<div class="entry-grid">
-<article class="entry-card">
-<div class="entry-top">
-<p><span class="entry-kind">Conference paper</span> <a class="entry-link" href="https://ieeexplore.ieee.org/document/10903012" title="Open" aria-label="Open link"><i class="bi bi-box-arrow-up-right"></i></a></p>
+<div id="pub-1-cite" class="pub-panel pub-cite" hidden="">
+<div class="pub-cite-row">
+<span class="pub-cite-label">Citation (IEEE)</span><button type="button" class="pub-copy" data-copy="pub-1-txt"><i class="bi bi-clipboard"></i> Copy</button>
 </div>
-<h3 class="entry-title anchored">
+<div id="pub-1-txt" class="pub-cite-text">
+A. Solaeman, S. A. I. Alfarozi, and S. Wibirama, "A Systematic Literature Review of Transfer Learning for Eye Tracking," ICADEIS 2025, pp.&nbsp;1-7, 2025, doi: 10.1109/ICADEIS65852.2025.10933367.
+</div>
+<div class="pub-cite-row">
+<span class="pub-cite-label">BibTeX</span><button type="button" class="pub-copy" data-copy="pub-1-bib"><i class="bi bi-clipboard"></i> Copy</button>
+</div>
+<pre class="pub-bib" id="pub-1-bib">@inproceedings{solaeman2025systematic,
+  title = {{A Systematic Literature Review of Transfer Learning for Eye Tracking}},
+  author = {Solaeman, Achmad and Alfarozi, Syukron Abu Ishaq and Wibirama, Sunu},
+  booktitle = {ICADEIS 2025},
+  publisher = {IEEE},
+  year = {2025},
+  pages = {1--7},
+  doi = {10.1109/ICADEIS65852.2025.10933367}
+}</pre>
+</div>
+</li>
+</ol>
+</section>
+<section class="pub-year" data-year="2024">
+<div class="pub-year-label" role="heading" aria-level="2">
+2024
+</div>
+<ol class="pub-list">
+<li class="pub-item" data-cat="conference">
+<div class="pub-title">
 <a href="https://ieeexplore.ieee.org/document/10903012">Robust Fetal Head Circumference Calculation on Ultrasound Images Using Just-in-Time Compiled Ellipse Fitting</a>
-</h3>
-<p class="entry-meta">
-TENCON 2024 · IEEE
-</p>
-<p class="entry-summary">
+</div>
+<div class="pub-authors">
+Pandega Abyan Zumarsyah, <strong>Achmad Solaeman</strong>, Fhareza Alvindo, Hanung Adi Nugroho
+</div>
+<div class="pub-venue">
+<em>TENCON 2024</em> · IEEE · pp.&nbsp;161-164<span class="pub-kind pub-kind-conference">Conference paper</span>
+</div>
+<div class="pub-actions">
+<a class="pub-btn" href="https://doi.org/10.1109/TENCON61640.2024.10903012"><i class="bi bi-link-45deg"></i> DOI</a><button type="button" class="pub-btn" data-toggle="pub-2-sum" aria-expanded="false"><i class="bi bi-text-paragraph"></i> Summary</button><button type="button" class="pub-btn" data-toggle="pub-2-cite" aria-expanded="false"><i class="bi bi-quote"></i> Cite</button>
+</div>
+<div id="pub-2-sum" class="pub-panel" hidden="">
 A fast, memory-efficient method based on JIT-compiled Randomized Hough Transform ellipse fitting, reaching Dice 0.93 and Hausdorff 3.88 mm in 0.41 s per image with under 800 kB of memory.
-</p>
-</article>
-<article class="entry-card">
-<div class="entry-top">
-<p><span class="entry-kind">Book review</span> <a class="entry-link" href="https://www.tandfonline.com/doi/full/10.1080/17538157.2024.2347230" title="Open" aria-label="Open link"><i class="bi bi-box-arrow-up-right"></i></a></p>
 </div>
-<h3 class="entry-title anchored">
-<a href="https://www.tandfonline.com/doi/full/10.1080/17538157.2024.2347230">Personalized medicine meets artificial intelligence: beyond “hype”, towards the metaverse</a>
-</h3>
-<p class="entry-meta">
-Informatics for Health and Social Care · Taylor &amp; Francis
-</p>
-<p class="entry-summary">
+<div id="pub-2-cite" class="pub-panel pub-cite" hidden="">
+<div class="pub-cite-row">
+<span class="pub-cite-label">Citation (IEEE)</span><button type="button" class="pub-copy" data-copy="pub-2-txt"><i class="bi bi-clipboard"></i> Copy</button>
+</div>
+<div id="pub-2-txt" class="pub-cite-text">
+P. A. Zumarsyah, A. Solaeman, F. Alvindo, and H. A. Nugroho, "Robust Fetal Head Circumference Calculation on Ultrasound Images Using Just-in-Time Compiled Ellipse Fitting," TENCON 2024, pp.&nbsp;161-164, 2024, doi: 10.1109/TENCON61640.2024.10903012.
+</div>
+<div class="pub-cite-row">
+<span class="pub-cite-label">BibTeX</span><button type="button" class="pub-copy" data-copy="pub-2-bib"><i class="bi bi-clipboard"></i> Copy</button>
+</div>
+<pre class="pub-bib" id="pub-2-bib">@inproceedings{zumarsyah2024robust,
+  title = {{Robust Fetal Head Circumference Calculation on Ultrasound Images Using Just-in-Time Compiled Ellipse Fitting}},
+  author = {Zumarsyah, Pandega Abyan and Solaeman, Achmad and Alvindo, Fhareza and Nugroho, Hanung Adi},
+  booktitle = {TENCON 2024},
+  publisher = {IEEE},
+  year = {2024},
+  pages = {161--164},
+  doi = {10.1109/TENCON61640.2024.10903012}
+}</pre>
+</div>
+</li>
+<li class="pub-item" data-cat="other">
+<div class="pub-title">
+<a href="https://www.tandfonline.com/doi/full/10.1080/17538157.2024.2347230">Personalized medicine meets artificial intelligence: beyond "hype", towards the metaverse</a>
+</div>
+<div class="pub-authors">
+Eko Wahyudi, Nur Eko Windianto, Gheri Febri Ananda, <strong>Achmad Solaeman</strong>, Wisnu Setiawan
+</div>
+<div class="pub-venue">
+<em>Informatics for Health and Social Care</em> · Taylor &amp; Francis · pp.&nbsp;149-152<span class="pub-kind pub-kind-other">Book review</span>
+</div>
+<div class="pub-actions">
+<a class="pub-btn" href="https://doi.org/10.1080/17538157.2024.2347230"><i class="bi bi-link-45deg"></i> DOI</a><button type="button" class="pub-btn" data-toggle="pub-3-sum" aria-expanded="false"><i class="bi bi-text-paragraph"></i> Summary</button><button type="button" class="pub-btn" data-toggle="pub-3-cite" aria-expanded="false"><i class="bi bi-quote"></i> Cite</button>
+</div>
+<div id="pub-3-sum" class="pub-panel" hidden="">
 A review of a book on how AI and personalized medicine are shaping digital health, data-driven care, and patient outcomes.
-</p>
-</article>
 </div>
-</details>
+<div id="pub-3-cite" class="pub-panel pub-cite" hidden="">
+<div class="pub-cite-row">
+<span class="pub-cite-label">Citation (IEEE)</span><button type="button" class="pub-copy" data-copy="pub-3-txt"><i class="bi bi-clipboard"></i> Copy</button>
+</div>
+<div id="pub-3-txt" class="pub-cite-text">
+E. Wahyudi, N. E. Windianto, G. F. Ananda, A. Solaeman, and W. Setiawan, "Personalized medicine meets artificial intelligence: beyond "hype", towards the metaverse," Informatics for Health and Social Care, pp.&nbsp;149-152, 2024, doi: 10.1080/17538157.2024.2347230.
+</div>
+<div class="pub-cite-row">
+<span class="pub-cite-label">BibTeX</span><button type="button" class="pub-copy" data-copy="pub-3-bib"><i class="bi bi-clipboard"></i> Copy</button>
+</div>
+<pre class="pub-bib" id="pub-3-bib">@article{wahyudi2024personalized,
+  title = {{Personalized medicine meets artificial intelligence: beyond "hype", towards the metaverse}},
+  author = {Wahyudi, Eko and Windianto, Nur Eko and Ananda, Gheri Febri and Solaeman, Achmad and Setiawan, Wisnu},
+  journal = {Informatics for Health and Social Care},
+  publisher = {Taylor &amp; Francis},
+  year = {2024},
+  pages = {149--152},
+  doi = {10.1080/17538157.2024.2347230}
+}</pre>
+</div>
+</li>
+</ol>
+</section>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
+<script>
+// Filter jenis, tombol Summary/Cite, dan salin sitasi
+document.addEventListener("click", function (e) {
+  var f = e.target.closest(".pub-filter .topic-filter-btn");
+  if (f) {
+    var c = f.dataset.cat;
+    document.querySelectorAll(".pub-filter .topic-filter-btn").forEach(function (b) { b.classList.toggle("active", b === f); });
+    document.querySelectorAll(".pub-item").forEach(function (li) { li.hidden = c !== "all" && li.dataset.cat !== c; });
+    document.querySelectorAll(".pub-year").forEach(function (sec) { sec.hidden = !sec.querySelector(".pub-item:not([hidden])"); });
+    return;
+  }
+  var t = e.target.closest(".pub-btn[data-toggle]");
+  if (t) {
+    var panel = document.getElementById(t.dataset.toggle);
+    var open = panel.hidden;
+    panel.hidden = !open;
+    t.setAttribute("aria-expanded", open ? "true" : "false");
+    t.classList.toggle("active", open);
+    return;
+  }
+  var c2 = e.target.closest(".pub-copy");
+  if (c2) {
+    var txt = document.getElementById(c2.dataset.copy).textContent;
+    var done = function () { var old = c2.innerHTML; c2.innerHTML = '<i class="bi bi-check2"></i> Copied'; setTimeout(function () { c2.innerHTML = old; }, 1500); };
+    if (navigator.clipboard) navigator.clipboard.writeText(txt).then(done, done); else done();
+  }
+});
+</script>
 
 
 

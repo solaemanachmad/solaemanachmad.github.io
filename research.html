@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Research in deep learning for computer vision and time series classification, plus open final-project topics for Internet Engineering Technology students.">
+<meta name="description" content="Research projects, open research-assistant positions, and final-project topics in deep learning, time series, and network intelligence by Achmad Solaeman.">
 
 <title>Research – Achmad Solaeman</title>
 <style>
@@ -51,9 +51,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-66f4e2ffd714046053294c85584342e8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-6af17a47e8c76a2d5c76c2a1f7033b20.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-66f4e2ffd714046053294c85584342e8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b40e99cb9966fa3a1807e4b809697cfc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-a408ddfdd2a517ea7924cd8a785e2ab0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b40e99cb9966fa3a1807e4b809697cfc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -84,6 +84,62 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-projects .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-id','listing-title','listing-status','listing-period','listing-summary','listing-tags','listing-funding','listing-post','listing-positions',{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: ["listing-id","listing-title","listing-status","listing-period","listing-summary","listing-tags","listing-funding","listing-post","listing-positions"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-projects'] = new List('listing-projects', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-positions .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-id','listing-title','listing-status','listing-period','listing-summary','listing-tags','listing-funding','listing-post','listing-positions',{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: ["listing-id","listing-title","listing-status","listing-period","listing-summary","listing-tags","listing-funding","listing-post","listing-positions"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-positions'] = new List('listing-positions', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
     const listingTargetEl = window.document.querySelector('#listing-topics .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
@@ -91,9 +147,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-status','listing-level','listing-tags','listing-summary','listing-skills',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-title','listing-status','listing-level','listing-tags','listing-summary','listing-skills','listing-project',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-title","listing-status","listing-level","listing-tags","listing-summary","listing-skills"],
+      searchColumns: ["listing-title","listing-status","listing-level","listing-tags","listing-summary","listing-skills","listing-project"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -186,7 +242,7 @@ ul.task-list li input[type="checkbox"] {
 -->
 <script>
   (function () {
-    var GOATCOUNTER_CODE = "";   // ← isi di sini, mis. "solaeman"
+    var GOATCOUNTER_CODE = "solaemanachmad";   // ← isi di sini, mis. "solaeman"
     if (!GOATCOUNTER_CODE || /^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
     var s = document.createElement("script");
     s.async = true;
@@ -228,11 +284,11 @@ window.Quarto = {
 
 <link rel="stylesheet" href="assets/vendor/academicons/css/academicons.min.css">
 <meta property="og:title" content="Research – Achmad Solaeman">
-<meta property="og:description" content="Research in deep learning for computer vision and time series classification, plus open final-project topics for Internet Engineering Technology students.">
+<meta property="og:description" content="Research projects, open research-assistant positions, and final-project topics in deep learning, time series, and network intelligence by Achmad Solaeman.">
 <meta property="og:image" content="https://solaemanachmad.github.io/assets/images/profile.jpg">
 <meta property="og:site_name" content="Achmad Solaeman">
 <meta name="twitter:title" content="Research – Achmad Solaeman">
-<meta name="twitter:description" content="Research in deep learning for computer vision and time series classification, plus open final-project topics for Internet Engineering Technology students.">
+<meta name="twitter:description" content="Research projects, open research-assistant positions, and final-project topics in deep learning, time series, and network intelligence by Achmad Solaeman.">
 <meta name="twitter:image" content="https://solaemanachmad.github.io/assets/images/profile.jpg">
 <meta name="twitter:card" content="summary">
 </head>
@@ -556,7 +612,7 @@ window.Quarto = {
 
 <div>
   <div class="description">
-    Research in deep learning for computer vision and time series classification, plus open final-project topics for Internet Engineering Technology students.
+    Research projects, open research-assistant positions, and final-project topics in deep learning, time series, and network intelligence by Achmad Solaeman.
   </div>
 </div>
 
@@ -573,51 +629,90 @@ window.Quarto = {
 </header>
 
 
-<p>My work sits at the intersection of deep learning, human-centred sensing, and intelligent communication.</p>
-<section id="student-projects" class="level2">
-<h2 class="anchored" data-anchor-id="student-projects">Student Projects</h2>
-<p><strong>For Internet Engineering Technology students looking for a final-project (Tugas Akhir) topic.</strong></p>
-<p>Below are topics I am currently offering. If one catches your interest, use <strong>Discuss this topic</strong> on its card or send me an <a href="mailto:achmad.solaeman@ugm.ac.id">email</a> and we can talk it through.</p>
-<div id="listing-topics" class="quarto-listing quarto-listing-container-custom">
-<div class="topic-filter" role="group" aria-label="Filter topics by status">
-<button type="button" class="topic-filter-btn active" data-status="all">
-All
-</button>
-<button type="button" class="topic-filter-btn" data-status="available">
-Available <span class="topic-count">1</span>
-</button>
+<p>My work sits at the intersection of deep learning, human-centred sensing, and intelligent networks. Students are welcome in two ways: <strong>join one of my research projects</strong> as a research assistant, or <strong>do your final project</strong> on a topic I supervise. Often the two go together.</p>
+<div class="research-areas">
+<p><span class="area-tile"><i class="bi bi-eye"></i><strong>Human Sensing</strong><span>Gaze-based interaction</span></span> <span class="area-tile"><i class="bi bi-heart-pulse"></i><strong>Applied AI</strong><span>Computer vision, natural language processing</span></span> <span class="area-tile"><i class="bi bi-graph-up"></i><strong>Intelligent Communication System</strong><span>eye-movement classification, fault identification</span></span></p>
 </div>
-<div class="topic-grid">
-<article class="topic-card topic-available" data-status="available">
-<div class="topic-top">
-<p><span class="topic-status topic-status-available">Available</span> <span class="topic-level">D4 / Tugas Akhir</span></p>
+<div class="research-jump">
+<p><a href="#research-projects"><i class="bi bi-kanban"></i> Projects</a> <a href="#join"><i class="bi bi-person-plus"></i> Join a project</a> <a href="#thesis-topics"><i class="bi bi-mortarboard"></i> Thesis topics</a> <a href="#how-to-apply"><i class="bi bi-question-circle"></i> How to apply</a></p>
 </div>
-<h3 class="topic-title anchored">
-Real-time eye-movement classification on a low-cost webcam
+<section id="research-projects" class="level2">
+<h2 class="anchored" data-anchor-id="research-projects">Research Projects</h2>
+<p>Funded and ongoing projects I lead. Students contribute as research assistants.</p>
+<div id="listing-projects" class="quarto-listing quarto-listing-container-custom">
+<div class="project-list">
+<article class="project-card project-ongoing" id="project-rca-network-faults">
+<div class="project-head">
+<span class="project-status project-status-ongoing">Ongoing</span><span class="project-period"><i class="bi bi-calendar3"></i> 2026</span>
+</div>
+<h3 class="project-title anchored">
+Intelligent Root Cause Analysis System for Network Faults
 </h3>
-<p class="topic-summary">
-Port a lightweight hybrid deep-learning model for fixation/saccade classification to webcam gaze data and evaluate accuracy versus latency on a laptop or mini PC.
+<div class="project-funding">
+<i class="bi bi-award"></i>
+<div>
+<span class="project-funding-label">Funded by</span> <strong><a href="https://sv.ugm.ac.id/">Hibah Riset dan Pembuatan Artikel Publikasi 2026</a></strong><span class="project-funding-meta">Sekolah Vokasi, Universitas Gadjah Mada · Competitive cluster</span>
+</div>
+</div>
+<p class="project-summary">
+When a network fails, operators face a flood of alarms and metrics. This project builds an intelligent root cause analysis system that combines time-series analysis of network telemetry with a large language model to pinpoint the underlying cause of a fault and explain it in plain language.
 </p>
 <ul class="topic-tags">
 <li>
-eye tracking
+root cause analysis
 </li>
 <li>
-deep learning
+large language model
 </li>
 <li>
 time series
 </li>
+<li>
+network operations
+</li>
 </ul>
-<p class="topic-skills">
-<i class="bi bi-tools"></i> <span><strong>Skills:</strong> Python, basic PyTorch or TensorFlow</span>
-</p>
-<a class="topic-contact" href="mailto:achmad.solaeman@ugm.ac.id?subject=Thesis%20topic%3A%20Real-time%20eye-movement%20classification%20on%20a%20low-cost%20webcam"><i class="bi bi-envelope"></i> Discuss this topic</a>
+<div class="project-links">
+<a href="posts/2026-04-01-hibah-riset-sv-ugm/"><i class="bi bi-megaphone"></i> Announcement</a><a href="#thesis-topics"><i class="bi bi-mortarboard"></i> Related thesis topics</a>
+</div>
 </article>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
+</section>
+<section id="join" class="level2">
+<h2 class="anchored" data-anchor-id="join">Join a Project</h2>
+<div id="listing-positions" class="quarto-listing quarto-listing-container-custom">
+<div class="position-none">
+<i class="bi bi-hourglass-split"></i>
+<div>
+<strong>No open positions right now.</strong> Interested in joining a project later? <a href="mailto:achmad.solaeman@ugm.ac.id?subject=Research%20assistant%20interest">Send me an email</a> with your interests and I will keep you in mind.
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+<div class="benefit-grid">
+<p><span class="benefit"><i class="bi bi-journal-text"></i><strong>Co-authorship</strong><span>Students who make a substantial contribution are invited as co-authors on the resulting publications.</span></span> <span class="benefit"><i class="bi bi-mortarboard"></i><strong>A ready-made final project</strong><span>A well-defined part of the project can become your Tugas Akhir, with data and guidance already in place.</span></span></p>
+</div>
+</section>
+<section id="thesis-topics" class="level2">
+<h2 class="anchored" data-anchor-id="thesis-topics">Thesis Topics</h2>
+<p><strong>For Internet Engineering Technology students looking for a final-project topic.</strong> Topics marked <em>Part of a research project</em> are carried out inside one of the projects above.</p>
+<div id="listing-topics" class="quarto-listing quarto-listing-container-custom">
+<p class="topic-empty">
+No open topics are listed right now.
+</p>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
 <p>Have your own idea instead? I’m glad to hear it. Reach out by <a href="mailto:achmad.solaeman@ugm.ac.id">email</a> and we can explore whether it fits.</p>
+</section>
+<section id="how-to-apply" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-apply">How to Apply</h2>
+<ol type="1">
+<li><strong>Pick</strong> a position or topic above (or describe your own idea).</li>
+<li><strong>Email me</strong> using the <em>Apply</em> / <em>Discuss this topic</em> button, attaching a short CV, your latest transcript, and two or three sentences on why it interests you.</li>
+<li><strong>Meet</strong> for a 20-minute chat about the scope, timeline, and expectations.</li>
+<li><strong>Start</strong> with a small warm-up task so we both know it is a good fit.</li>
+</ol>
 <script>
 // Filter status topik (All / Available / Ongoing / Taken)
 document.addEventListener("DOMContentLoaded", function () {
