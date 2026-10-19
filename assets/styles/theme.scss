@@ -152,6 +152,9 @@ footer.footer { background-color: $footer-bg; position: relative; z-index: 2; }
   // (aturan `aside:not(.footnotes):not(.sidebar)`); selektor ini lebih spesifik agar profil tetap di kolom isi
   aside.profile-sidebar:not(.footnotes):not(.sidebar) {
     grid-column: body-content-start / body-content-end !important;
+    // Di atas elemen Quarto ber-z-index 998 (mis. .column-page-right di About), agar daftar
+    // kontak "Follow" tidak tertimpa teks di bawahnya. Tetap di bawah navbar (1030).
+    z-index: 1010 !important;
   }
   .profile-sidebar {
     position: relative;
